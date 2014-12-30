@@ -1,0 +1,536 @@
+\newpage
+\section{Turbulence primer}
+
+Most environmental and geophysical flows occur at high Reynolds numbers. At high
+Reynolds numbers, laminar solutions to the Navier-Stokes equations are unstable,
+and the flows are turbulent. 
+
+\subsection{Basics of turbulence}
+
+Throughout this and the next section, assume that the density $\rho$ is constant
+and uniform.
+
+\subsubsection{What is turbulence?}
+
+Although there is no simple definition for turbulence, turbulent flows can be
+characterised by a few properties:
+\begin{itemize}
+    \item Turbulent flows are dominated by inertia, since $\mathrm{Re}\gg1$.
+        Viscosity plays a small (but crucial) role.
+    \item Turbulent flows are vortical, not irrotational. However, vortical
+        flows need not be turbulent.
+    \item Turbulent flows involve a range of length scales. Vortices exist at
+        both large and small length scales: ``Big whorls have little whorls,
+        which feed on their velocity, // And little whorls have lesser whorls,
+        and so on to viscosity.'' ---Lewis Richardson.
+\end{itemize}
+Turbulent flows are unpredictable and simulating them numerically may be
+difficult as they may be numerically unstable. However, it may be possible to
+predict certain statistics of the flow, such as the behaviour of the mean flow
+or mean pressure (noting that fluctuations about these means may be great).
+Some features of turbulence can be shown to be universal.
+
+Lewis Richardson's couplet describes the two processes at work in a turbulent
+flow. \textit{Vortex stretching} is responsible for creating small vortices out
+of large ones, while \textit{energy dissipation} causes small vortices to
+decay.
+
+\subsubsection{Vortex stretching}
+
+Taking the curl of the Navier-Stokes equation gives the \textit{vorticity
+equation}:
+\begin{equation}
+    \frac{\partial\bs{\omega}}{\partial t} + \bs{u}\cdot\grad\bs{\omega} 
+     = \bs{\omega}\cdot\grad\bs{u} + \nu\grad^2\bs{\omega}
+ \label{vorticity-eqn}
+\end{equation}
+The second term on the RHS of \ref{vorticity-eqn} means that vorticity is
+diffused with diffusion constant $\nu$. This is a minor effect in flows with
+$\mathrm{Re}\gg1$. More importantly, the first term means that when a parcel of
+fluid is stretched into a column, its vorticity increases and becomes aligned
+with the column. Thus stretching a vortex takes energy to a smaller scale. 
+However, if the vortex column is compressed, not nearly as much energy is taken
+back to the large scale, since the compression in general de-aligns the
+vorticity vector and the column.
+
+\subsubsection{Energy dissipation: Kolmogorov's theory (1941)}
+
+We know that energy is dissipated in a fluid at a rate
+\begin{equation}
+    \int_V\mu|\grad\bs{u}|^2dV
+\end{equation}
+(or expressed in terms of the strain rate tensor, using
+$|\grad\bs{u}|^2=2e_{ij}e_{ij}$). For a laminar flow with characteristic
+velocity $U$ in a box with sides $L$, we might suppose that this scales as
+$\mu\frac{U^2}{L^2}L^3 = \mu U^2 L$.  However, for a turbulent flow, the energy
+dissipation is much faster than this, because there is a transfer of energy from
+large to small scales, and so $|\grad\bs{u}|^2$ is in fact very large: viscosity
+acts more strongly at small lengthscales.
+
+This suggests that although the large-scale structure of the flow might have
+characteristic lengthscale $L$, the small-scale structure of the flow should be
+described by another characteristic lengthscale $\eta$, called the
+\textit{Kolmogorov length scale} or the \textit{Kolmogorov microscale}. This is
+the lengthscale at which the effects of vortex stretching and dissipation
+balance each other.
+
+To summarise: The flow is externally driven (continually or initially) at the
+lengthscale $L$, energy cascades to smaller lengthscales; as the energy is
+transferred to smaller lengthscales, viscosity acts more and more strongly;
+until the energy reaches the lengthscale $\eta$ and can proceed no further.
+
+Let $\bs{U}(\bs{k})$ be the Fourier transform of the velocity $\bs{u}(\bs{x})$, 
+using the normalisation
+\begin{equation}
+    \bs{U}(\bs{k}) = \frac{1}{\sqrt{2\pi}} \int_V \bs{u}(\bs{x}) e^{-i\bs{k}\cdot\bs{x}} d\bs{x}.
+\end{equation}
+Let 
+\begin{equation}
+    E(\bs{k}) = \frac{1}{2}\rho\bs{U}(\bs{k})\cdot\bs{U}(\bs{k})*
+\end{equation}
+be the energy density spectrum. (In defining these Fourier transforms, we are
+assuming that $\rho$ is constant and uniform.) The total kinetic energy is
+\begin{equation}
+    KE = \int E(\bs{k}) d\bs{k}
+\end{equation}
+with the integral taken over wavenumber space. For isotropic turbulence,
+$\bs{U}$ and $E$ depend only on the magnitude $k=|\bs{k}|$. 
+
+Kolmogorov made two hypotheses about isotropic turbulent flows. These hypotheses
+allow us to make progress by dimensional analysis, but they do not follow from
+first principles, and their predictions must be verified experimentally.
+
+Since density is constant, we will find it convenient to rewrite the
+above expressions without $\rho$, so that the dimension $M$ may be set to $1$.
+We therefore work with the energy dissipation rate 
+\begin{equation}
+    \epsilon = \int_V\nu|\grad\bs{u}|^2dV
+\end{equation}
+which has dimensions $L^2 T^{-3}$, and with the energy spectrum
+\begin{equation}
+    E(k) = \frac{1}{2}\bs{U}(k)\cdot\bs{U}(k)*
+\end{equation}
+which has dimensions $L^3 T^{-2}$. We write 
+\begin{equation}
+    KE = \int E(k) dk
+\end{equation}
+for the kinetic energy per unit mass, with dimensions $L^2 T^{-2}$.
+
+
+\paragraph{First hypothesis} The rate of dissipation of energy (per unit
+density), $\epsilon$ (dimensions $L^2T^{-3}$), depends only on viscosity $\nu$
+(dimensions $L^2T^{-1}$) and on the microscale $\eta$. In particular, $\epsilon$ and
+$\eta$ are not to depend on the large lengthscale $L$.
+
+By dimensional analysis, this hypothesis allows us to construct $\eta$:
+\begin{equation}
+    \eta = (\nu^3 / \epsilon)^{1/4}
+\end{equation}
+
+Note that in a system in equilibrium, the rate of dissipation of energy is
+equal to the rate of energy input.
+\footnote{We can have a dynamic equilibrium, but not a static one, since
+turbulent flow is not steady.}
+
+\paragraph{Second hypothesis} The energy density $E(k)$ (dimensions $L^3
+T^{-2}$) depends only on the rate of dissipation $\epsilon$ and on $k$
+(dimensions $L^{-1}$).
+
+By dimensional analysis,
+\begin{equation}
+    E(k) = C \epsilon^{2/3} k^{-5/3}
+    \label{kolmogorov-energy-spectrum}
+\end{equation}
+for some constant $C$.
+
+This second hypothesis is not completely valid. If the flow is in a bounded
+domain with characteristic lengthscale $L$, or if the flow is driven at the
+lengthscale $L$, then the hypothesis is not valid at wavenumbers $k\sim1/L$ or
+below. And the hypothesis is also not valid when $k\sim1/\eta$, where the
+details of dissipation start to be important.
+
+However, for the range $1/L\ll k\ll 1/\eta$, known as the \textit{inertial
+range}, the hypothesis is justified and is supported by experimental evidence:
+(\ref{kolmogorov-energy-spectrum}) is reproduced by experimental data. 
+
+\subsubsection{Two-dimensional turbulence}
+
+A turbulent flow in two dimensions is different from one in three dimensions,
+since for a two-dimensional flow the vortex stretching term in
+(\ref{vorticity-eqn}) is always zero. Vorticity is conserved, and there is no
+cascade of energy to smaller lengthscales. Dotting (\ref{vorticity-eqn}) with
+$\bs{\omega}$ gives us the \textit{enstrophy equation}:
+\begin{equation}
+    \DDt\left(\frac{1}{2}|\bs{\omega}|^2\right) 
+    = \nu\left(\grad^2\frac{1}{2}|\bs{\omega}|^2 - |\grad\bs{\omega}|^2\right).
+ \label{enstrophy-eqn}
+\end{equation}
+The scalar quantity $\frac{1}{2}|\bs{\omega}|^2$ is called the
+\textit{enstrophy density}. 
+
+We obtain a very similar equation for the kinetic energy density by dotting the
+Navier-Stokes equation with $\bs{u}$:
+\begin{equation}
+    \DDt\left(\frac{1}{2}|\bs{u}|^2\right) 
+    = \nu\left(\grad^2\frac{1}{2}|\bs{u}|^2 - |\grad\bs{u}|^2\right).
+ \label{ke-eqn}
+\end{equation}
+Equations \ref{enstrophy-eqn} and \ref{ke-eqn} tell us that in a 2D flow,
+enstrophy and kinetic energy are redistributed by diffusion (first term on RHS)
+as well as dissipated (second term).
+
+Since total enstrophy (enstrophy density integated across the volume) must
+decrease, there must be a net movement of energy to \textit{larger} lengthscales
+(i.e.  smaller $k$). Total enstrophy is proportional to $\int k^2E(k) dk$, so if
+$E(k)$ increases at high $k$, this increase must be balanced by a greater
+increase in $E(k)$ at low $k$, so that $\int k^2E(k) dk$ never increases.
+
+Hence there is an \textit{anticascade} of energy to larger scales, and a
+\textit{cascade} of enstrophy to smaller scales.
+
+\subsection{Simplistic approaches to modelling turbulence}
+
+Instead of starting from first principles and trying to solve the Navier-Stokes
+equations for a turbulent system directly, it is often easier, and fruitful, to
+model the effects of turbulence instead.
+
+\subsubsection{Molecular diffusion}
+
+A direct approach is to model all scales down to the microscale
+$\eta=(\nu^3/\epsilon)^{1/4}$. The energy spectrum
+(\ref{kolmogorov-energy-spectrum}) predicts that the kinetic energy 
+per unit volume will be 
+\begin{equation}
+    \text{KE density} = \int_{1/L}^{1/\eta} E(k) dk \propto (\epsilon L)^{2/3}
+\end{equation}
+giving a characteristic velocity
+\begin{equation}
+    u \propto \sqrt{\text{KE density}} \propto (\epsilon L)^{1/3}
+\end{equation}
+and therefore a Reynolds number
+\begin{equation}
+    Re = \frac{uL}{\nu} \propto \frac{\epsilon^{1/3} L^{4/3}}{\nu}.
+\end{equation}
+Note that we calculate this Reynolds number using a characteristic velocity
+calculated only from the turbulent properties, not taking into account any
+large-scale velocities (such as one driving the flow). 
+
+Since $\eta = (\nu^3/\epsilon)^{1/4}$, we have
+\begin{equation}
+    Re = \left(\frac{L}{\eta}\right)^{4/3} \gg 1.
+\end{equation}
+
+For moderately large $Re$, direct numerical simulation (DNS) may be possible,
+but usually $Re$ is so large that DNS is impractical or impossible. 
+
+The problem would be even worse if the fluid were not of uniform and constant
+density. The mass diffusivity $\kappa$ and the momentum diffusivity $\nu$ are
+compared by the \textit{Schmidt number} $Sc = \nu/\kappa$. For salt water, $Sc
+\approx 1000$. In order to simulate the diffusion of mass, we would have to look
+at an even smaller scale, the \textit{Batchelor scale}
+$\lambda_B=\eta/Sc^{1/2}$. 
+
+\subsubsection{The closure problem}
+
+A turbulent flow $\bs{u}$, and the associated pressure field $p$, can be
+decomposed into its mean part $\overline{\bs{u}}$, and a fluctuating part $\bs{u}'$
+that fluctuates about $\bs{0}$: $\overline{\bs{u}'} = \bs{0}$. We can model a
+turbulent flow by ignoring the details of these fluctuations, and looking only
+at how these fluctuations affect the mean part.
+\footnote{The mean can be taken as a time average or as a local spatial average,
+but this detail is unimportant for what follows.}
+
+Beginning with the Navier-Stokes equations:
+\begin{equation}
+    \rho\DDt\bs{u} = -\grad p + \mu\grad^2\bs{u} + \bs{f}
+    \label{ns-eqn}
+\end{equation}
+and averaging, we obtain
+\begin{equation}
+    \rho\left(\frac{\partial\overline{\bs{u}}}{\partial t} + \overline{\bs{u}}\cdot\grad\overline{\bs{u}}\right)
+    = -\grad\overline{p} + \mu\grad^2\overline{\bs{u}} + \bs{f} - \rho\overline{\bs{u}'\cdot\grad\bs{u}'}
+    \label{ave-ns-eqn}
+\end{equation}
+(assuming that the body force $\bs{f}$ is a constant). The fluctuations are
+still present in the quadratic term $-\rho\overline{\bs{u}'\cdot\grad\bs{u}'}$ on the RHS,
+because (\ref{ns-eqn}) is nonlinear.
+\footnote{If we had a non-constant $\rho$, then we would have further such
+quadratic terms, such as the turbulent buoyancy flux $\overline{\bs{u}'\cdot\grad\rho}$.}
+We cannot remove such nonlinear terms by more averaging, as that simply
+introduces further nonlinear terms. This is the \textit{closure problem}: we
+cannot close the system as we do not know how to deal with these terms.
+Many approximate closures have been proposed, but none are universally
+applicable.
+
+Note that 
+\begin{equation}
+    -\rho\overline{\bs{u}'\cdot\grad\bs{u}'} = -\rho\grad\cdot(\overline{\bs{u'}\bs{u'}})
+\end{equation}
+and so the fluctuations affect the mean flow as though they were an additional
+stress force, with stress tensor 
+\begin{equation}
+    \bs{\sigma}^{(R)} = -\rho \overline{\bs{u'}\bs{u'}}.
+\end{equation}
+This `stress' is called the \textit{Reynolds stress}.
+
+\subsubsection{The $k$-$\epsilon$ model}
+
+The most commonly used closure model is the $k$-$\epsilon$ model, where
+$k=\frac{1}{2}\bs{u}'\cdot\bs{u}'$ is the \textit{turbulent kinetic energy} (per
+unit density), and $\epsilon$ is the energy dissipation. The model states that
+\begin{equation}
+    \rho\DDt k
+    = \grad\cdot\left(\frac{\mu_T}{\sigma_k}\grad k\right) 
+    + 2 \mu_T \bs{S}:\bs{S} 
+    - \rho\epsilon
+    \label{ke-model-1}
+\end{equation}
+where 
+\begin{equation}
+    \mu_T = C_\mu\rho\frac{k^2}{\epsilon}
+\end{equation}
+is the \textit{turbulent viscosity}, 
+\begin{equation}
+    \bs{S} = \frac{1}{2}(\grad\overline{\bs{u}} + (\grad\overline{\bs{u}})^T)
+\end{equation}
+is the strain rate tensor corresponding to the mean flow, and $C_\mu \approx
+0.09$ and $\sigma_k\approx1.00$ are constants that are determined empirically.
+Equations \ref{ave-ns-eqn} and \ref{ke-model-1} together specify the problem for
+$\overline{\bs{u}}$ completely.
+
+Essentially, the model describes how turbulent kinetic energy is governed. We
+can interpret (\ref{ke-model-1}) as follows:
+\begin{itemize}
+    \item The first term on the RHS represents the diffusion of turbulent
+        kinetic energy, at some (non-constant) rate $\mu_T/\sigma_k$.
+    \item The second term represents the generation of turbulent kinetic energy,
+        by means of vortex stretching.
+    \item The third term represents the dissipation of turbulent kinetic energy.
+\end{itemize}
+
+Equation \ref{ke-model-1} can be re-written as 
+\begin{equation}
+    \rho\DDt\epsilon =
+    \grad\cdot\left(\frac{\mu_T}{\sigma_\epsilon}\grad\epsilon\right)
+    + 2 C_{1\epsilon} \frac{\epsilon}{k}\mu_T\bs{S}:\bs{S}
+    - C_{2\epsilon}\rho\frac{\epsilon^2}{k}
+\end{equation}
+where $\sigma_\epsilon\approx1.30$, $C_{1\epsilon}\approx1.44$ and
+$C_{2\epsilon}\approx1.92$ are constants that are determined empiracally.
+
+Experiments and simulations find that these constants are \textit{universal}.
+
+\subsubsection{Turbulent diffusion models}
+
+As discussed, the vortex stretching process is irreversible and takes energy to
+smaller lengthscales. There is little back-scatter: smaller lengthscales do not
+strongly affect the larger scales, except as a sink of energy. This is why we
+can consider the mean flow as in (\ref{ave-ns-eqn}) and ignore the behaviour of
+the fluctuations, except as a sink of energy.
+
+This suggests replacing the Reynolds stress with an additional viscosity term
+that mimics the diffusion of momentum and dissipation of energy without actually
+describing how this happens. That is, we take
+\begin{equation}
+    -\overline{\bs{u}' \bs{u}'} = \nu_T \bs{S}
+\end{equation}
+where $\nu_T$ is called the \textit{(turbulent) eddy viscosity}. We also write
+$\mu_T = \rho\nu_T$. The force due to Reynolds stresses is therefore
+\begin{align}
+    \divg\bs{\sigma}^{(R)} &= \divg(-\rho\overline{\bs{u}'\bs{u}'})  \\
+     &= \rho\grad\cdot(\nu_T\bs{S}) \\
+     &= \rho (\grad\nu_T \cdot \bs{S} + \nu_T \divg\bs{S}) \\
+     &= \rho (\grad\nu_T \cdot \bs{S} + \frac{1}{2} \nu_T \grad^2\overline{\bs{u}}).
+\end{align}
+Putting this into the averaged Navier-Stokes equations gives us
+\begin{equation}
+    \left(\frac{\partial\overline{\bs{u}}}{\partial t} +
+    \overline{\bs{u}}\cdot\grad\overline{\bs{u}}\right)
+    = -\frac{1}{\rho}\grad\overline{p} 
+    + \left(\nu+\frac{1}{2}\nu_T\right)\grad^2\overline{\bs{u}} 
+    + \frac{1}{\rho}\bs{f} 
+    + \grad\nu_T \cdot \bs{S}.
+    \label{ave-ns-eqn-td-model}
+\end{equation}
+Closure models that do this are called \textit{turbulent diffusion models}.
+Different models propose different expressions for $\nu_T$: this is usually not 
+constant, but may depend on the position or on $\overline{\bs{u}}$.
+
+\subsubsection{Prandtl's mixing length model}
+
+Prandtl's mixing length model is a turbulent diffusion model, in which
+\begin{equation}
+    \nu_T = k u' l
+\end{equation}
+where $l$ is some \textit{mixing length}, $u'=\sqrt{\overline{|\bs{u}'|^2}}$
+is the \textit{turbulence intensity}, and the \textit{Prandtl ratio}
+$k\approx0.4$ is another empirically-determined constant. The mixing length
+represents the lengthscale of turbulent eddies; it may vary with position, and
+depends on the geometry of the problem. 
+
+\paragraph{The law of the wall} For example, in the domain $z>0$ bounded by a
+wall at $z=0$, the lengthscale $l$ of turbulent eddies is assumed to scale with
+$z$. The turbulence intensity is assumed to be some constant $q$. Hence $\nu_T =
+kqz$.  The horizontal shear stress is also assumed to be constant. 
+
+Assuming that the mean flow is $\overline{\bs{u}} = U(z) \bs{e}_x$, the
+$x$-component of Equation \ref{ave-ns-eqn-td-model} gives us
+\begin{equation}
+    0 = \frac{1}{\rho} G
+    + \left(\nu+\frac{1}{2}\nu_T\right)\frac{d^2U}{dz^2}
+    + \frac{1}{2}kq \frac{dU}{dz}
+    \label{law-of-the-wall-eqn}
+\end{equation}
+where $G = -\frac{\partial\overline{p}}{\partial x}$ is the horizontal pressure
+gradient, which is some constant. 
+
+In the case $G=0$, we can solve (\ref{law-of-the-wall-eqn}) exactly to give us
+\begin{equation}
+    U(z) = \frac{A}{kq} \log(2\nu + kqz)
+    \label{law-of-the-wall-2}
+\end{equation}
+where $A$ is some constant. The condition that shear stress is (approximately)
+constant allows us to write $A$ in terms of the \textit{bed shear stress}, the
+shear stress on $z=0$.
+
+For $z\ll\frac{\nu}{kq}$, (\ref{law-of-the-wall-2}) says that $U(z)\propto z$,
+as we would expect for a boundary layer. In this region, molecular viscosity
+$\nu$ is dominant. However, for larger $z$, $U(z)$ is logarithmic in $z$:
+\begin{equation}
+    U(z) \sim \frac{u_*}{\kappa} \log\frac{z}{z_0}
+    \label{law-of-the-wall}
+\end{equation}
+This is the \textit{law of the wall}. Here $u_*$ is called the \textit{slip
+velocity} and $z_0$ the \textit{roughness height}; $\kappa\approx0.41$ is a
+dimensionless constant called \textit{von Karmen's constant}. 
+
+The law of the wall does not hold when $z$ becomes too large, when other effects
+such as small pressure gradients take hold, or when the mixing length is no
+longer $l\sim z$, but it is a good approximation for boundary layers. 
+
+\subsubsection{Entrainment: Diffusion of turbulence}
+
+Consider a turbulent patch of length scale $l$ and turbulence intensity $u'$,
+surrounded by irrotational fluid outside the patch. The vortical motion within
+the patch will draw in the external fluid, straining and diffusing vorticity
+into it. Thus the size of the patch will increase; its boundaries move out at a
+rate proportional to $u'$. 
+
+The diffusivity of turbulence is called the \textit{turbulent diffusivity},
+written $\kappa_T$, with $\kappa_T \sim u'l$. This is not to be confused with
+turbulent viscosity, though both are $\sim u'l$ with similar (but not
+necessarily equal) constants of proportionality.
+
+This diffusivity of turbulence can explain the growth of the Rayleigh-Taylor
+instability in a tall tube. 
+
+\subsection{Mixing}
+
+We now drop the assumption that $\rho$ is constant and uniform.
+
+\subsubsection{What is mixing?}
+
+Mixing is the blending of fluid particles with different properties, such as
+density, salinity or temperature. (These properties are related to each other.)
+There are two processes responsible for mixing:
+\begin{itemize}
+    \item \textit{Stirring} is the intermingling of fluid particles of different
+        properties. This produces large gradients in these properties.
+    \item \textit{Diffusion} drives a flux down a gradient that reduces these
+        gradients between adjacent fluid particles.
+\end{itemize}
+Diffusion is an irreversible process: there is a `preferred' direction for
+fluxes, down a gradient; but stirring (on its own) is reversible. Diffusion is a
+slow process that occurs at the molecular level, whereas stirring can happen
+quickly and over large lengthscales. Together, stirring and diffusion can cause
+irreversiible mixing.
+
+In general, a scalar property $S$ is governed by the advection-diffusion
+equation
+\begin{equation}
+    \DDt S = \kappa\grad^2S
+\end{equation}
+where $\kappa$ (dimensions $L^2T^{-1}$) is the molecular diffusivity of $S$.
+This is often very small: the diffusivity of heat in air is
+$\approx10^{-5}m^2s^{-1}$ and the diffusivity of salt in water is
+$\approx10^{-9}m^2s^{-1}$. The timescale for diffusing across a length $l$ is
+therefore $t\sim l^2/\kappa$, which is huge: heat takes a day to diffuse across
+a metre in air, and salinity takes thirty years to diffuse a metre.
+
+However, stirring (represented in the advection term) can help to create large
+gradients in $S$, which increases the rate of diffusion (by reducing $l$).
+
+\subsubsection{The energy budget}
+
+Consider an incompressible Boussinesq fluid with a linear equation of state.
+\footnote{Incompressibility means that $\divg\bs{u}=0$, but this does not mean
+    that the density $\rho$ is constant; $\rho$ is governed by the
+    advection-diffusion equation.}
+Assume that dissipative heating is unimportant, and ignore any heating effects
+from dilution, chempical potential energy, and so on.
+
+Begin with the momentum equation for a variable-density fluid:
+\begin{equation}
+    \DDt\rho\bs{u} = -\grad p - \rho g \bs{e}_z + \rho\nu\grad^2\bs{u}
+\end{equation}
+and dot with $\bs{u}$. Since
+\begin{equation}
+    \bs{u}\cdot\grad p = \divg(p\bs{u})
+\end{equation}
+for an incompressible fluid, and 
+\begin{equation}
+    \bs{u}\cdot\rho g \bs{e}_z = \DDt(\rho gz) - \divg(gz\kappa\grad\rho) +
+    g\kappa\frac{\partial\rho}{\partial z}
+\end{equation}
+(where we have used the advection-diffusion equation for $\rho$, with mass
+diffusivity $\kappa$), we have:
+\begin{equation}
+    \DDt\left(\frac{1}{2}\rho|\bs{u}|^2 + \rho gz\right)
+    + \divg\left(p\bs{u} - \frac{1}{2}\rho\nu\grad|\bs{u}|^2 
+       - gz\kappa\grad\rho\right)
+    = -g\kappa\frac{\partial\rho}{\partial z} 
+    - \rho\nu|\grad\bs{u}|^2.
+    \label{mixing-energy-eqn}
+\end{equation}
+This is an equation descibing kinetic and potential energy density. The energy
+of a parcel of fluid changes due to diffusion, because:
+\begin{itemize}
+    \item work is done on it by pressure from neighbouring parcels, causing an
+        energy flux $p\bs{u}$; 
+    \item viscosity causes the diffusion of kinetic energy, with energy flux
+        $-\frac{1}{2}\rho\nu\grad|\bs{u}|^2$;
+    \item mass diffusion causes the diffusion of potential energy, with energy
+        flux $- gz\kappa\grad\rho$.
+\end{itemize}
+The energy of a parcel also changes due to:
+\begin{itemize}
+    \item mass diffusion raising the centre of mass, changing the potential
+        energy at a rate $-g\kappa\frac{\partial\rho}{\partial z}$;
+    \item dissipation due to viscosity, decreasing the kinetic energy at a rate
+        $\rho\nu|\grad\bs{u}|^2$.
+\end{itemize}
+These processes, whose terms appear on the RHS of (\ref{mixing-energy-eqn}), are
+irreversible.
+
+If there are no fluxes of mass or momentum from the boundaries of $V$, then
+integrating the energy equation gives us:
+\begin{equation}
+    \frac{d}{dt}(KE + PE) = W-\epsilon
+\end{equation}
+where $KE = \int_V \frac{1}{2}\rho|\bs{u}|^2 dV$ and $PE = \int_V \rho gz dV$ be
+the total kinetic and potential energy of the system, $W = -\int_S p
+\bs{u}\cdot\bs{n} dS$ is the rate of pressure working and $\epsilon = \int_V
+\rho\nu\grad|\bs{u}|^2 dV$ is the rate of dissipation.
+
+Energy is dissipated into heat. Kinetic and potential energy can be converted
+into each other, but mixing and dissipation cause irreversible. 
+
+\subsection{Stably stratified flows}
+
+\subsection{Mixing efficiency}
+
+\subsection{Internal mixing}
+\subsubsection{Kelvin-Helmholtz instability}
+\subsubsection{Stratified shear flow}
+\subsubsection{Holmboe instability}
+\subsubsection{Entrainment by internal mixing}
