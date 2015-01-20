@@ -1,44 +1,44 @@
-\contentsline {section}{\numberline {1}Internal gravity waves}{2}
-\contentsline {section}{\numberline {2}Turbulence primer}{3}
-\contentsline {subsection}{\numberline {2.1}Basics of turbulence}{3}
-\contentsline {subsubsection}{\numberline {2.1.1}What is turbulence?}{3}
-\contentsline {subsubsection}{\numberline {2.1.2}Vortex stretching}{3}
-\contentsline {subsubsection}{\numberline {2.1.3}Energy dissipation: Kolmogorov's theory (1941)}{3}
-\contentsline {paragraph}{First hypothesis}{4}
-\contentsline {paragraph}{Second hypothesis}{5}
-\contentsline {subsubsection}{\numberline {2.1.4}Two-dimensional turbulence}{5}
-\contentsline {subsection}{\numberline {2.2}Simplistic approaches to modelling turbulence}{5}
-\contentsline {subsubsection}{\numberline {2.2.1}Molecular diffusion}{5}
-\contentsline {subsubsection}{\numberline {2.2.2}The closure problem}{6}
-\contentsline {subsubsection}{\numberline {2.2.3}The $k$-$\epsilon $ model}{7}
-\contentsline {subsubsection}{\numberline {2.2.4}Turbulent diffusion models}{7}
-\contentsline {subsubsection}{\numberline {2.2.5}Prandtl's mixing length model}{8}
-\contentsline {paragraph}{The law of the wall}{8}
-\contentsline {subsubsection}{\numberline {2.2.6}Entrainment: Diffusion of turbulence}{9}
-\contentsline {subsection}{\numberline {2.3}Mixing}{9}
-\contentsline {subsubsection}{\numberline {2.3.1}What is mixing?}{9}
-\contentsline {subsubsection}{\numberline {2.3.2}The energy budget}{9}
-\contentsline {subsection}{\numberline {2.4}Stably stratified flows}{10}
-\contentsline {subsection}{\numberline {2.5}Mixing efficiency}{10}
-\contentsline {subsection}{\numberline {2.6}Internal mixing}{10}
-\contentsline {subsubsection}{\numberline {2.6.1}Kelvin-Helmholtz instability}{10}
-\contentsline {subsubsection}{\numberline {2.6.2}Stratified shear flow}{10}
-\contentsline {subsubsection}{\numberline {2.6.3}Holmboe instability}{10}
-\contentsline {subsubsection}{\numberline {2.6.4}Entrainment by internal mixing}{10}
-\contentsline {section}{\numberline {3}Shallow water}{11}
-\contentsline {section}{\numberline {4}Particle-laden and granular flow}{11}
-\contentsline {subsection}{\numberline {4.1}Types of particulate flows}{11}
-\contentsline {paragraph}{Grain suspension by fluid turbulence}{11}
-\contentsline {paragraph}{Liquefied and fluidised flow}{11}
-\contentsline {paragraph}{Dry grain flow and interactions}{11}
-\contentsline {paragraph}{Grain-supported matrix}{11}
-\contentsline {subsection}{\numberline {4.2}Modelling a particulate gravity current}{12}
-\contentsline {subsection}{\numberline {4.3}Physics within a particle gravity current}{12}
-\contentsline {subsection}{\numberline {4.4}Sedimenting particle-laden flows}{12}
-\contentsline {subsubsection}{\numberline {4.4.1}Type I: Free settling of individual particles}{13}
-\contentsline {paragraph}{The particle Reynolds number}{13}
-\contentsline {paragraph}{The drag coefficient}{13}
-\contentsline {paragraph}{The settling velocity}{14}
-\contentsline {paragraph}{Advection and diffusion of particles}{14}
-\contentsline {subsubsection}{\numberline {4.4.2}Type III: Hindered (zone) settling}{15}
-\contentsline {section}{\numberline {5}Jets, plumes and thermals}{15}
+\contentsline {section}{\numberline {1}Internal gravity waves}{1}{section.1}
+\contentsline {section}{\numberline {2}Turbulence primer}{2}{section.2}
+\contentsline {subsection}{\numberline {2.1}Basics of turbulence}{2}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}What is turbulence?}{2}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}Vortex stretching}{2}{subsubsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.3}Energy dissipation: Kolmogorov's theory (1941)}{2}{subsubsection.2.1.3}
+\contentsline {paragraph}{First hypothesis}{3}{section*.2}
+\contentsline {paragraph}{Second hypothesis}{4}{section*.3}
+\contentsline {subsubsection}{\numberline {2.1.4}Two-dimensional turbulence}{4}{subsubsection.2.1.4}
+\contentsline {subsection}{\numberline {2.2}Simplistic approaches to modelling turbulence}{4}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Molecular diffusion}{4}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}The closure problem}{5}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.3}The $k$-$\epsilon $ model}{5}{subsubsection.2.2.3}
+\contentsline {subsubsection}{\numberline {2.2.4}Turbulent diffusion models}{6}{subsubsection.2.2.4}
+\contentsline {subsubsection}{\numberline {2.2.5}Prandtl's mixing length model}{7}{subsubsection.2.2.5}
+\contentsline {paragraph}{The law of the wall}{7}{section*.4}
+\contentsline {subsubsection}{\numberline {2.2.6}Entrainment: Diffusion of turbulence}{7}{subsubsection.2.2.6}
+\contentsline {subsection}{\numberline {2.3}Mixing}{7}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}What is mixing?}{8}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}The energy budget}{8}{subsubsection.2.3.2}
+\contentsline {subsection}{\numberline {2.4}Stably stratified flows}{9}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}Mixing efficiency}{9}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}Internal mixing}{9}{subsection.2.6}
+\contentsline {subsubsection}{\numberline {2.6.1}Kelvin-Helmholtz instability}{9}{subsubsection.2.6.1}
+\contentsline {subsubsection}{\numberline {2.6.2}Stratified shear flow}{9}{subsubsection.2.6.2}
+\contentsline {subsubsection}{\numberline {2.6.3}Holmboe instability}{9}{subsubsection.2.6.3}
+\contentsline {subsubsection}{\numberline {2.6.4}Entrainment by internal mixing}{9}{subsubsection.2.6.4}
+\contentsline {section}{\numberline {3}Shallow water}{10}{section.3}
+\contentsline {section}{\numberline {4}Particle-laden and granular flow}{10}{section.4}
+\contentsline {subsection}{\numberline {4.1}Types of particulate flows}{10}{subsection.4.1}
+\contentsline {paragraph}{Grain suspension by fluid turbulence}{10}{section*.5}
+\contentsline {paragraph}{Liquefied and fluidised flow}{10}{section*.6}
+\contentsline {paragraph}{Dry grain flow and interactions}{10}{section*.7}
+\contentsline {paragraph}{Grain-supported matrix}{10}{section*.8}
+\contentsline {subsection}{\numberline {4.2}Modelling a particulate gravity current}{11}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Physics within a particle gravity current}{11}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Sedimenting particle-laden flows}{11}{subsection.4.4}
+\contentsline {subsubsection}{\numberline {4.4.1}Type I: Free settling of individual particles}{12}{subsubsection.4.4.1}
+\contentsline {paragraph}{The particle Reynolds number}{12}{section*.9}
+\contentsline {paragraph}{The drag coefficient}{12}{section*.10}
+\contentsline {paragraph}{The settling velocity}{12}{section*.11}
+\contentsline {paragraph}{Advection and diffusion of particles}{13}{section*.12}
+\contentsline {subsubsection}{\numberline {4.4.2}Type III: Hindered (zone) settling}{14}{subsubsection.4.4.2}
+\contentsline {section}{\numberline {5}Jets, plumes and thermals}{14}{section.5}

@@ -1,8 +1,10 @@
 \documentclass{article}
-\input{preamble.tex}
+
+\input{/Users/jmft2/Documents/writing/preamble.tex}
 
 \title{Fluid Dynamics of the Environment}
 \author{J.M.F.T.}
+
 \begin{document}
 \maketitle
 \tableofcontents
