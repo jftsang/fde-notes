@@ -1,0 +1,206 @@
+\documentclass{article}
+\input{preamble.tex}
+
+\title{Fluid Dynamics of the Environment: Example Sheet postmortems}
+\author{J.M.F.T.}
+\begin{document}
+\maketitle
+\tableofcontents
+
+\section{Question 1: Equipartition of energy}
+
+\begin{quote}
+    Consider linear surface waves of amplitude $\eta_0$ in a fluid of depth $H$.
+    Prove that there is an equipartition between kinetic and potential energy,
+    averaged over a wave length. Derive also a relationship between energy flux,
+    energy density (sum of kinetic and potential energy densities) and group
+    velocity.
+\end{quote}
+
+Begin with the linearised inviscid irrotational equations:
+\begin{equation}
+    \rho\bs{u}_t = -\grad p + \rho\bs{g}.
+    \label{q1:eom}
+\end{equation}
+These hold in $z\in(-H,0)$. Write $\bs{u}=\grad\phi$; then $\grad^2\phi=0$. And
+$w=\phi_z=0$ on $z=-H$. Hence 
+\begin{align}
+    \phi &= \phi_0 \cos(kx-\omega t)\cosh(k(z+H)) \\
+    u    &= -\phi_0 k \sin(kx-\omega t)\cosh(k(z+H)) \\
+    w    &= \phi_0 k \cos(kx-\omega t)\sinh(k(z+H)).
+\end{align}
+The surface height $\eta$ will be of the form
+\begin{equation}
+    \eta = \Re (\eta_0 e^{i(kx-\omega t)});
+\end{equation}
+and the usual free-surface BCs on this surface give
+\begin{equation}
+    \eta = \phi_0 \frac{k}{\omega} \sinh(kH) \sin(kx-\omega t)
+\end{equation}
+and the dispersion relation
+\begin{equation}
+    \omega^2 = gk\tanh kH.
+\end{equation}
+
+Now dot (\ref{q1:eom}) with $\bs{u}$ to get an energy equation:
+\begin{equation}
+    \underbrace{\left(\frac{1}{2}\rho\bs{u}^2\right)_t}_{\text{KE density}_t} 
+    + \underbrace{\rho gw}_{\text{PE density}_t} +
+    \divg(\underbrace{p\bs{u}}_{\substack{\text{energy}\\\text{flux}\\\text{density}}}) = 0 
+\end{equation}
+
+Thus we compute $K = \frac{1}{2}\rho\bs{u}^2$ and integrate over $-H<z<0$ to
+find the kinetic energy per unit area. For potential energy, we are interested
+in the \textit{perturbation} to the PE rather than the total PE. We have
+\begin{equation}
+    \Delta PE\text{ per unit area} = \int_0^\eta \rho g z dz = \frac{1}{2}\rho g\eta^2.
+\end{equation}
+Then it can be shown that $\langle KE\text{ p.u.a.}\rangle = \langle\Delta
+PE\text{ p.u.a.}\rangle = \frac{1}{8}\phi_0^8\rho k\sinh(2kH)$. This is
+\textit{equipartition of energy}.
+
+\paragraph{Notes}
+Analogous statements of equipartition of energy apply for other types of waves
+as well. Although equipartition of energy is about time-averages
+$\langle\cdot\rangle$ of energy, in practice it is often established fairly quickly
+and can be taken as applying instantaneously. This is a useful idea sometimes.  
+
+
+\section{Question 2}
+\section{Question 3}
+\pagebreak
+\section{Question 4: Reflexion and transmission of internal gravity waves}
+
+\begin{figure}
+    \begin{center}
+        \vspace{4 cm}
+        \caption{Incident, reflected and transmitted waves.}
+        \label{fig:q4}
+    \end{center}
+\end{figure}
+
+\begin{quote}
+    Consider a plane internal wave beam of frequency $\omega$ propagating from
+    $z<0$ where the fluid has a linear stratification given by buoyancy $N_1$
+    into the region $z>0$ where the buoyancy frequency is $N_2 < N_1$. The
+    density field is continuous across $z=0$.
+\end{quote}
+
+If $\omega < N_2$ then the incident wave gives rise to both a transmitted and a
+reflected wave. But if $N_2 < \omega < N_1$ then the `transmitted wave' is
+evanescent, and we have total internal reflexion. Consider $\omega < N_2$:
+
+The boundary conditions at $z=0$ are that pressure perturbations $p'$ and
+vertical velocities $\bs{u}\cdot\bs{n}$, or equivalently vertical displacements,
+must be continuous. Using the dispersion relation $\omega = N\cos\theta$ and the
+fact that $\omega$ is the same everywhere, we have
+\begin{equation}
+    \omega = N_1\cos\theta_I = N_2\cos\theta_T
+\end{equation}
+so the transmitted wave makes an angle 
+\begin{equation}
+    \cos\theta_T = \frac{N_1}{N_2}\cos\theta_I
+\end{equation}
+with the vertical.
+
+The wavevectors of the three rays are
+\begin{align}
+    \bs{k}_I &= k_I (\cos\theta_I,-\sin\theta_I) \\
+    \bs{k}_R &= k_R (\cos\theta_I,+\sin\theta_I) \\
+    \bs{k}_T &= k_T (\cos\theta_T,-\sin\theta_T) 
+\end{align}
+as shown in Figure \ref{fig:q4}.
+
+The horizontal displacements of fluid particles satisfy
+\begin{equation}
+    \eta_x = \begin{cases}
+        e^{-i\omega t} \sin\theta_I (\hat\eta_I e^{i\bs{k}_I\cdot\bs{x}} +
+                                     \hat\eta_R e^{i\bs{k}_R\cdot\bs{x}}) & z < 0 \\
+        e^{-i\omega t} \sin\theta_T \hat\eta_T e^{i\bs{k}_R\cdot\bs{x}} & z > 0
+    \end{cases}
+\end{equation}
+where the $\hat\eta_{I,R,T}$ are displacement amplitudes along the ray, and the
+$\sin\theta_{I,T}$ appear because the rays are travelling in different
+directions, and and we need to pick out the horizontal components of
+displacement.
+
+Considering dependences on $x$, we see that
+\begin{equation}
+    k_I\cos\theta_I = k_R\cos\theta_I = k_T\cos\theta_T
+\end{equation}
+and so $k_I = k_R$ and $k_T = \frac{N_2}{N_1}k_I$. That is, wavenumbers in the
+$x$ direction are all equal to each other.
+
+Meanwhile, pressure perturbations are given by
+\begin{equation}
+    \hat{p}=\frac{i\rho_0\omega^2\hat\eta\tan\theta}{|k|}
+\end{equation}
+and these are continuous at $z=0$. Hence:
+%\begin{align}
+%    \frac{-\omega^2}{\cos\theta_I}\sin\theta_I (\hat\eta_I e^{i\bs{k}_I\cdot\bs{x}} +
+%                                         \hat\eta_R e^{i\bs{k}_R\cdot\bs{x}})
+%  &=\frac{-\omega^2}{\cos\theta_T}\sin\theta_T \hat\eta_T e^{i\bs{k}_T\cdot\bs{x}}\\
+%  \frac{1}{\cos\theta_I}\sin\theta_I (\hat\eta_I e^{i\bs{k}_I\cdot\bs{x}}+\hat\eta_Re^{i\bs{k}_R\cdot\bs{x}})
+%   &=\frac{1}{\cos\theta_T}\sin\theta_T \hat\eta_T e^{i\bs{k}_T\cdot\bs{x}} \\
+%  \sin\theta_I (\hat\eta_I + \hat\eta_R) &= 
+%   \sin\theta_T \hat\eta_T  
+%   \label{q4:eqn1}
+%\end{align}
+\begin{align}
+    \frac{\hat\eta_I\tan\theta_I}{k_I} + \frac{\hat\eta_R\tan\theta_I}{k_I} 
+     &= \frac{\hat\eta_T\tan\theta_T}{k_T} \\
+    \tan\theta_I(\hat\eta_I+\hat\eta_R)
+     &=\tan\theta_T\frac{\cos\theta_T}{\cos\theta_I} \hat\eta_T \\
+    \sin\theta_I (\hat\eta_I + \hat\eta_R) &= 
+    \sin\theta_T \hat\eta_T  
+    \label{q4:eqn1}
+\end{align}
+
+Finally, vertical displacements are given by
+\begin{equation}
+    \eta_y = \begin{cases}
+        e^{-i\omega t} \cos\theta_I (\hat\eta_I e^{i\bs{k}_I\cdot\bs{x}} -
+                                     \hat\eta_R e^{i\bs{k}_R\cdot\bs{x}}) & z < 0 \\
+        e^{-i\omega t} \cos\theta_T \hat\eta_T e^{i\bs{k}_R\cdot\bs{x}} & z > 0
+    \end{cases}
+\end{equation}
+and are also continuous across the boundary. Hence
+\begin{align}
+    \cos\theta_I (\hat\eta_I - \hat\eta_R) &= \cos\theta_T \hat\eta_T \\
+    \label{q4:eqn2}
+\end{align}
+
+So, Equations \ref{q4:eqn1} and \ref{q4:eqn2} together give:
+\begin{equation}
+    \begin{pmatrix}
+        -1 & \frac{\sin\theta_T}{\sin\theta_I} \\
+        1 & \frac{\cos\theta_T}{\cos\theta_I}
+    \end{pmatrix}
+    \begin{pmatrix}
+        \hat\eta_R \\ \hat\eta_T
+    \end{pmatrix}
+    =
+\hat\eta_I\begin{pmatrix}1\\1\end{pmatrix}
+\end{equation}
+This is solved to give
+\begin{align}
+    \hat\eta_R &= \hat\eta_I\frac{\sin(\theta_T-\theta_I)}{\sin(\theta_T+\theta_I)} \\
+    \hat\eta_T &= \hat\eta_I\frac{\sin(2\theta_I)}{\sin(\theta_T+\theta_I)}
+\end{align}
+
+Now we should check that $\eta_x$ is continuous at $z=0$, i.e. that 
+\begin{equation}
+    \sin\theta_I(\hat\eta_I+\hat\eta_R) = \sin\theta_T\hat\eta_T.
+\end{equation}
+This is easily done.
+
+\begin{quote}
+   What happens in the limit $\omega=N_2$?
+\end{quote}
+If $\omega=N_2$, then $\cos\theta_T=1$ and $\sin\theta_T=0$, i.e. the
+transmitted wave points vertically upwards. The amplitude of the transmitted
+wave $\hat\eta_T$ does not vanish, but the group velocity of the transmitted
+wave is zero and so no energy is transmitted. The reflected wave has the same
+amplitude as the incident wave: $\hat\eta_R = -\hat\eta_I$.
+
+\end{document}
