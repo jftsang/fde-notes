@@ -24,60 +24,41 @@ characterised by a few properties:
         which feed on their velocity, // And little whorls have lesser whorls,
         and so on to viscosity.'' ---Lewis Richardson.
 \end{itemize}
-Turbulent flows are unpredictable and simulating them numerically may be
-difficult as they may be numerically unstable. However, it may be possible to
-predict certain statistics of the flow, such as the behaviour of the mean flow
-or mean pressure (noting that fluctuations about these means may be great).
-Some features of turbulence can be shown to be universal.
+Turbulent flows are unpredictable and simulating them numerically may be difficult as they may be numerically unstable. However, it may be possible to predict certain statistics of the flow, such as the behaviour of the mean flow or mean pressure (noting that fluctuations about these means may be great). Some features of turbulence can be shown to be universal.
 
-Lewis Richardson's couplet describes the two processes at work in a turbulent
-flow. \textit{Vortex stretching} is responsible for creating small vortices out
-of large ones, while \textit{energy dissipation} causes small vortices to
-decay.
+Lewis Richardson's couplet describes the two processes at work in a turbulent flow. \textit{Vortex stretching} is responsible for creating small vortices out of large ones, while \textit{energy dissipation} causes small vortices to decay.
 
 \subsubsection{Vortex stretching}
 
-Taking the curl of the Navier-Stokes equation gives the \textit{vorticity
-equation}:
+Vortex stretching is the main process by which energy is transferred from large scales to smaller scales.
+
+Taking the curl of the Navier-Stokes equation gives the \textit{vorticity equation}:
 \begin{equation}
-    \frac{\partial\bs{\omega}}{\partial t} + \bs{u}\cdot\grad\bs{\omega} 
+    \pd{\omega}{t} + \bs{u}\cdot\grad\bs{\omega} 
      = \bs{\omega}\cdot\grad\bs{u} + \nu\grad^2\bs{\omega}
  \label{vorticity-eqn}
 \end{equation}
-The second term on the RHS of \ref{vorticity-eqn} means that vorticity is
-diffused with diffusion constant $\nu$. This is a minor effect in flows with
-$\mathrm{Re}\gg1$. More importantly, the first term means that when a parcel of
-fluid is stretched into a column, its vorticity increases and becomes aligned
-with the column. Thus stretching a vortex takes energy to a smaller scale. 
-However, if the vortex column is compressed, not nearly as much energy is taken
-back to the large scale, since the compression in general de-aligns the
-vorticity vector and the column.
+The second term on the RHS of (\ref{vorticity-eqn}) means that vorticity is diffused with diffusion constant $\nu$. This is a minor effect in flows with $\mathrm{Re}\gg1$. The first term means that when a parcel of fluid is stretched into a column, its vorticity increases and becomes aligned with the column. Thus stretching a vortex takes energy to a smaller scale. However, if the vortex column is compressed, not nearly as much energy is taken back to the large scale, since the compression in general de-aligns the vorticity vector and the column.
 
 \subsubsection{Energy dissipation: Kolmogorov's theory (1941)}
 
 We know that energy is dissipated in a fluid at a rate
 \begin{equation}
-    \int_V\mu|\grad\bs{u}|^2dV
+	\Delta = \int_V\mu|\grad\bs{u}|^2dV
 \end{equation}
-(or expressed in terms of the strain rate tensor, using
-$|\grad\bs{u}|^2=2e_{ij}e_{ij}$). For a laminar flow with characteristic
-velocity $U$ in a box with sides $L$, we might suppose that this scales as
-$\mu\frac{U^2}{L^2}L^3 = \mu U^2 L$.  However, for a turbulent flow, the energy
-dissipation is much faster than this, because there is a transfer of energy from
-large to small scales, and so $|\grad\bs{u}|^2$ is in fact very large: viscosity
-acts more strongly at small lengthscales.
+(or expressed in terms of the strain rate tensor, using $|\grad\bs{u}|^2=2e_{ij}e_{ij}$). In a volume with characteristic length $L$, 
+\begin{equation}
+	\Delta \sim L^3 |\grad\bs{u}|^2.
+\end{equation}
+For a laminar flow with characteristic velocity $U$ in a box with sides $L$, $|\grad\bs{u}|\sim U/L$ and so
+\begin{equation}
+\Delta \sim \mu\frac{U^2}{L^2}L^3 = \mu U^2 L.
+\end{equation}  
+However, for a turbulent flow, the energy dissipation is much faster than this, because the velocity gradients are over much smaller distances, and so $|\grad\bs{u}|\gg U/L$. 
 
-This suggests that although the large-scale structure of the flow might have
-characteristic lengthscale $L$, the small-scale structure of the flow should be
-described by another characteristic lengthscale $\eta$, called the
-\textit{Kolmogorov length scale} or the \textit{Kolmogorov microscale}. This is
-the lengthscale at which the effects of vortex stretching and dissipation
-balance each other.
+Although the large-scale structure of the flow might have characteristic lengthscale $L$, the small-scale structure of the flow should be described by another lengthscale $\eta$, called the \textit{Kolmogorov length scale} or the \textit{Kolmogorov microscale}. This is the lengthscale at which the effects of vortex stretching and dissipation balance each other.
 
-To summarise: The flow is externally driven (continually or initially) at the
-lengthscale $L$, energy cascades to smaller lengthscales; as the energy is
-transferred to smaller lengthscales, viscosity acts more and more strongly;
-until the energy reaches the lengthscale $\eta$ and can proceed no further.
+To summarise: The flow is externally driven (continually or initially) at the lengthscale $L$, energy cascades to smaller lengthscales by vortex stretching; viscosity acts more and more strongly at these smaller lengthscales. Eventually, energy cascades down to the lengthscale $\eta$ and proceeds no more.
 
 Let $\bs{U}(\bs{k})$ be the Fourier transform of the velocity $\bs{u}(\bs{x})$, 
 using the normalisation
@@ -96,13 +77,7 @@ assuming that $\rho$ is constant and uniform.) The total kinetic energy is
 with the integral taken over wavenumber space. For isotropic turbulence,
 $\bs{U}$ and $E$ depend only on the magnitude $k=|\bs{k}|$. 
 
-Kolmogorov made two hypotheses about isotropic turbulent flows. These hypotheses
-allow us to make progress by dimensional analysis, but they do not follow from
-first principles, and their predictions must be verified experimentally.
-
-Since density is constant, we will find it convenient to rewrite the
-above expressions without $\rho$, so that the dimension $M$ may be set to $1$.
-We therefore work with the energy dissipation rate 
+Since density is constant, we will find it convenient to rewrite the above expressions without $\rho$, so that the dimension $M$ may be set to $1$. We therefore work with the energy dissipation rate 
 \begin{equation}
     \epsilon = \int_V\nu|\grad\bs{u}|^2dV
 \end{equation}
@@ -116,6 +91,7 @@ which has dimensions $L^3 T^{-2}$. We write
 \end{equation}
 for the kinetic energy per unit mass, with dimensions $L^2 T^{-2}$.
 
+Kolmogorov made two hypotheses about isotropic turbulent flows. These hypotheses allow us to make progress by dimensional analysis, but they do not follow from first principles, and their predictions must be verified experimentally.
 
 \paragraph{First hypothesis} The rate of dissipation of energy (per unit
 density), $\epsilon$ (dimensions $L^2T^{-3}$), depends only on viscosity $\nu$
@@ -430,44 +406,26 @@ We now drop the assumption that $\rho$ is constant and uniform.
 
 \subsubsection{What is mixing?}
 
-Mixing is the blending of fluid particles with different properties, such as
-density, salinity or temperature. (These properties are related to each other.)
-There are two processes responsible for mixing:
+Mixing is the blending of fluid particles with different properties, such as density, salinity or temperature. (These properties are related to each other.) There are two processes responsible for mixing:
 \begin{itemize}
-    \item \textit{Stirring} is the intermingling of fluid particles of different
-        properties. This produces large gradients in these properties.
-    \item \textit{Diffusion} drives a flux down a gradient that reduces these
-        gradients between adjacent fluid particles.
+    \item \textit{Stirring} is the intermingling of fluid particles of different properties. This produces large gradients in these properties.
+    \item \textit{Diffusion} drives a flux down a gradient that reduces these gradients between adjacent fluid particles.
 \end{itemize}
-Diffusion is an irreversible process: there is a `preferred' direction for
-fluxes, down a gradient; but stirring (on its own) is reversible. Diffusion is a
-slow process that occurs at the molecular level, whereas stirring can happen
-quickly and over large lengthscales. Together, stirring and diffusion can cause
-irreversiible mixing.
+Diffusion is an irreversible process: there is a `preferred' direction for fluxes, down a gradient; but stirring (on its own) is reversible. Diffusion is a slow process that occurs at the molecular level, whereas stirring can happen quickly and over large lengthscales. Together, stirring and diffusion can cause irreversiible mixing.
 
-In general, a scalar property $S$ is governed by the advection-diffusion
-equation
+In general, a scalar property $S$ is governed by the advection-diffusion equation
 \begin{equation}
     \DDt S = \kappa\grad^2S
 \end{equation}
-where $\kappa$ (dimensions $L^2T^{-1}$) is the molecular diffusivity of $S$.
-This is often very small: the diffusivity of heat in air is
-$\approx10^{-5}m^2s^{-1}$ and the diffusivity of salt in water is
-$\approx10^{-9}m^2s^{-1}$. The timescale for diffusing across a length $l$ is
-therefore $t\sim l^2/\kappa$, which is huge: heat takes a day to diffuse across
-a metre in air, and salinity takes thirty years to diffuse a metre.
+where $\kappa$ (dimensions $L^2T^{-1}$) is the molecular diffusivity of $S$. This is often very small: the diffusivity of heat in air is $\approx10^{-5}m^2s^{-1}$ and the diffusivity of salt in water is $\approx10^{-9}m^2s^{-1}$. The timescale for diffusing across a length $l$ is therefore $t\sim l^2/\kappa$, which is huge: heat takes a day to diffuse across a metre in air, and salinity takes thirty years to diffuse a metre.
 
-However, stirring (represented in the advection term) can help to create large
-gradients in $S$, which increases the rate of diffusion (by reducing $l$).
+However, stirring (represented by the advection term) can help to create large gradients in $S$, which increases the rate of diffusion (by reducing $l$).
 
 \subsubsection{The energy budget}
 
 Consider an incompressible Boussinesq fluid with a linear equation of state.
-\footnote{Incompressibility means that $\divg\bs{u}=0$, but this does not mean
-    that the density $\rho$ is constant; $\rho$ is governed by the
-    advection-diffusion equation.}
-Assume that dissipative heating is unimportant, and ignore any heating effects
-from dilution, chempical potential energy, and so on.
+\footnote{Incompressibility means that $\divg\bs{u}=0$, but this does not mean that the density $\rho$ is constant; $\rho$ is governed by the advection-diffusion equation.}
+Assume that dissipative heating is unimportant, and ignore any heating effects from dilution, chemical potential energy, and so on. 
 
 Begin with the momentum equation for a variable-density fluid:
 \begin{equation}
@@ -522,14 +480,17 @@ the total kinetic and potential energy of the system, $W = -\int_S p
 \bs{u}\cdot\bs{n} dS$ is the rate of pressure working and $\epsilon = \int_V
 \rho\nu\grad|\bs{u}|^2 dV$ is the rate of dissipation.
 
-Energy is dissipated into heat. Kinetic and potential energy can be converted
-into each other, but mixing and dissipation cause irreversible. 
+Energy is dissipated into heat. Kinetic and potential energy can be converted into each other, but mixing and dissipation cause irreversible. 
 
-\subsection{Stably stratified flows}
+\subsection{*Stably stratified flows}
+Not covered.
+\subsubsection{Stratification modifies turbulence}
 
-\subsection{Mixing efficiency}
+\subsection{*Mixing efficiency}
+Not covered.
 
-\subsection{Internal mixing}
+\subsection{*Internal mixing}
+Not covered. 
 \subsubsection{Kelvin-Helmholtz instability}
 \subsubsection{Stratified shear flow}
 \subsubsection{Holmboe instability}
