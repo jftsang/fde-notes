@@ -1,122 +1,122 @@
-\contentsline {section}{\numberline {1}Internal gravity waves}{5}{section.1}
-\contentsline {subsection}{\numberline {1.1}The minimal mathematics version}{5}{subsection.1.1}
-\contentsline {subsection}{\numberline {1.2}A more rigorous derivation}{5}{subsection.1.2}
-\contentsline {subsection}{\numberline {1.3}Wave velocities}{5}{subsection.1.3}
-\contentsline {subsection}{\numberline {1.4}Motion of fluid particles}{5}{subsection.1.4}
-\contentsline {subsection}{\numberline {1.5}Equipartition of energy}{5}{subsection.1.5}
-\contentsline {subsection}{\numberline {1.6}Oscillating cylinders}{5}{subsection.1.6}
-\contentsline {subsection}{\numberline {1.7}Reflexions}{5}{subsection.1.7}
-\contentsline {subsubsection}{\numberline {1.7.1}Properties of reflected beams}{5}{subsubsection.1.7.1}
-\contentsline {subsubsection}{\numberline {1.7.2}Energy density upon reflexion}{5}{subsubsection.1.7.2}
-\contentsline {subsubsection}{\numberline {1.7.3}Subcritical and supercritical reflexions}{5}{subsubsection.1.7.3}
-\contentsline {subsection}{\numberline {1.8}Ray tracing}{5}{subsection.1.8}
-\contentsline {subsection}{\numberline {1.9}Wave attractors}{5}{subsection.1.9}
-\contentsline {subsubsection}{\numberline {1.9.1}Rectangular basins}{5}{subsubsection.1.9.1}
-\contentsline {subsubsection}{\numberline {1.9.2}Trapezoidal basin}{5}{subsubsection.1.9.2}
-\contentsline {subsubsection}{\numberline {1.9.3}More complex geometries}{5}{subsubsection.1.9.3}
-\contentsline {subsubsection}{\numberline {1.9.4}Energy spectrum for attractor}{5}{subsubsection.1.9.4}
-\contentsline {subsection}{\numberline {1.10}Decay along a beam}{5}{subsection.1.10}
-\contentsline {subsection}{\numberline {1.11}Reflexions from rough topology}{5}{subsection.1.11}
-\contentsline {subsubsection}{\numberline {1.11.1}Subcritical reflexion from a sinusoidal}{5}{subsubsection.1.11.1}
-\contentsline {subsubsection}{\numberline {1.11.2}Supercritical reflexions from a sinusoidal}{5}{subsubsection.1.11.2}
-\contentsline {subsection}{\numberline {1.12}Non-linear stratification}{5}{subsection.1.12}
-\contentsline {subsection}{\numberline {1.13}Leewaves}{5}{subsection.1.13}
-\contentsline {subsubsection}{\numberline {1.13.1}Kelvin ship waves}{5}{subsubsection.1.13.1}
-\contentsline {subsubsection}{\numberline {1.13.2}Extended range of hills}{5}{subsubsection.1.13.2}
-\contentsline {subsubsection}{\numberline {1.13.3}Causality}{5}{subsubsection.1.13.3}
-\contentsline {subsection}{\numberline {1.14}Shear flows}{5}{subsection.1.14}
-\contentsline {subsubsection}{\numberline {1.14.1}Sheared base state}{5}{subsubsection.1.14.1}
-\contentsline {subsubsection}{\numberline {1.14.2}Ray tracing in a shear flow}{5}{subsubsection.1.14.2}
-\contentsline {subsubsection}{\numberline {1.14.3}*Three-dimensional forcing}{5}{subsubsection.1.14.3}
-\contentsline {subsubsection}{\numberline {1.14.4}*Effect of viscosity}{5}{subsubsection.1.14.4}
-\contentsline {subsubsection}{\numberline {1.14.5}*Blocking}{5}{subsubsection.1.14.5}
-\contentsline {subsection}{\numberline {1.15}Columnar modes}{5}{subsection.1.15}
-\contentsline {subsection}{\numberline {1.16}*Stokes drift in internal waves}{5}{subsection.1.16}
-\contentsline {subsection}{\numberline {1.17}Resonant triads}{5}{subsection.1.17}
-\contentsline {section}{\numberline {2}Turbulence primer}{6}{section.2}
-\contentsline {subsection}{\numberline {2.1}Basics of turbulence}{6}{subsection.2.1}
-\contentsline {subsubsection}{\numberline {2.1.1}What is turbulence?}{6}{subsubsection.2.1.1}
-\contentsline {subsubsection}{\numberline {2.1.2}Vortex stretching}{6}{subsubsection.2.1.2}
-\contentsline {subsubsection}{\numberline {2.1.3}Energy dissipation: Kolmogorov's theory (1941)}{6}{subsubsection.2.1.3}
-\contentsline {paragraph}{First hypothesis}{7}{section*.2}
-\contentsline {paragraph}{Second hypothesis}{8}{section*.3}
-\contentsline {subsubsection}{\numberline {2.1.4}Two-dimensional turbulence}{8}{subsubsection.2.1.4}
-\contentsline {subsection}{\numberline {2.2}Simplistic approaches to modelling turbulence}{8}{subsection.2.2}
-\contentsline {subsubsection}{\numberline {2.2.1}Molecular diffusion}{8}{subsubsection.2.2.1}
-\contentsline {subsubsection}{\numberline {2.2.2}The closure problem}{9}{subsubsection.2.2.2}
-\contentsline {subsubsection}{\numberline {2.2.3}The $k$-$\epsilon $ model}{9}{subsubsection.2.2.3}
-\contentsline {subsubsection}{\numberline {2.2.4}Turbulent diffusion models}{10}{subsubsection.2.2.4}
-\contentsline {subsubsection}{\numberline {2.2.5}Prandtl's mixing length model}{10}{subsubsection.2.2.5}
-\contentsline {paragraph}{The law of the wall}{11}{section*.4}
-\contentsline {subsubsection}{\numberline {2.2.6}Entrainment: Diffusion of turbulence}{11}{subsubsection.2.2.6}
-\contentsline {subsection}{\numberline {2.3}Mixing}{11}{subsection.2.3}
-\contentsline {subsubsection}{\numberline {2.3.1}What is mixing?}{11}{subsubsection.2.3.1}
-\contentsline {subsubsection}{\numberline {2.3.2}The energy budget}{12}{subsubsection.2.3.2}
-\contentsline {subsection}{\numberline {2.4}*Stably stratified flows}{13}{subsection.2.4}
-\contentsline {subsubsection}{\numberline {2.4.1}Stratification modifies turbulence}{13}{subsubsection.2.4.1}
-\contentsline {subsection}{\numberline {2.5}*Mixing efficiency}{13}{subsection.2.5}
-\contentsline {subsection}{\numberline {2.6}*Internal mixing}{13}{subsection.2.6}
-\contentsline {subsubsection}{\numberline {2.6.1}Kelvin-Helmholtz instability}{13}{subsubsection.2.6.1}
-\contentsline {subsubsection}{\numberline {2.6.2}Stratified shear flow}{13}{subsubsection.2.6.2}
-\contentsline {subsubsection}{\numberline {2.6.3}Holmboe instability}{13}{subsubsection.2.6.3}
-\contentsline {subsubsection}{\numberline {2.6.4}Entrainment by internal mixing}{13}{subsubsection.2.6.4}
-\contentsline {section}{\numberline {3}Shallow water}{15}{section.3}
-\contentsline {subsection}{\numberline {3.1}Introduction}{15}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Linear waves on an interface}{15}{subsection.3.2}
-\contentsline {subsubsection}{\numberline {3.2.1}Dispersion relation}{15}{subsubsection.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.2}Properties of interfacial waves}{15}{subsubsection.3.2.2}
-\contentsline {subsubsection}{\numberline {3.2.3}The short wave limit}{15}{subsubsection.3.2.3}
-\contentsline {subsubsection}{\numberline {3.2.4}The long wave limit}{15}{subsubsection.3.2.4}
-\contentsline {subsubsection}{\numberline {3.2.5}Energy}{15}{subsubsection.3.2.5}
-\contentsline {subsection}{\numberline {3.3}Shallow water equations}{15}{subsection.3.3}
-\contentsline {subsubsection}{\numberline {3.3.1}Mathematical definition of `shallow'}{15}{subsubsection.3.3.1}
-\contentsline {subsubsection}{\numberline {3.3.2}Derivation from first principles}{15}{subsubsection.3.3.2}
-\contentsline {subsubsection}{\numberline {3.3.3}Boussinesq versus non-Boussinesq}{15}{subsubsection.3.3.3}
-\contentsline {subsubsection}{\numberline {3.3.4}More than one layer}{15}{subsubsection.3.3.4}
-\contentsline {subsubsection}{\numberline {3.3.5}Derivation by averaging}{15}{subsubsection.3.3.5}
-\contentsline {subsection}{\numberline {3.4}Hyperbolic systems}{15}{subsection.3.4}
-\contentsline {subsubsection}{\numberline {3.4.1}A model for traffic flow}{15}{subsubsection.3.4.1}
-\contentsline {subsubsection}{\numberline {3.4.2}Shallow water as a hyperbolic system}{15}{subsubsection.3.4.2}
-\contentsline {subsubsection}{\numberline {3.4.3}Matrix formulation}{15}{subsubsection.3.4.3}
-\contentsline {subsubsection}{\numberline {3.4.4}General approach to hyperbolic systems}{15}{subsubsection.3.4.4}
-\contentsline {subsubsection}{\numberline {3.4.5}Implications of hyperbolic nature}{15}{subsubsection.3.4.5}
-\contentsline {subsubsection}{\numberline {3.4.6}The dam break problem}{15}{subsubsection.3.4.6}
-\contentsline {subsubsection}{\numberline {3.4.7}Entrainment}{15}{subsubsection.3.4.7}
-\contentsline {subsection}{\numberline {3.5}Gravity currents}{15}{subsection.3.5}
-\contentsline {subsubsection}{\numberline {3.5.1}A moving dam problem}{15}{subsubsection.3.5.1}
-\contentsline {subsubsection}{\numberline {3.5.2}Description}{15}{subsubsection.3.5.2}
-\contentsline {subsubsection}{\numberline {3.5.3}Early models}{15}{subsubsection.3.5.3}
-\contentsline {subsubsection}{\numberline {3.5.4}Cavity flows}{15}{subsubsection.3.5.4}
-\contentsline {subsubsection}{\numberline {3.5.5}*Morden and Beiburg}{15}{subsubsection.3.5.5}
-\contentsline {subsubsection}{\numberline {3.5.6}Gravity currents and characteristics}{15}{subsubsection.3.5.6}
-\contentsline {subsubsection}{\numberline {3.5.7}Modelling gravity currents}{15}{subsubsection.3.5.7}
-\contentsline {subsubsection}{\numberline {3.5.8}Real life is more complex}{15}{subsubsection.3.5.8}
-\contentsline {section}{\numberline {4}Particle-laden and granular flow}{16}{section.4}
-\contentsline {subsection}{\numberline {4.1}Types of particulate flows}{16}{subsection.4.1}
-\contentsline {paragraph}{Grain suspension by fluid turbulence}{16}{section*.5}
-\contentsline {paragraph}{Liquefied and fluidised flow}{16}{section*.6}
-\contentsline {paragraph}{Dry grain flow and interactions}{16}{section*.7}
-\contentsline {paragraph}{Grain-supported matrix}{16}{section*.8}
-\contentsline {subsection}{\numberline {4.2}Modelling a particulate gravity current}{16}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Physics within a particle gravity current}{16}{subsection.4.3}
-\contentsline {subsection}{\numberline {4.4}Sedimenting particle-laden flows}{17}{subsection.4.4}
-\contentsline {subsubsection}{\numberline {4.4.1}Type I: Free settling of individual particles}{17}{subsubsection.4.4.1}
-\contentsline {paragraph}{The particle Reynolds number}{18}{section*.9}
-\contentsline {paragraph}{The drag coefficient}{18}{section*.10}
-\contentsline {paragraph}{The settling velocity}{18}{section*.11}
-\contentsline {paragraph}{Advection and diffusion of particles}{19}{section*.12}
-\contentsline {subsubsection}{\numberline {4.4.2}Type III: Hindered (zone) settling}{19}{subsubsection.4.4.2}
-\contentsline {section}{\numberline {5}Jets, plumes and thermals}{20}{section.5}
-\contentsline {subsection}{\numberline {5.1}Jets}{20}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}General plume equations}{20}{subsection.5.2}
-\contentsline {subsubsection}{\numberline {5.2.1}Self-similar plumes}{20}{subsubsection.5.2.1}
-\contentsline {subsubsection}{\numberline {5.2.2}Time-dependent plume equations}{20}{subsubsection.5.2.2}
-\contentsline {subsection}{\numberline {5.3}Plumes in a homogeneous environment}{20}{subsection.5.3}
-\contentsline {subsubsection}{\numberline {5.3.1}Steady Boussinesq plumes}{20}{subsubsection.5.3.1}
-\contentsline {subsubsection}{\numberline {5.3.2}Time-dependent plumes}{20}{subsubsection.5.3.2}
-\contentsline {subsubsection}{\numberline {5.3.3}Steady non-Boussinesq plumes}{20}{subsubsection.5.3.3}
-\contentsline {subsection}{\numberline {5.4}Plumes in a stratified environment}{20}{subsection.5.4}
-\contentsline {subsubsection}{\numberline {5.4.1}Rise height}{20}{subsubsection.5.4.1}
-\contentsline {subsubsection}{\numberline {5.4.2}Series solution in Boussinesq fluid}{20}{subsubsection.5.4.2}
-\contentsline {subsection}{\numberline {5.5}*Thermal in a homogeneous environment}{20}{subsection.5.5}
-\contentsline {subsection}{\numberline {5.6}*Thermals in a stratified environment}{20}{subsection.5.6}
+\contentsline {section}{\numberline {1}Internal gravity waves}{4}{section.1}
+\contentsline {subsection}{\numberline {1.1}The minimal mathematics version}{4}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}A more rigorous derivation}{4}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Wave velocities}{6}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}Motion of fluid particles}{7}{subsection.1.4}
+\contentsline {subsection}{\numberline {1.5}Equipartition of energy}{7}{subsection.1.5}
+\contentsline {subsection}{\numberline {1.6}Oscillating cylinders}{7}{subsection.1.6}
+\contentsline {subsection}{\numberline {1.7}Reflexions}{7}{subsection.1.7}
+\contentsline {subsubsection}{\numberline {1.7.1}Properties of reflected beams}{7}{subsubsection.1.7.1}
+\contentsline {subsubsection}{\numberline {1.7.2}Energy density upon reflexion}{8}{subsubsection.1.7.2}
+\contentsline {subsubsection}{\numberline {1.7.3}Subcritical and supercritical reflexions}{8}{subsubsection.1.7.3}
+\contentsline {subsection}{\numberline {1.8}Ray tracing}{9}{subsection.1.8}
+\contentsline {subsection}{\numberline {1.9}Wave attractors}{9}{subsection.1.9}
+\contentsline {subsubsection}{\numberline {1.9.1}Rectangular basins}{9}{subsubsection.1.9.1}
+\contentsline {subsubsection}{\numberline {1.9.2}Trapezoidal basin}{9}{subsubsection.1.9.2}
+\contentsline {subsubsection}{\numberline {1.9.3}More complex geometries}{9}{subsubsection.1.9.3}
+\contentsline {subsubsection}{\numberline {1.9.4}Energy spectrum for attractor}{9}{subsubsection.1.9.4}
+\contentsline {subsection}{\numberline {1.10}Decay along a beam}{9}{subsection.1.10}
+\contentsline {subsection}{\numberline {1.11}Reflexions from rough topology}{9}{subsection.1.11}
+\contentsline {subsubsection}{\numberline {1.11.1}Subcritical reflexion from a sinusoidal}{9}{subsubsection.1.11.1}
+\contentsline {subsubsection}{\numberline {1.11.2}Supercritical reflexions from a sinusoidal}{9}{subsubsection.1.11.2}
+\contentsline {subsection}{\numberline {1.12}Non-linear stratification}{9}{subsection.1.12}
+\contentsline {subsection}{\numberline {1.13}Leewaves}{9}{subsection.1.13}
+\contentsline {subsubsection}{\numberline {1.13.1}Kelvin ship waves}{9}{subsubsection.1.13.1}
+\contentsline {subsubsection}{\numberline {1.13.2}Extended range of hills}{10}{subsubsection.1.13.2}
+\contentsline {subsubsection}{\numberline {1.13.3}Causality}{10}{subsubsection.1.13.3}
+\contentsline {subsection}{\numberline {1.14}Shear flows}{10}{subsection.1.14}
+\contentsline {subsubsection}{\numberline {1.14.1}Sheared base state}{10}{subsubsection.1.14.1}
+\contentsline {subsubsection}{\numberline {1.14.2}Ray tracing in a shear flow}{10}{subsubsection.1.14.2}
+\contentsline {subsubsection}{\numberline {1.14.3}*Three-dimensional forcing}{10}{subsubsection.1.14.3}
+\contentsline {subsubsection}{\numberline {1.14.4}*Effect of viscosity}{10}{subsubsection.1.14.4}
+\contentsline {subsubsection}{\numberline {1.14.5}*Blocking}{10}{subsubsection.1.14.5}
+\contentsline {subsection}{\numberline {1.15}Columnar modes}{10}{subsection.1.15}
+\contentsline {subsection}{\numberline {1.16}*Stokes drift in internal waves}{10}{subsection.1.16}
+\contentsline {subsection}{\numberline {1.17}Resonant triads}{10}{subsection.1.17}
+\contentsline {section}{\numberline {2}Turbulence primer}{11}{section.2}
+\contentsline {subsection}{\numberline {2.1}Basics of turbulence}{11}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}What is turbulence?}{11}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}Vortex stretching}{11}{subsubsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.3}Energy dissipation: Kolmogorov's theory (1941)}{11}{subsubsection.2.1.3}
+\contentsline {paragraph}{First hypothesis}{12}{section*.2}
+\contentsline {paragraph}{Second hypothesis}{13}{section*.3}
+\contentsline {subsubsection}{\numberline {2.1.4}Two-dimensional turbulence}{13}{subsubsection.2.1.4}
+\contentsline {subsection}{\numberline {2.2}Simplistic approaches to modelling turbulence}{13}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Molecular diffusion}{13}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}The closure problem}{14}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.3}The $k$-$\epsilon $ model}{14}{subsubsection.2.2.3}
+\contentsline {subsubsection}{\numberline {2.2.4}Turbulent diffusion models}{15}{subsubsection.2.2.4}
+\contentsline {subsubsection}{\numberline {2.2.5}Prandtl's mixing length model}{15}{subsubsection.2.2.5}
+\contentsline {paragraph}{The law of the wall}{16}{section*.4}
+\contentsline {subsubsection}{\numberline {2.2.6}Entrainment: Diffusion of turbulence}{16}{subsubsection.2.2.6}
+\contentsline {subsection}{\numberline {2.3}Mixing}{16}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}What is mixing?}{16}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}The energy budget}{17}{subsubsection.2.3.2}
+\contentsline {subsection}{\numberline {2.4}*Stably stratified flows}{18}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}Stratification modifies turbulence}{18}{subsubsection.2.4.1}
+\contentsline {subsection}{\numberline {2.5}*Mixing efficiency}{18}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}*Internal mixing}{18}{subsection.2.6}
+\contentsline {subsubsection}{\numberline {2.6.1}Kelvin-Helmholtz instability}{18}{subsubsection.2.6.1}
+\contentsline {subsubsection}{\numberline {2.6.2}Stratified shear flow}{18}{subsubsection.2.6.2}
+\contentsline {subsubsection}{\numberline {2.6.3}Holmboe instability}{18}{subsubsection.2.6.3}
+\contentsline {subsubsection}{\numberline {2.6.4}Entrainment by internal mixing}{18}{subsubsection.2.6.4}
+\contentsline {section}{\numberline {3}Shallow water}{20}{section.3}
+\contentsline {subsection}{\numberline {3.1}Introduction}{20}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Linear waves on an interface}{20}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Dispersion relation}{20}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Properties of interfacial waves}{20}{subsubsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.3}The short wave limit}{20}{subsubsection.3.2.3}
+\contentsline {subsubsection}{\numberline {3.2.4}The long wave limit}{20}{subsubsection.3.2.4}
+\contentsline {subsubsection}{\numberline {3.2.5}Energy}{20}{subsubsection.3.2.5}
+\contentsline {subsection}{\numberline {3.3}Shallow water equations}{20}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Mathematical definition of `shallow'}{20}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Derivation from first principles}{20}{subsubsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.3}Boussinesq versus non-Boussinesq}{20}{subsubsection.3.3.3}
+\contentsline {subsubsection}{\numberline {3.3.4}More than one layer}{20}{subsubsection.3.3.4}
+\contentsline {subsubsection}{\numberline {3.3.5}Derivation by averaging}{20}{subsubsection.3.3.5}
+\contentsline {subsection}{\numberline {3.4}Hyperbolic systems}{20}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}A model for traffic flow}{20}{subsubsection.3.4.1}
+\contentsline {subsubsection}{\numberline {3.4.2}Shallow water as a hyperbolic system}{20}{subsubsection.3.4.2}
+\contentsline {subsubsection}{\numberline {3.4.3}Matrix formulation}{20}{subsubsection.3.4.3}
+\contentsline {subsubsection}{\numberline {3.4.4}General approach to hyperbolic systems}{20}{subsubsection.3.4.4}
+\contentsline {subsubsection}{\numberline {3.4.5}Implications of hyperbolic nature}{20}{subsubsection.3.4.5}
+\contentsline {subsubsection}{\numberline {3.4.6}The dam break problem}{20}{subsubsection.3.4.6}
+\contentsline {subsubsection}{\numberline {3.4.7}Entrainment}{20}{subsubsection.3.4.7}
+\contentsline {subsection}{\numberline {3.5}Gravity currents}{20}{subsection.3.5}
+\contentsline {subsubsection}{\numberline {3.5.1}A moving dam problem}{20}{subsubsection.3.5.1}
+\contentsline {subsubsection}{\numberline {3.5.2}Description}{20}{subsubsection.3.5.2}
+\contentsline {subsubsection}{\numberline {3.5.3}Early models}{20}{subsubsection.3.5.3}
+\contentsline {subsubsection}{\numberline {3.5.4}Cavity flows}{20}{subsubsection.3.5.4}
+\contentsline {subsubsection}{\numberline {3.5.5}*Morden and Beiburg}{20}{subsubsection.3.5.5}
+\contentsline {subsubsection}{\numberline {3.5.6}Gravity currents and characteristics}{20}{subsubsection.3.5.6}
+\contentsline {subsubsection}{\numberline {3.5.7}Modelling gravity currents}{20}{subsubsection.3.5.7}
+\contentsline {subsubsection}{\numberline {3.5.8}Real life is more complex}{20}{subsubsection.3.5.8}
+\contentsline {section}{\numberline {4}Particle-laden and granular flow}{21}{section.4}
+\contentsline {subsection}{\numberline {4.1}Types of particulate flows}{21}{subsection.4.1}
+\contentsline {paragraph}{Grain suspension by fluid turbulence}{21}{section*.5}
+\contentsline {paragraph}{Liquefied and fluidised flow}{21}{section*.6}
+\contentsline {paragraph}{Dry grain flow and interactions}{21}{section*.7}
+\contentsline {paragraph}{Grain-supported matrix}{21}{section*.8}
+\contentsline {subsection}{\numberline {4.2}Modelling a particulate gravity current}{21}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Physics within a particle gravity current}{21}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Sedimenting particle-laden flows}{22}{subsection.4.4}
+\contentsline {subsubsection}{\numberline {4.4.1}Type I: Free settling of individual particles}{22}{subsubsection.4.4.1}
+\contentsline {paragraph}{The particle Reynolds number}{23}{section*.9}
+\contentsline {paragraph}{The drag coefficient}{23}{section*.10}
+\contentsline {paragraph}{The settling velocity}{23}{section*.11}
+\contentsline {paragraph}{Advection and diffusion of particles}{24}{section*.12}
+\contentsline {subsubsection}{\numberline {4.4.2}Type III: Hindered (zone) settling}{24}{subsubsection.4.4.2}
+\contentsline {section}{\numberline {5}Jets, plumes and thermals}{25}{section.5}
+\contentsline {subsection}{\numberline {5.1}Jets}{25}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}General plume equations}{25}{subsection.5.2}
+\contentsline {subsubsection}{\numberline {5.2.1}Self-similar plumes}{25}{subsubsection.5.2.1}
+\contentsline {subsubsection}{\numberline {5.2.2}Time-dependent plume equations}{25}{subsubsection.5.2.2}
+\contentsline {subsection}{\numberline {5.3}Plumes in a homogeneous environment}{25}{subsection.5.3}
+\contentsline {subsubsection}{\numberline {5.3.1}Steady Boussinesq plumes}{25}{subsubsection.5.3.1}
+\contentsline {subsubsection}{\numberline {5.3.2}Time-dependent plumes}{25}{subsubsection.5.3.2}
+\contentsline {subsubsection}{\numberline {5.3.3}Steady non-Boussinesq plumes}{25}{subsubsection.5.3.3}
+\contentsline {subsection}{\numberline {5.4}Plumes in a stratified environment}{25}{subsection.5.4}
+\contentsline {subsubsection}{\numberline {5.4.1}Rise height}{25}{subsubsection.5.4.1}
+\contentsline {subsubsection}{\numberline {5.4.2}Series solution in Boussinesq fluid}{25}{subsubsection.5.4.2}
+\contentsline {subsection}{\numberline {5.5}*Thermal in a homogeneous environment}{25}{subsection.5.5}
+\contentsline {subsection}{\numberline {5.6}*Thermals in a stratified environment}{25}{subsection.5.6}
