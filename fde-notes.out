@@ -88,24 +88,24 @@
 \BOOKMARK [3][-]{subsubsection.3.5.6}{Gravity currents and characteristics}{subsection.3.5}% 88
 \BOOKMARK [3][-]{subsubsection.3.5.7}{Modelling gravity currents}{subsection.3.5}% 89
 \BOOKMARK [3][-]{subsubsection.3.5.8}{Real life is more complex}{subsection.3.5}% 90
-\BOOKMARK [1][-]{section.4}{Particle-laden and granular flow}{}% 91
-\BOOKMARK [2][-]{subsection.4.1}{Types of particulate flows}{section.4}% 92
-\BOOKMARK [2][-]{subsection.4.2}{Modelling a particulate gravity current}{section.4}% 93
-\BOOKMARK [2][-]{subsection.4.3}{Physics within a particle gravity current}{section.4}% 94
-\BOOKMARK [2][-]{subsection.4.4}{Sedimenting particle-laden flows}{section.4}% 95
-\BOOKMARK [3][-]{subsubsection.4.4.1}{Type I: Free settling of individual particles}{subsection.4.4}% 96
-\BOOKMARK [3][-]{subsubsection.4.4.2}{Type III: Hindered \(zone\) settling}{subsection.4.4}% 97
-\BOOKMARK [1][-]{section.5}{Jets, plumes and thermals}{}% 98
-\BOOKMARK [2][-]{subsection.5.1}{Jets}{section.5}% 99
-\BOOKMARK [2][-]{subsection.5.2}{General plume equations}{section.5}% 100
-\BOOKMARK [3][-]{subsubsection.5.2.1}{Self-similar plumes}{subsection.5.2}% 101
-\BOOKMARK [3][-]{subsubsection.5.2.2}{Time-dependent plume equations}{subsection.5.2}% 102
-\BOOKMARK [2][-]{subsection.5.3}{Plumes in a homogeneous environment}{section.5}% 103
-\BOOKMARK [3][-]{subsubsection.5.3.1}{Steady Boussinesq plumes}{subsection.5.3}% 104
-\BOOKMARK [3][-]{subsubsection.5.3.2}{Time-dependent plumes}{subsection.5.3}% 105
-\BOOKMARK [3][-]{subsubsection.5.3.3}{Steady non-Boussinesq plumes}{subsection.5.3}% 106
-\BOOKMARK [2][-]{subsection.5.4}{Plumes in a stratified environment}{section.5}% 107
-\BOOKMARK [3][-]{subsubsection.5.4.1}{Rise height}{subsection.5.4}% 108
-\BOOKMARK [3][-]{subsubsection.5.4.2}{Series solution in Boussinesq fluid}{subsection.5.4}% 109
-\BOOKMARK [2][-]{subsection.5.5}{*Thermal in a homogeneous environment}{section.5}% 110
-\BOOKMARK [2][-]{subsection.5.6}{*Thermals in a stratified environment}{section.5}% 111
+\BOOKMARK [1][-]{section.4}{Jets, plumes and thermals}{}% 91
+\BOOKMARK [2][-]{subsection.4.1}{Jets}{section.4}% 92
+\BOOKMARK [2][-]{subsection.4.2}{General plume equations}{section.4}% 93
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Self-similar plumes}{subsection.4.2}% 94
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Time-dependent plume equations}{subsection.4.2}% 95
+\BOOKMARK [2][-]{subsection.4.3}{Plumes in a homogeneous environment}{section.4}% 96
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Steady Boussinesq plumes}{subsection.4.3}% 97
+\BOOKMARK [3][-]{subsubsection.4.3.2}{Time-dependent plumes}{subsection.4.3}% 98
+\BOOKMARK [3][-]{subsubsection.4.3.3}{Steady non-Boussinesq plumes}{subsection.4.3}% 99
+\BOOKMARK [2][-]{subsection.4.4}{Plumes in a stratified environment}{section.4}% 100
+\BOOKMARK [3][-]{subsubsection.4.4.1}{Rise height}{subsection.4.4}% 101
+\BOOKMARK [3][-]{subsubsection.4.4.2}{Series solution in Boussinesq fluid}{subsection.4.4}% 102
+\BOOKMARK [2][-]{subsection.4.5}{*Thermal in a homogeneous environment}{section.4}% 103
+\BOOKMARK [2][-]{subsection.4.6}{*Thermals in a stratified environment}{section.4}% 104
+\BOOKMARK [1][-]{section.5}{Particle-laden and granular flow}{}% 105
+\BOOKMARK [2][-]{subsection.5.1}{Types of particulate flows}{section.5}% 106
+\BOOKMARK [2][-]{subsection.5.2}{Modelling a particulate gravity current}{section.5}% 107
+\BOOKMARK [2][-]{subsection.5.3}{Physics within a particle gravity current}{section.5}% 108
+\BOOKMARK [2][-]{subsection.5.4}{Sedimenting particle-laden flows}{section.5}% 109
+\BOOKMARK [3][-]{subsubsection.5.4.1}{Type I: Free settling of individual particles}{subsection.5.4}% 110
+\BOOKMARK [3][-]{subsubsection.5.4.2}{Type III: Hindered \(zone\) settling}{subsection.5.4}% 111
