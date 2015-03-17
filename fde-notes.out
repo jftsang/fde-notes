@@ -78,7 +78,7 @@
 \BOOKMARK [3][-]{subsubsection.3.4.4}{General approach to hyperbolic systems}{subsection.3.4}% 78
 \BOOKMARK [3][-]{subsubsection.3.4.5}{Implications of hyperbolic nature}{subsection.3.4}% 79
 \BOOKMARK [3][-]{subsubsection.3.4.6}{The dam break problem}{subsection.3.4}% 80
-\BOOKMARK [3][-]{subsubsection.3.4.7}{Entrainment}{subsection.3.4}% 81
+\BOOKMARK [3][-]{subsubsection.3.4.7}{Entrainment into shallow water flows}{subsection.3.4}% 81
 \BOOKMARK [2][-]{subsection.3.5}{Gravity currents}{section.3}% 82
 \BOOKMARK [3][-]{subsubsection.3.5.1}{A moving dam problem}{subsection.3.5}% 83
 \BOOKMARK [3][-]{subsubsection.3.5.2}{Description}{subsection.3.5}% 84
@@ -108,4 +108,9 @@
 \BOOKMARK [2][-]{subsection.5.3}{Physics within a particle gravity current}{section.5}% 108
 \BOOKMARK [2][-]{subsection.5.4}{Sedimenting particle-laden flows}{section.5}% 109
 \BOOKMARK [3][-]{subsubsection.5.4.1}{Type I: Free settling of individual particles}{subsection.5.4}% 110
-\BOOKMARK [3][-]{subsubsection.5.4.2}{Type III: Hindered \(zone\) settling}{subsection.5.4}% 111
+\BOOKMARK [3][-]{subsubsection.5.4.2}{Type II: Flocculent settling, particle coalescence}{subsection.5.4}% 111
+\BOOKMARK [3][-]{subsubsection.5.4.3}{Type III: Hindered \(zone\) settling}{subsection.5.4}% 112
+\BOOKMARK [3][-]{subsubsection.5.4.4}{Type IV: Compressional settling, compacting}{subsection.5.4}% 113
+\BOOKMARK [2][-]{subsection.5.5}{Sediment transport}{section.5}% 114
+\BOOKMARK [2][-]{subsection.5.6}{Aqueous and aeolian bedforms \(dunes\)}{section.5}% 115
+\BOOKMARK [2][-]{subsection.5.7}{Dry granular flows, rheology, segregation}{section.5}% 116
