@@ -98,170 +98,173 @@ where
 
 \subsection{Sedimenting particle-laden flows}
 
-We now assume that particles are small compared to the scale of motion, so that
-the presence of an individual particle has a negligible effect on the bulk flow.
-However, the collective of particles will have an effect. We also assume that
-particles sediment slowly, over a timescale much larger than that of the flow;
-and that particles are numerous and well-mixed, so that we can talk of the
-`concentration' of particles, rather than having to study individual particles.
+We now assume that particles are small compared to the scale of motion, so that the presence of an individual particle has a negligible effect on the bulk flow. However, the collective of particles will have an effect. We also assume that particles sediment slowly, over a timescale much larger than that of the flow; and that particles are numerous and well-mixed, so that we can talk of the `concentration' of particles, rather than having to study individual particles.
 
-Although we use the word `particles', this theory could just as well apply to
-bubbles or to droplets; a bubble can be regarded as a particle with density
-negligible compared to that of the fluid; the reduced gravity is negative.
+Note that although we use the word `particles', all of this theory could just as well apply to bubbles or to droplets; a bubble can be regarded as a particle with density negligible compared to that of the fluid; the reduced gravity is negative.
 
-The suspension changes the bulk properties of the fluid. As discussed, the 
-suspension has density
+The suspension changes the bulk properties of the fluid. As discussed, the suspension has density
 \begin{equation}
-        \rho_l = \rho_0 + \phi (\rho_p - \rho_0).
+        \rho_l = \rho_0 + \phi (\rho_p - \rho_0)
 \end{equation}
-The viscosity of the suspension is given by a power law
+where $\phi$ is the concentration by volume. We model the viscosity of the suspension as having a power law dependence on the concentration: 
 \begin{equation}
  \mu = \mu_0 \left( 1 - \frac{\phi}{\phi_{max}} \right)^{-n \phi_{max}}
 \end{equation}
-where $\phi_{max}$ is the maximum suspension concentration that can be
-supported. For spherical particles, $n = \frac{5}{2}$.
+where $\phi_{max}$ is the maximum suspension concentration that can be supported. For spherical particles, $n = \frac{5}{2}$.
+\footnote{Why?}
 
-Particles settle towards the bottom at some settling velocity $u_s$ which we
-will determine. Let $D$ denote the particle diameter. We define the
-\textit{particle Reynolds number}
+We define the \textit{particle Reynolds number}
 \begin{equation}
-    Re_p = \frac{\rho_l D u_s}{\mu}
+    \mathrm{Re}_p = \frac{\rho_l D u_s}{\mu}
 \end{equation}
-which governs many properties of the flow.
+which governs many properties of the flow. Here $D$ is the diameter of a particle, and $u_s$ is the settling velocity, which we will determine. 
 
-When particles sediment out of suspension, we are left with a \textit{clarified}
-fluid, devoid of particles, and a concentrated suspension at the bottom where
-all the particles gather. Sedimenting flows are classified into four types:
+When particles sediment out of suspension, we are left with a \textit{clarified} fluid, devoid of particles, and a concentrated suspension at the bottom where all the particles gather. 
+
+Sedimenting flows can exhibit four types of behaviour, depending on $\mathrm{Re}_p$ and on the concentration $\phi$:
 \begin{itemize}
     \item Type I: Free settling of individual particles
     \item Type II: Flocculant settling: Coaleescence of particles
     \item Type III: Hindered (zone) settling: Restricted, fluid motion
     \item Type IV: Compression settling: Mechanical support
 \end{itemize}
-We will discuss Types I and III in detail.
+We will discuss Types I and III in detail. Types II and IV involve complicated particle-particle interactions. 
 
 \subsubsection{Type I: Free settling of individual particles} 
 
-This occurs when particles are very well-separated from each other, and may be
-treated independently of each other.
+This occurs when particles are very well-separated from each other, and so do not interact with each other. This occurs at very low concentrations (the \textit{dilute limit}).
 
-\paragraph{The particle Reynolds number} When a sphere of diameter $D$ moves at
-a speed $u_s$ through otherwise unmoving fluid, its behaviour depends on the
-particle Reynolds number $Re_p=\frac{\rho_lDu_s}{\mu}$.  If $Re_p\ll 1$ then the
-flow past the sphere is \textit{laminar}; the sphere travels smoothly. But if
-$10^3 \ll Re_p \ll 2\cdot10^5$ then the flow is in the \textit{inertial regime};
-the sphere travels roughly, and the boundary layer is turbulent. 
+\paragraph{The particle Reynolds number} When a sphere of diameter $D$ moves at a speed $u_s$ through otherwise unmoving fluid, its behaviour depends on the particle Reynolds number $\mathrm{Re}_p=\frac{\rho_lDu_s}{\mu}$.  If $\mathrm{Re}_p\ll1$ then the flow past the sphere is \textit{laminar}; the sphere travels smoothly. But if $10^3 \ll \mathrm{Re}_p \ll 2\cdot10^5$ then the flow is in the \textit{inertial regime}; the sphere travels roughly, and the boundary layer on the sphere is turbulent. Various other regimes are possible for different values of $\mathrm{Re}_p$; they are discussed in Middleton and Southard (1984). 
 
-Various other regimes are possible for different values of $Re_p$; they are
-discussed in Middleton and Southard (1984). 
-
-\paragraph{The drag coefficient} By dimensional analysis, the drag $F_D$ on a
-particle travelling at $u_s$ through a fluid must be proportional to
-$\frac{1}{2}\rho_lu_s^2A_p$:
+\paragraph{The drag coefficient} By dimensional analysis, the drag $F_D$ on a particle travelling at $u_s$ through a fluid is
 \begin{equation}
  F_D = C_D\frac{1}{2}\rho_lu_s^2A_p
 \end{equation}
-where $A_p$ is the planar area of the particle. (See Prandtl and Tietjens, 1957
-for details.) The dimensionless coefficient $C_D$ is called the \textit{drag
-coefficient}, and depends on the Reynolds number. The dependence may be found
-empirically:
+where $A_p$ is the planar area of the particle. (See Prandtl and Tietjens, 1957 for details.) The dimensionless coefficient $C_D$ is called the \textit{drag coefficient}, and depends on the Reynolds number. The dependence may be found empirically:
 \begin{itemize}
- \item When $Re_p\ll1$, then $C_D$ is inversely proportional to $Re_p$:
-\begin{equation}
-    C_D = \frac{24}{Re_p}
-\end{equation}
- \item When $0.2 < Re_p < 10^3$, there is a transitional region.
- \item When $10^3 < Re_p < 2\cdot10^5$, $C_D$ is approximately constant for
-     cylinders, spheres and discs. For these shapes, $C_D \approx 0.44$.
- \item At $Re_p\approx2\cdot10^5$, the drag coefficient drops very quickly before
-     increasing much more slowly again. This is called the \textit{drag crisis
-     regime}, and arises because of a flow separation.
+	\item When $\mathrm{Re}_p\ll1$, then $C_D$ is inversely proportional to $\mathrm{Re}_p$:
+	\begin{equation}
+    		C_D = \frac{24}{\mathrm{Re}_p}
+	\end{equation}
+	\item When $0.2 < \mathrm{Re}_p < 10^3$, there is a transitional region.
+	\item When $10^3 < \mathrm{Re}_p < 2\cdot10^5$, $C_D$ is approximately constant for cylinders, spheres and discs. For these shapes, $C_D \approx 0.44$.
+	\item At $\mathrm{Re}_p\approx2\cdot10^5$, the drag coefficient drops very quickly before increasing much more slowly again. This is called the \textit{drag crisis regime}, and arises because of a flow separation.
 \end{itemize}
 
-\paragraph{The settling velocity} So what is the settling velocity $u_s$?
-We consider the momentum balance on a particle in suspension. The forces acting
-on the particle are drag, buoyancy and gravity, and so:
+\paragraph{The settling velocity} So what is the settling velocity $u_s$? We consider the momentum balance on a particle in suspension. The forces acting on the particle are drag, buoyancy and gravity, and so:
 \begin{align}
-    m\frac{du}{dt} &= F_g - F_b - F_D \\
+    m\dod{u}{t} &= F_g - F_b - F_D \\
     F_D            &= C_D\frac{1}{2}\rho_lu^2A_p \\
     F_b            &= \rho_lgV \\
     F_g            &= \rho_pgV
 \end{align}
-where $V$ is the volume of the particle. The expression for $F_b$ is given by
-Archimedes' law: the buoyancy force is $g$ times the mass of fluid displaced.
-(Note that the fluid displaced is assumed to have density $\rho_l$ rather than
-$\rho_0$, even though we are assuming that particles are well-separated from
-each other and do not interact!) Setting $\frac{du}{dt} = 0$ and solving for $u$
-gives us the terminal velocity, which is the settling velocity.
+where $V$ is the volume of the particle. The expression for $F_b$ is given by Archimedes' law: the buoyancy force is $g$ times the mass of fluid displaced. (Note that the fluid displaced is said to have density $\rho_l$ rather than $\rho_0$, though the two are approximately equal in the dilute limit.) Setting $\od{u}{t} = 0$ and solving for $u$ gives us the terminal velocity, which is the settling velocity.
 
-For a sphere of diameter $D$, we have $V = \frac{1}{6}\pi D^3$ and $A_p =
-\frac{1}{4}\pi D^2$, and so
+For a sphere of diameter $D$, we have $V = \frac{1}{6}\pi D^3$ and $A_p = \frac{1}{4}\pi D^2$, and so
 \begin{equation}
     u_s=\sqrt{\frac{4g(\rho_p-\rho_l)D}{3C_D\rho_l}}.
 \end{equation}
-Recall that in the Stokes regime $Re_p < 0.2$, we have $C_D=\frac{24}{Re_p}$. Hence:
+Recall that in the Stokes regime with $\mathrm{Re}_p < 0.2$, we have $C_D=\frac{24}{\mathrm{Re}_p}$. Hence:
 \begin{align}
     F_D &= 3\pi u_s \mu D \\
     u_s &= \frac{g(\rho_p-\rho_l)D^2}{18\mu}
 \end{align}
-with $u_s \propto D^2$ and dependent on $\mu$. 
-
-But in the inertial, turbulent regime, with $10^3 < Re_p < 2\cdot10^5$, we have
-that $C_D=0.44$ is constant, and 
+with $u_s \propto D^2$ and dependent on $\mu$. But in the inertial, turbulent regime, with $10^3 < \mathrm{Re}_p < 2\cdot10^5$, we have $C_D=0.44$ constant, and 
 \begin{align}
     F_D &= 0.055\pi\rho_lu_s^2D^2 \\
     u_s &= 1.74\sqrt{\frac{g(\rho_p-\rho_l)D}{\rho_l}}
 \end{align}
 with $u_s \propto D^{1/2}$ and not dependent on $\mu$.
 
-These predictions are confirmed by observations: the Stokes regime holds for
-fine grains such as silt, whereas the inertial regime holds for very coarse
-sand, granules and pebbles (provided that particle-particle interactions may be
-neglected). However, for $D$ between 0.1mm and 1mm (such as for medium or coarse
-sand), neither the Stokes nor the turbulent predictions hold well. Many
-equations have been proposed to describe the intermediate region, including the
-\textit{Ferguson-Church equation}.  \footnote{See
-\url{http://hinderedsettling.com/2013/08/09/grain-settling-python/}.}
+These predictions are confirmed by observations: the Stokes regime holds for fine grains such as silt, whereas the inertial regime holds for very coarse sand, granules and pebbles (provided that particle-particle interactions may be neglected). However, for $D$ between 0.1mm and 1mm (such as for medium or coarse sand), we are in the transitional regime where neither the Stokes nor the turbulent predictions hold well. Many equations have been proposed to describe the intermediate region, including the \textit{Ferguson-Church equation}.\footnote{See \url{http://hinderedsettling.com/2013/08/09/grain-settling-python/}.}
 
-\paragraph{Advection and diffusion of particles} The concentration of particles
-$\phi$ is governed by an advection-diffusion equation:
+\paragraph{Advection and diffusion of particles} The concentration of particles $\phi$ is governed by an advection-diffusion equation:
 \begin{equation}
-    \frac{\partial\phi}{\partial t} + \mathbf{u}\cdot\nabla\phi = D\nabla^2\phi
+	\dpd{\phi}{t} + \bs{u}\cdot\grad\phi = D\grad^2\phi
+	\label{suspension-advdiff}
 \end{equation}
-where $D$ now denotes a diffusion coefficient, \textit{not} the particle
-diameter. The particle velocity $\mathbf{u}$ is equal to the velocity of the
-fluid, plus the settling velocity:
+where $D$ now denotes the diffusion coefficient, \textit{not} the particle diameter. The settling velocity which we have so far calculated was for an otherwise stationary fluid, so in (\ref{suspension-advdiff}) the particle velocity $\bs{u}$ is equal to
 \begin{equation}
-    \mathbf{u} = (u, v, w) + (0, 0, -u_s).
+ 	\mathbf{u} = (u, v, w) + (0, 0, -u_s)
 \end{equation}
-In the particular case of no background fluid flow, $\mathbf{u} = (u,v,w)$ and
-the advection-diffusion equation reduces to
-\begin{equation}
-    \frac{\partial\phi}{\partial t} - u_s\frac{\partial\phi}{\partial z} = D\nabla^2\phi
-\end{equation}
+where $(u,v,w)$ is the mean velocity of the fluid.\footnote{We can have fluid flow even if there is no mean fluid flow, if we are in a turbulent regime.}
 
-The diffusion coefficient $D$ depends on $Re_p$ and whether the flow is laminar
-or turbulent. In the laminar regime, diffusion of particles is due to molecular
-(Brownian) diffusion: 
+If there is no mean background fluid flow, then (\ref{suspension-advdiff}) reduces to
+\begin{equation}
+    \dpd{\phi}{t} - u_s\dpd{\phi}{z} = D\grad^2\phi.
+    \label{suspension-advdiff-settling}
+\end{equation}
+If we neglect dependencies on $x$ and $y$, then (\ref{suspension-advdiff-settling}) is Burgers' equation. 
+
+The diffusion coefficient $D$ depends on $\mathrm{Re}_p$ and whether the flow is laminar or turbulent. In the laminar regime, diffusion of particles is due to molecular (Brownian) diffusion: 
 \begin{equation}
     D = D_B \sim \frac{kT}{6\pi\mu r}
 \end{equation}
-where $r$ is the radius of particles, $k$ is the Boltzmann constant and $T$ is
-the temperature. Molecular diffusion is a very slow process unless $r$ is very
-small, such as for aerosol particles.
+where $r$ is the radius of particles, $k$ is the Boltzmann constant and $T$ is the temperature. Molecular diffusion is a very slow process unless $r$ is very small, such as for aerosol particles.
 
-However, in the turbulent regime, diffusion of particles is due to turbulent
-diffusivity:
+However, in the turbulent regime, diffusion of particles is due to turbulent diffusivity:
 \begin{equation}
-    D = D_t \sim u^\star h
+    D = D_T \sim u^\star h
 \end{equation}
-where $u^\star = \sqrt{\frac{\tau_b}{\rho}}$ is the shear velocity (friction
-velocity), $\tau_b$ is the shear stress at the bottom, and $h$ is some length
-scale, such as the distance from the bottom.
+where $u^\star = \sqrt{\frac{\tau_b}{\rho}}$ is the shear velocity (friction velocity), $\tau_b$ is the shear stress at the bottom, and $h$ is some turbulence length scale, such as the distance from the bottom.
+
+Note that if we ignore diffusivity in Equation \ref{suspension-advdiff-settling} and set $D=0$, then the resulting equation admits shocks. This is because when the diffusivity is small, we have fronts where the concentration changes very sharply. To calculate the speed at which these fronts move, we can use the Rankine-Hugoniot conditions.
+
+\subsubsection{Type II: Flocculent settling, particle coalescence}
+
+In this regime, particles may coalesce together to form larger particles, which have larger settling velocities. Therefore settling in this regime occurs quicker than if particles do not coalesce. There is no mathematical theory to model this regime.
 
 \subsubsection{Type III: Hindered (zone) settling}
 
-When there are many particles, then particles no longer settle at $u_s$ but at
-some slower velocity, $u_h$, which depends on $\phi$ and on $u_s$. 
+When there are many particles, then particles no longer settle at the $u_s$ which we have calculated, but at some slower velocity $u_h$, a \textit{hindered settling velocity}. The hindered settling velocity depends on $\phi$ and on $u_s$. As $\phi$ increases, $u_h$ decreases. As $\phi$ approaches $\phi_{max}$, then more complicated inter-particle interactions take place and we start to have compression settling. 
+
+The model that we will use is 
+\begin{equation}
+	u_h = u_s \left( 1 - \frac{\phi}{\phi_max} \right)^\alpha
+\end{equation}
+where $\alpha$ is some empirically determined constant which depends on the flow regime.\footnote{Following 'A physical introduction to suspension dynamics'.} Richardson and Zaki (1954) found that for $\phi$ up to 0.35, $\alpha = 4.65$ in the laminar regime $\mathrm{Re}_p < 0.2$ and $\alpha = 2.39$ in the regime $\mathrm{Re}_p > 500$. 
+%TODO proper citations
+
+The settling flux is
+\begin{equation}
+	Q_h = u_h \phi.
+\end{equation}
+In a suspension with a steady concentration profile $\phi(z)$, the settling flux of particles downwards is balanced by diffusive flux upwards. Thus the concentration satisfies the \textit{Rouse equation}:
+\begin{equation}
+	\phi(z) u_h(z) = -D \dod{\phi(z)}{z}
+\end{equation}
+where $D$ is a diffusivity. This tends to happen if the flow is turbulent and $D$ is large.
+
+\paragraph{Nonlinear kinematic wave equation}
+If $\phi = \phi(z,t)$ and diffusivity is small (which happens if the flow is laminar) then, as we have seen before, $\phi$ obeys the `traffic equation'
+\begin{equation}
+	\dpd{\phi}{t} + \dpd{\phi u_h}{z} = 0
+\end{equation}
+which may be solved by the method of characteristics. Again, solutions to this equation have shocks, which represent sharp fronts in a settling suspension.
+
+\paragraph{Settling of particles on inclines}
+
+\subsubsection{Type IV: Compressional settling, compacting}
+
+This regime occurs in regions of very high concentration. Stirring or tapping can allow the liquid to escape. The packing fraction may increase locally, leading to increased stability.  
+%TODO
+
+\subsection{Sediment transport}
+
+Particles in a fluid can move by several means. Particles which are in suspension (the \textit{suspended load}) or which have dissolved (the \textit{dissolved load}) will move with the flow. Particles which have settled to the bottom of the fluid can roll or slide along the bottom, or by hopping (\textit{saltation}). In a river, silt and clay tend to move by suspension; sand particles, which are larger, by saltation; gravel, larger still, by rolling and sliding. 
+
+A particle out of suspension does not necessarily move when there is a flow. A rock on the bed starts to move only when the flow exerts a critical shear stress on the bed. However, if the flow is turbulent then a sudden eddy may be able to move the rock: turbulent flows are stochastic, and need to be modelled as such. 
+
+Transport will change the morphology of the bed by erosion deposition: a strong flow can break up large rocks into smaller pieces. This in turn changes whether these particles are able to be suspended or settle out of suspension.  
+
+\subsection{Aqueous and aeolian bedforms (dunes)}
+
+\subsection{Dry granular flows, rheology, segregation}
+
+Most granular materials do not fill the space that they occupy, but instead have a \textit{packing fraction} $\phi$. The packing fraction is variable for a given material: a collection of uniform rigid spheres has a maximum packing fraction of $\phi\approx0.74$, but randomly packed spheres have typically $\phi\approx0.64$. The value of the packing fraction depends on the history of the material: that is, how it came to be arranged as it is. A pile of sand could have very different packing fractions depending on whether the sand was simply poured onto a surface, or slowly added and packed together. 
+
+A granular flow with particles of different sizes or densities will exhibit \textit{segregation}. Larger particles will tend to come to the top of the flow. We can demonstrate this by shaking a jar containing sand and marbles.
+
+
 
 
