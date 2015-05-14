@@ -60,8 +60,7 @@ Although the large-scale structure of the flow might have characteristic lengths
 
 To summarise: The flow is externally driven (continually or initially) at the lengthscale $L$, energy cascades to smaller lengthscales by vortex stretching; viscosity acts more and more strongly at these smaller lengthscales. Eventually, energy cascades down to the lengthscale $\eta$ and proceeds no more.
 
-Let $\bs{U}(\bs{k})$ be the Fourier transform of the velocity $\bs{u}(\bs{x})$, 
-using the normalisation
+Let $\bs{U}(\bs{k})$ be the Fourier transform of the velocity $\bs{u}(\bs{x})$, using the normalisation
 \begin{equation}
     \bs{U}(\bs{k}) = \frac{1}{\sqrt{2\pi}} \int_V \bs{u}(\bs{x}) e^{-i\bs{k}\cdot\bs{x}} d\bs{x}.
 \end{equation}
@@ -69,13 +68,11 @@ Let
 \begin{equation}
     E(\bs{k}) = \frac{1}{2}\rho\bs{U}(\bs{k})\cdot\bs{U}(\bs{k})*
 \end{equation}
-be the energy density spectrum. (In defining these Fourier transforms, we are
-assuming that $\rho$ is constant and uniform.) The total kinetic energy is
+be the energy density spectrum. (In defining these Fourier transforms, we are assuming that $\rho$ is constant and uniform.) The total kinetic energy is
 \begin{equation}
     KE = \int E(\bs{k}) d\bs{k}
 \end{equation}
-with the integral taken over wavenumber space. For isotropic turbulence,
-$\bs{U}$ and $E$ depend only on the magnitude $k=|\bs{k}|$. 
+with the integral taken over wavenumber space. For isotropic turbulence, $\bs{U}$ and $E$ depend only on the magnitude $k=|\bs{k}|$. 
 
 Since density is constant, we will find it convenient to rewrite the above expressions without $\rho$, so that the dimension $M$ may be set to $1$. We therefore work with the energy dissipation rate 
 \begin{equation}
@@ -93,20 +90,15 @@ for the kinetic energy per unit mass, with dimensions $L^2 T^{-2}$.
 
 Kolmogorov made two hypotheses about isotropic turbulent flows. These hypotheses allow us to make progress by dimensional analysis, but they do not follow from first principles, and their predictions must be verified experimentally.
 
-\paragraph{First hypothesis} The rate of dissipation of energy (per unit
-density), $\epsilon$ (dimensions $L^2T^{-3}$), depends only on viscosity $\nu$
-(dimensions $L^2T^{-1}$) and on the microscale $\eta$. In particular, $\epsilon$ and
-$\eta$ are not to depend on the large lengthscale $L$.
+\paragraph{First hypothesis} The rate of dissipation of energy (per unit density), $\epsilon$ (dimensions $L^2T^{-3}$), depends only on viscosity $\nu$ (dimensions $L^2T^{-1}$) and on the microscale $\eta$. In particular, $\epsilon$ and $\eta$ are not to depend on the large lengthscale $L$.
 
 By dimensional analysis, this hypothesis allows us to construct $\eta$:
 \begin{equation}
     \eta = (\nu^3 / \epsilon)^{1/4}
 \end{equation}
 
-Note that in a system in equilibrium, the rate of dissipation of energy is
-equal to the rate of energy input.
-\footnote{We can have a dynamic equilibrium, but not a static one, since
-turbulent flow is not steady.}
+Note that in a system in dynamic equilibrium, the rate of dissipation of energy is equal to the rate of energy input.
+\footnote{We can have a dynamic equilibrium, but not a static one, since turbulent flow is not steady.}
 
 \paragraph{Second hypothesis} The energy density $E(k)$ (dimensions $L^3
 T^{-2}$) depends only on the rate of dissipation $\epsilon$ and on $k$
@@ -402,16 +394,14 @@ instability in a tall tube.
 
 \subsection{Mixing}
 
-We now drop the assumption that $\rho$ is constant and uniform.
-
 \subsubsection{What is mixing?}
 
-Mixing is the blending of fluid particles with different properties, such as density, salinity or temperature. (These properties are related to each other.) There are two processes responsible for mixing:
+Mixing is the blending of fluid particles with different properties, such as density, salinity or temperature. (These properties are related to each other: the density of salt water increases with salinity and decreases with temperature.) There are two processes responsible for mixing:
 \begin{itemize}
     \item \textit{Stirring} is the intermingling of fluid particles of different properties. This produces large gradients in these properties.
     \item \textit{Diffusion} drives a flux down a gradient that reduces these gradients between adjacent fluid particles.
 \end{itemize}
-Diffusion is an irreversible process: there is a `preferred' direction for fluxes, down a gradient; but stirring (on its own) is reversible. Diffusion is a slow process that occurs at the molecular level, whereas stirring can happen quickly and over large lengthscales. Together, stirring and diffusion can cause irreversiible mixing.
+Diffusion is an irreversible process: there is a `preferred' direction for fluxes, down a gradient; but stirring (on its own) is reversible. Diffusion is a slow process that occurs at the molecular level, whereas stirring can happen quickly and over large lengthscales. Together, stirring and diffusion can cause irreversible mixing very quickly.
 
 In general, a scalar property $S$ is governed by the advection-diffusion equation
 \begin{equation}
