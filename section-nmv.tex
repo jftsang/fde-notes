@@ -19,13 +19,13 @@ made about the flows and the particles:
 
 \paragraph{Grain suspension by fluid turbulence} Examples include pyroclastic
 flows
-%\footnote{Wikipedia: A pyroclastic flow is a fast-moving current of hot gas and
-%rock (collectively known as tephra), which reaches speeds moving away from a
-%volcano of up to 700 km/h (450 mph). The gas can reach temperatures of about
-%1,000\deg C. Pyroclastic flows normally hug the ground and travel downhill, or
-%spread laterally under gravity. Their speed depends upon the density of the
-%current, the volcanic output rate, and the gradient of the slope. They are a
-%common and devastating result of certain explosive volcanic eruptions.}
+\footnote{Wikipedia: A pyroclastic flow is a fast-moving current of hot gas and
+rock (collectively known as tephra), which reaches speeds moving away from a
+volcano of up to 700 km/h (450 mph). The gas can reach temperatures of about
+$1,000\,^{\circ}\mathrm{C}$. Pyroclastic flows normally hug the ground and travel downhill, or
+spread laterally under gravity. Their speed depends upon the density of the
+current, the volcanic output rate, and the gradient of the slope. They are a
+common and devastating result of certain explosive volcanic eruptions.}
 , turbidity currents
 \footnote{Wikipedia: A turbidity current is a current of rapidly moving,
 sediment-laden water moving down a slope through water, or another fluid. The
@@ -48,7 +48,7 @@ which settle quickly undergo \textit{resuspension}.
 and \textit{some} mudflows. In these cases, the flow is dominant and the
 particles move with the flow; in this regime, particles do not interact with
 each other (\textit{cohesionlessness}), as they are separated from each other
-(\textit{grain dispersion})). Their effect is to increase the viscosity of the
+(\textit{grain dispersion}). Their effect is to increase the viscosity of the
 fluid. However, this limits the possibility of turbulence, and so particles can 
 settle out at the base of the fluid.
 
@@ -64,10 +64,6 @@ relationships (\textit{rheological models}), including power laws, Bingham
 plastic models nad Herschel-Bulkley models. In the latter two models, the fluid
 has a \textit{yield strength}: a minimum shear stress must be applied before any
 flow occurs. 
-
-\subsection{Modelling a particulate gravity current}
-
-
 
 \subsection{Physics within a particle gravity current}
 
@@ -249,6 +245,68 @@ which may be solved by the method of characteristics. Again, solutions to this e
 This regime occurs in regions of very high concentration. Stirring or tapping can allow the liquid to escape. The packing fraction may increase locally, leading to increased stability.  
 %TODO
 
+\subsection{Modelling a particulate gravity current}
+
+
+See \textit{Quantitative modelling of granular suspension flows} by Herbert Huppert, \textit{Phil. Trans. R. Soc. London A}, 1998 for more details and more complicated models. 
+
+\subsubsection{A simple box model}
+We assume a `box profile' for the particulate gravity current: it has a length $L(t)$ and a constant height $h(t)$ throughout its length, except possibly at its nose, where the nose height $h_N$ may be larger than $h$. We let $u$ be the velocity in the current, and $u_N$ be the velocity of the nose. The nose velocity is related to $L$ by $\od{L}{t} = u_N$. For simplicity we will take $h_N = h$ and $u_N = u$. We will also assume that the particle concentration $\phi$ is uniform throughout the current, and that particles are settling with settling velocity $u_s$.  
+
+Throughout, we assume that $\phi\ll1$, so that the settling is unhindered, and the current is Boussinesq. 
+
+Let $\rho_0$ be the fluid density, and $\rho_p$ be the particle density. Then the density of the current, with concentration $\phi$, is $\rho_l = (1-\phi)\rho_0 + \phi \rho_p$. We define a reduced gravity
+\begin{equation}
+g' = g \frac{\rho_l - \rho_0}{\rho_0} = g\phi\frac{\phi_p - \phi_0}{\rho_0} = \phi g'_0.
+\end{equation} 
+Since the current is Boussinesq, $g' \ll g$. 
+
+Assume that there is no entrainment. Then the volume of the current is constant, and so the mass of the current $M = L(t)h(t)$ is constant. Hence particle conservation gives
+\begin{equation}
+\dod{(M\phi)}{t} = M\dod{\phi}{t} = -u_s \phi(t) L(t)
+\end{equation}
+Hence,
+\begin{equation}
+\dod{\phi}{t} = -\frac{u_s \phi}{h}.
+\end{equation}
+
+Meanwhile, the value of $u_N = \od{L}{t}$ is related to the nose height $h_N$ by a Froude number condition
+\begin{equation}
+u_N = \dod{L}{t} = \mathrm{Fr}_f (\phi g_0' h_N)^{1/2} 
+ \label{pcbox-dLdt}
+\end{equation}
+where $\mathrm{Fr}_f$ is the front Froude number. For an ideal fluid with irrotational flow, Bernoulli's theorem would predict that $\mathrm{Fr}_f = \sqrt{2}$, but in practice experiments by Huppert \textit{et al.} have shown that $\mathrm{Fr}_f = 1.19$ for particulate gravity currents. 
+
+Assume that $h_N = h$ and $u_N = u$. We must solve these equations for $\phi$ and $L$, subject to some initial conditions $L=L_0$ and $\phi=\phi_0$ at $t=0$. One way to proceed would be to eliminate one of $\phi$ or $L$, and get the equation
+\begin{equation}
+ \dod{}{t}\left[ L\left( \dod{L}{t}\right)^2 \right] = -\frac{u_s L}{h} \left(\dod{L}{t}\right)^2
+\end{equation}
+which must be solved numerically. We can also make progress by dividing one equation by the other, to get
+\begin{equation}
+\dod{\phi}{L} = -\frac{u_s L}{h} \frac{1}{\mathrm{Fr}_f (\phi g_0' h)^{1/2}} = -\frac{\phi^{1/2} L^{3/2}}{\beta} 
+ \label{pcbox-dphidL}
+\end{equation}
+where
+\begin{equation}
+\beta = \frac{\mathrm{Fr}_f (g_0' M^3)^{1/2}}{u_s}
+\end{equation}
+
+Equation \ref{pcbox-dphidL} can be solved easily:
+\begin{equation}
+ L^{5/2} =  L_0^{5/2} + 5\beta \left(\phi_0^{1/2} - \phi^{1/2} \right) 
+ \label{pcbox-Lphi}
+\end{equation}
+The current stops advancing when the concentration drops to $\phi = 0$. Hence the run-out length of the current $L_\infty$ is
+\begin{equation}
+ L_\infty^{5/2} =  L_0^{5/2} + 5\beta \phi_0^{1/2}.
+\end{equation}
+We can therefore rearrange (\ref{pcbox-Lphi}):
+\begin{equation}
+ \frac{\phi}{\phi_0} = \left[ 1-\left(\frac{L}{L_\infty}\right)^{5/2} \right]^2 = \left[ 1 - \xi^{5/2} \right]^2
+\end{equation}
+where $\xi = L/L_\infty$. 
+Having found $\phi$ in terms of $L$ and $L_\infty$, we can solve (\ref{pcbox-dLdt}) implicitly for $t$ as a function of $L$. 
+
 \subsection{Sediment transport}
 
 Particles in a fluid can move by several means. Particles which are in suspension (the \textit{suspended load}) or which have dissolved (the \textit{dissolved load}) will move with the flow. Particles which have settled to the bottom of the fluid can roll or slide along the bottom, or by hopping (\textit{saltation}). In a river, silt and clay tend to move by suspension; sand particles, which are larger, by saltation; gravel, larger still, by rolling and sliding. 
@@ -256,6 +314,14 @@ Particles in a fluid can move by several means. Particles which are in suspensio
 A particle out of suspension does not necessarily move when there is a flow. A rock on the bed starts to move only when the flow exerts a critical shear stress on the bed. However, if the flow is turbulent then a sudden eddy may be able to move the rock: turbulent flows are stochastic, and need to be modelled as such. 
 
 Transport will change the morphology of the bed by erosion deposition: a strong flow can break up large rocks into smaller pieces. This in turn changes whether these particles are able to be suspended or settle out of suspension.  
+
+\subsubsection{Resuspension}
+
+Resuspension is the process by which particles which have settled to the bottom boundary are lifted back up into suspension in the fluid. A flow near a boundary obeys the no-slip condition at the boundary, but away from the boundary suppose the velocity is uniform, horizontal, with speed $U$. There is a viscous sublayer of thickness $\delta\sim\nu/U$ near the boundary, where the speed drops from $U$ to $0$. The velocity profile in the viscous sublayer is approximately linear. The shear stress on the boundary is $O(\mu U/\delta) = O(\rho U^2)$.
+
+Consider a particle deposited in the viscous sublayer. Since the fluid at the top of the particle moves faster than the fluid at the bottom, then by Bernoulli's principle the pressure at the bottom of the particle is higher than the pressure at the top. This causes \textit{lift}. If the particle is more dense than the fluid, then it also experiences a `downwards' \textit{buoyancy} force. 
+
+
 
 \subsection{Aqueous and aeolian bedforms (dunes)}
 
