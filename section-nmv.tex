@@ -1,46 +1,27 @@
 \section{Particle-laden and granular flow}
 
-We consider the flow of a current consisting of a fluid with a well-mixed
-suspension of particles, with the particles denser than the fluid. The
-difference in density means that \textit{buoyancy} has a role to play. The flow is
-driven by a pressure gradient and affected by the effects of buoyancy. Viscosity
-is negligible, so buoyancy and inertia balance each other. 
-
-Particles can settle out of suspension (\textit{sedimentation}) or be \textit{entrained}
-into suspension. This means the concentration of the particles in the suspension
-changes. So the density difference between the suspension and the ambient fluid
-changes too. 
-
 \subsection{Types of particulate flows}
 
-We model four types of particulate gravity currents. The models are ad-hoc and
-apply to different geophysical situations, where different assumptions may be
-made about the flows and the particles:
+Models for particulate flows are ad-hoc and apply to different geophysical situations, depending on which assumptions may be made about the flows and the particles:
 
 \paragraph{Grain suspension by fluid turbulence} Examples include pyroclastic
-flows
-\footnote{Wikipedia: A pyroclastic flow is a fast-moving current of hot gas and
+flows\footnote{Wikipedia: A pyroclastic flow is a fast-moving current of hot gas and
 rock (collectively known as tephra), which reaches speeds moving away from a
 volcano of up to 700 km/h (450 mph). The gas can reach temperatures of about
 $1,000\,^{\circ}\mathrm{C}$. Pyroclastic flows normally hug the ground and travel downhill, or
 spread laterally under gravity. Their speed depends upon the density of the
 current, the volcanic output rate, and the gradient of the slope. They are a
-common and devastating result of certain explosive volcanic eruptions.}
-, turbidity currents
-\footnote{Wikipedia: A turbidity current is a current of rapidly moving,
+common and devastating result of certain explosive volcanic eruptions.}, turbidity currents\footnote{Wikipedia: A turbidity current is a current of rapidly moving,
 sediment-laden water moving down a slope through water, or another fluid. The
 current moves because it has a higher density than the fluid through which it
 flows—the driving force of a turbidity current derives from its sediment, which
 renders the turbid water denser than the clear water above. The deposit of a
-turbidity current is called a turbidite.}
-and powder snow
-\footnote{Wikipedia: Freshly fallen, uncompacted snow. The density and moisture
+turbidity current is called a turbidite.} and powder snow\footnote{Wikipedia: Freshly fallen, uncompacted snow. The density and moisture
 content of powder snow can vary widely; snowfall in coastal regions and areas
 with higher humidity is usually heavier than a similar depth of snowfall in an
 arid or continental region. Light, dry (low moisture content, typically 4–7\%
 water content) powder snow is prized by skiers and snowboarders. It is often
-found in the Rocky Mountains of North America and in most regions in Japan.}. 
-In such flows, the particles may be very concentrated and denser than the fluid, but
+found in the Rocky Mountains of North America and in most regions in Japan.}. In such flows, the particles may be very concentrated and denser than the fluid, but
 they are kept in suspension by the turbulent flow of the fluid; any particles
 which settle quickly undergo \textit{resuspension}.
 
@@ -67,10 +48,11 @@ flow occurs.
 
 \subsection{Physics within a particle gravity current}
 
-A particle gravity current can be modelled as having a main body and a base. In
-the main body, there is a well-mixed suspension of particles in a turbulent
-flow; in the base, the particles and fluid have low velocity and particles are
-settling out. 
+A particle gravity current can be modelled as having a main body and a base. In the main body, there is a well-mixed suspension of particles in a turbulent flow; in the base, the particles and fluid have low velocity and particles are settling out. 
+
+We consider the flow of a current consisting of a fluid with a well-mixed suspension of particles, with the particles denser than the fluid. The difference in density means that \textit{buoyancy} has a role to play. The flow is driven by a pressure gradient and affected by the effects of buoyancy. Viscosity is negligible, so buoyancy and inertia balance each other. 
+
+Particles can settle out of suspension (\textit{sedimentation}) or be \textit{entrained} into suspension. This means the concentration of the particles in the suspension changes. So the density difference between the suspension and the ambient fluid changes too. 
 
 Let
 \begin{itemize}
@@ -94,7 +76,7 @@ where
 
 \subsection{Sedimenting particle-laden flows}
 
-We now assume that particles are small compared to the scale of motion, so that the presence of an individual particle has a negligible effect on the bulk flow. However, the collective of particles will have an effect. We also assume that particles sediment slowly, over a timescale much larger than that of the flow; and that particles are numerous and well-mixed, so that we can talk of the `concentration' of particles, rather than having to study individual particles.
+We assume that particles are small compared to the scale of motion, so that the presence of an individual particle has a negligible effect on the bulk flow. However, the collective of particles will have an effect. We also assume that particles sediment slowly, over a timescale much larger than that of the flow; and that particles are numerous and well-mixed, so that we can talk of the `concentration' of particles, rather than having to study individual particles.
 
 Note that although we use the word `particles', all of this theory could just as well apply to bubbles or to droplets; a bubble can be regarded as a particle with density negligible compared to that of the fluid; the reduced gravity is negative.
 
@@ -107,7 +89,7 @@ where $\phi$ is the concentration by volume. We model the viscosity of the suspe
  \mu = \mu_0 \left( 1 - \frac{\phi}{\phi_{max}} \right)^{-n \phi_{max}}
 \end{equation}
 where $\phi_{max}$ is the maximum suspension concentration that can be supported. For spherical particles, $n = \frac{5}{2}$.
-\footnote{Why?}
+\footnote{A similar result is derived in a \textit{Slow Viscous Flow} past examination question, 2013/68/1.}
 
 We define the \textit{particle Reynolds number}
 \begin{equation}
@@ -327,9 +309,9 @@ Consider a particle deposited in the viscous sublayer. Since the fluid at the to
 
 \subsection{Dry granular flows, rheology, segregation}
 
-Most granular materials do not fill the space that they occupy, but instead have a \textit{packing fraction} $\phi$. The packing fraction is variable for a given material: a collection of uniform rigid spheres has a maximum packing fraction of $\phi\approx0.74$, but randomly packed spheres have typically $\phi\approx0.64$. The value of the packing fraction depends on the history of the material: that is, how it came to be arranged as it is. A pile of sand could have very different packing fractions depending on whether the sand was simply poured onto a surface, or slowly added and packed together. 
+Granular materials do not fill the space that they occupy, but instead have a \textit{packing fraction} $\phi$. The packing fraction is variable for a given material: a collection of uniform rigid spheres has a maximum packing fraction of $\phi\approx0.74$, but randomly packed spheres have typically $\phi\approx0.64$. The value of the packing fraction depends on the history of the material: that is, how it came to be arranged as it is. A pile of sand could have very different packing fractions depending on whether the sand was simply poured onto a surface, or slowly added and packed together. 
 
-A granular flow with particles of different sizes or densities will exhibit \textit{segregation}. Larger particles will tend to come to the top of the flow. We can demonstrate this by shaking a jar containing sand and marbles.
+A granular flow with particles of different sizes or densities will exhibit \textit{segregation}. Larger particles will tend to come to the top or edges of the flow. We can demonstrate this by shaking a jar containing sand and marbles. 
 
 
 

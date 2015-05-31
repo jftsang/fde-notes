@@ -129,7 +129,7 @@ since for a two-dimensional flow the vortex stretching term in
 cascade of energy to smaller lengthscales. Dotting (\ref{vorticity-eqn}) with
 $\bs{\omega}$ gives us the \textit{enstrophy equation}:
 \begin{equation}
-    \DDt\left(\frac{1}{2}|\bs{\omega}|^2\right) 
+    \DDt{}\left(\frac{1}{2}|\bs{\omega}|^2\right) 
     = \nu\left(\grad^2\frac{1}{2}|\bs{\omega}|^2 - |\grad\bs{\omega}|^2\right).
  \label{enstrophy-eqn}
 \end{equation}
@@ -139,7 +139,7 @@ The scalar quantity $\frac{1}{2}|\bs{\omega}|^2$ is called the
 We obtain a very similar equation for the kinetic energy density by dotting the
 Navier-Stokes equation with $\bs{u}$:
 \begin{equation}
-    \DDt\left(\frac{1}{2}|\bs{u}|^2\right) 
+    \DDt{}\left(\frac{1}{2}|\bs{u}|^2\right) 
     = \nu\left(\grad^2\frac{1}{2}|\bs{u}|^2 - |\grad\bs{u}|^2\right).
  \label{ke-eqn}
 \end{equation}
@@ -200,17 +200,11 @@ $\lambda_B=\eta/Sc^{1/2}$.
 
 \subsubsection{The closure problem}
 
-A turbulent flow $\bs{u}$, and the associated pressure field $p$, can be
-decomposed into its mean part $\overline{\bs{u}}$, and a fluctuating part $\bs{u}'$
-that fluctuates about $\bs{0}$: $\overline{\bs{u}'} = \bs{0}$. We can model a
-turbulent flow by ignoring the details of these fluctuations, and looking only
-at how these fluctuations affect the mean part.
-\footnote{The mean can be taken as a time average or as a local spatial average,
-but this detail is unimportant for what follows.}
+A turbulent flow $\bs{u}$, and the associated pressure field $p$, can be decomposed into its mean part $\overline{\bs{u}}$, and a fluctuating part $\bs{u}'$ that fluctuates about $\bs{0}$: $\overline{\bs{u}'} = \bs{0}$. We can model a turbulent flow by ignoring the details of these fluctuations, and looking only at how these fluctuations affect the mean part.\footnote{The mean can be taken as a time average, a local spatial average, or as an ensemble average, but this detail is unimportant for what follows.}
 
 Beginning with the Navier-Stokes equations:
 \begin{equation}
-    \rho\DDt\bs{u} = -\grad p + \mu\grad^2\bs{u} + \bs{f}
+    \rho\DDt{\bs{u}} = -\grad p + \mu\grad^2\bs{u} + \bs{f}
     \label{ns-eqn}
 \end{equation}
 and averaging, we obtain
@@ -219,16 +213,8 @@ and averaging, we obtain
     = -\grad\overline{p} + \mu\grad^2\overline{\bs{u}} + \bs{f} - \rho\overline{\bs{u}'\cdot\grad\bs{u}'}
     \label{ave-ns-eqn}
 \end{equation}
-(assuming that the body force $\bs{f}$ is a constant). The fluctuations are
-still present in the quadratic term $-\rho\overline{\bs{u}'\cdot\grad\bs{u}'}$ on the RHS,
-because (\ref{ns-eqn}) is nonlinear.
-\footnote{If we had a non-constant $\rho$, then we would have further such
-quadratic terms, such as the turbulent buoyancy flux $\overline{\bs{u}'\cdot\grad\rho}$.}
-We cannot remove such nonlinear terms by more averaging, as that simply
-introduces further nonlinear terms. This is the \textit{closure problem}: we
-cannot close the system as we do not know how to deal with these terms.
-Many approximate closures have been proposed, but none are universally
-applicable.
+(assuming that the body force $\bs{f}$ is a constant). The fluctuations are still present in the quadratic term $-\rho\overline{\bs{u}'\cdot\grad\bs{u}'}$ on the RHS, because (\ref{ns-eqn}) is nonlinear.\footnote{If we had a non-constant $\rho$, then we would have further such quadratic terms, such as the turbulent buoyancy flux $\overline{\bs{u}'\cdot\grad\rho}$.} 
+We cannot remove such terms by more averaging, as that simply introduces further fluctuating terms. This is the \textit{closure problem}: we cannot close the system as we do not know how to deal with these terms. Many approximate closures have been proposed, but none are universally applicable.
 
 Note that 
 \begin{equation}
@@ -239,15 +225,15 @@ stress force, with stress tensor
 \begin{equation}
     \bs{\sigma}^{(R)} = -\rho \overline{\bs{u'}\bs{u'}}.
 \end{equation}
-This `stress' is called the \textit{Reynolds stress}.
+This `stress' is called the \textit{Reynolds stress}. Different closure models propose different formulae for the Reynolds stresss, usually in terms of some properties of the mean flow. 
 
 \subsubsection{The $k$-$\epsilon$ model}
 
 The most commonly used closure model is the $k$-$\epsilon$ model, where
-$k=\frac{1}{2}\bs{u}'\cdot\bs{u}'$ is the \textit{turbulent kinetic energy} (per
-unit density), and $\epsilon$ is the energy dissipation. The model states that
+$k=\frac{1}{2}\bs{u}'\cdot\bs{u}'$ refers to the \textit{turbulent kinetic energy} (per
+unit density), and $\epsilon$ to the energy dissipation. The model states that
 \begin{equation}
-    \rho\DDt k
+    \rho\DDt{k}
     = \grad\cdot\left(\frac{\mu_T}{\sigma_k}\grad k\right) 
     + 2 \mu_T \bs{S}:\bs{S} 
     - \rho\epsilon
@@ -259,7 +245,7 @@ where
 \end{equation}
 is the \textit{turbulent viscosity}, 
 \begin{equation}
-    \bs{S} = \frac{1}{2}(\grad\overline{\bs{u}} + (\grad\overline{\bs{u}})^T)
+    \bs{S} = \frac{1}{2}\left[\grad\overline{\bs{u}} + (\grad\overline{\bs{u}})^T\right]
 \end{equation}
 is the strain rate tensor corresponding to the mean flow, and $C_\mu \approx
 0.09$ and $\sigma_k\approx1.00$ are constants that are determined empirically.
@@ -278,7 +264,7 @@ can interpret (\ref{ke-model-1}) as follows:
 
 Equation \ref{ke-model-1} can be re-written as 
 \begin{equation}
-    \rho\DDt\epsilon =
+    \rho\DDt{\epsilon} =
     \grad\cdot\left(\frac{\mu_T}{\sigma_\epsilon}\grad\epsilon\right)
     + 2 C_{1\epsilon} \frac{\epsilon}{k}\mu_T\bs{S}:\bs{S}
     - C_{2\epsilon}\rho\frac{\epsilon^2}{k}
@@ -305,10 +291,10 @@ describing how this happens. That is, we take
 where $\nu_T$ is called the \textit{(turbulent) eddy viscosity}. We also write
 $\mu_T = \rho\nu_T$. The force due to Reynolds stresses is therefore
 \begin{align}
-    \divg\bs{\sigma}^{(R)} &= \divg(-\rho\overline{\bs{u}'\bs{u}'})  \\
+    \divg\bs{\sigma}^{(R)} &= \divg\left(-\rho\overline{\bs{u}'\bs{u}'}\right)  \\
      &= \rho\grad\cdot(\nu_T\bs{S}) \\
      &= \rho (\grad\nu_T \cdot \bs{S} + \nu_T \divg\bs{S}) \\
-     &= \rho (\grad\nu_T \cdot \bs{S} + \frac{1}{2} \nu_T \grad^2\overline{\bs{u}}).
+     &= \rho \left(\grad\nu_T \cdot \bs{S} + \frac{1}{2} \nu_T \grad^2\overline{\bs{u}}\right).
 \end{align}
 Putting this into the averaged Navier-Stokes equations gives us
 \begin{equation}
@@ -365,16 +351,14 @@ For $z\ll\frac{\nu}{kq}$, (\ref{law-of-the-wall-2}) says that $U(z)\propto z$,
 as we would expect for a boundary layer. In this region, molecular viscosity
 $\nu$ is dominant. However, for larger $z$, $U(z)$ is logarithmic in $z$:
 \begin{equation}
+\boxed{
     U(z) \sim \frac{u_*}{\kappa} \log\frac{z}{z_0}
     \label{law-of-the-wall}
+}
 \end{equation}
-This is the \textit{law of the wall}. Here $u_*$ is called the \textit{slip
-velocity} and $z_0$ the \textit{roughness height}; $\kappa\approx0.41$ is a
-dimensionless constant called \textit{von Karmen's constant}. 
+Equation \ref{law-of-the-wall} is the \textit{law of the wall}. Here $u_*$ is called the \textit{slip velocity} and $z_0$ the \textit{roughness height}; $\kappa\approx0.41$ is a dimensionless constant called \textit{von Karmen's constant}. 
 
-The law of the wall does not hold when $z$ becomes too large, when other effects
-such as small pressure gradients take hold, or when the mixing length is no
-longer $l\sim z$, but it is a good approximation for boundary layers. 
+The law of the wall does not hold when $z$ becomes too large, when other effects such as small pressure gradients take hold, or when the mixing length is no longer $l\sim z$, but it is a good approximation for turbulent boundary layers. 
 
 \subsubsection{Entrainment: Diffusion of turbulence}
 
@@ -405,7 +389,7 @@ Diffusion is an irreversible process: there is a `preferred' direction for fluxe
 
 In general, a scalar property $S$ is governed by the advection-diffusion equation
 \begin{equation}
-    \DDt S = \kappa\grad^2S
+    \DDt{S} = \kappa\grad^2S
 \end{equation}
 where $\kappa$ (dimensions $L^2T^{-1}$) is the molecular diffusivity of $S$. This is often very small: the diffusivity of heat in air is $\approx10^{-5}m^2s^{-1}$ and the diffusivity of salt in water is $\approx10^{-9}m^2s^{-1}$. The timescale for diffusing across a length $l$ is therefore $t\sim l^2/\kappa$, which is huge: heat takes a day to diffuse across a metre in air, and salinity takes thirty years to diffuse a metre.
 
@@ -413,13 +397,12 @@ However, stirring (represented by the advection term) can help to create large g
 
 \subsubsection{The energy budget}
 
-Consider an incompressible Boussinesq fluid with a linear equation of state.
-\footnote{Incompressibility means that $\divg\bs{u}=0$, but this does not mean that the density $\rho$ is constant; $\rho$ is governed by the advection-diffusion equation.}
+Consider an incompressible Boussinesq fluid with a linear equation of state.\footnote{Incompressibility means that $\divg\bs{u}=0$, but this does not mean that the density $\rho$ is constant; $\rho$ is governed by the advection-diffusion equation.}
 Assume that dissipative heating is unimportant, and ignore any heating effects from dilution, chemical potential energy, and so on. 
 
 Begin with the momentum equation for a variable-density fluid:
 \begin{equation}
-    \DDt\rho\bs{u} = -\grad p - \rho g \bs{e}_z + \rho\nu\grad^2\bs{u}
+    \DDt{(\rho\bs{u})} = -\grad p - \rho g \bs{e}_z + \rho\nu\grad^2\bs{u}
 \end{equation}
 and dot with $\bs{u}$. Since
 \begin{equation}
@@ -427,21 +410,20 @@ and dot with $\bs{u}$. Since
 \end{equation}
 for an incompressible fluid, and 
 \begin{equation}
-    \bs{u}\cdot\rho g \bs{e}_z = \DDt(\rho gz) - \divg(gz\kappa\grad\rho) +
+    \bs{u}\cdot\rho g \bs{e}_z = \DDt{}(\rho gz) - \divg(gz\kappa\grad\rho) +
     g\kappa\frac{\partial\rho}{\partial z}
 \end{equation}
 (where we have used the advection-diffusion equation for $\rho$, with mass
 diffusivity $\kappa$), we have:
 \begin{equation}
-    \DDt\left(\frac{1}{2}\rho|\bs{u}|^2 + \rho gz\right)
+    \DDt{}\left(\frac{1}{2}\rho|\bs{u}|^2 + \rho gz\right)
     + \divg\left(p\bs{u} - \frac{1}{2}\rho\nu\grad|\bs{u}|^2 
        - gz\kappa\grad\rho\right)
     = -g\kappa\frac{\partial\rho}{\partial z} 
     - \rho\nu|\grad\bs{u}|^2.
     \label{mixing-energy-eqn}
 \end{equation}
-This is an equation descibing kinetic and potential energy density. The energy
-of a parcel of fluid changes due to diffusion, because:
+This equation describes what happens to the kinetic and potential energy density of a fluid. The energy of a parcel of fluid changes due to diffusion, because:
 \begin{itemize}
     \item work is done on it by pressure from neighbouring parcels, causing an
         energy flux $p\bs{u}$; 
@@ -470,7 +452,7 @@ the total kinetic and potential energy of the system, $W = -\int_S p
 \bs{u}\cdot\bs{n} dS$ is the rate of pressure working and $\epsilon = \int_V
 \rho\nu\grad|\bs{u}|^2 dV$ is the rate of dissipation.
 
-Energy is dissipated into heat. Kinetic and potential energy can be converted into each other, but mixing and dissipation cause irreversible. 
+Energy is dissipated into heat. (We are ignoring any effects due to heating.) Kinetic and potential energy can be converted into each other, but mixing and dissipation cause irreversible. 
 
 \subsection{*Stably stratified flows}
 Not covered.
