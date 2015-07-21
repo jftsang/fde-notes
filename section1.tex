@@ -2,9 +2,9 @@
 \section{Internal gravity waves} \label{section1}
 \subsection{The minimal mathematics version}
 
-In a stably stratified fluid, consider a parcel of fluid. If the parcel is raised from its original position, then it will be heavier than the surrounding fluid, and will sink back down. If it is lowered, then buoyancy will push it back up. Thus density differences provide a restoring force to a parcel displaced vertically. 
+Consider a parcel of fluid in a stable stratification. If the parcel is raised from its original position, then it will be heavier than the surrounding fluid, and will sink back down. If it is lowered, then buoyancy will push it back up. Thus density differences provide a restoring force to a parcel displaced vertically. 
 
-Let $\rho(z)$ be the density of the fluid, with $z$ vertically upwards so that $\dod{\rho}{z} < 0$. If the parcel has volume $V$ and is displaced vertically by a height $H$, then the density difference between the parcel and the surrounding fluid is 
+Let $\rho(z)$ be the density of the fluid, with $z$ vertically upwards. We then have $\dod{\rho}{z} < 0$ since the stratification is stable. If the parcel has volume $V$ and is displaced upwards by $H$, then the density difference between the parcel and the surrounding fluid is 
 \begin{equation}
 	\Delta\rho = \dod{\rho}{z} H
 \end{equation}
@@ -32,13 +32,13 @@ Then
 \end{equation}
 so parcels of fluid execute oscillations with frequency $\omega = N$.
 
+The above argument is not quite valid, because we have neglected \textit{continuity}. We cannot simply displace a parcel of fluid without displacing some other fluid around it. Rather, we should consider displacing an entire slab of fluid and making it oscillate in its plane. But otherwise, following the same steps gives the same results. 
+
 In the oceans, $N \approx 10^{-2}\mathrm{s^{-1}}$.
 
-The above argument is not quite valid, because we cannot ignore continuity: we cannot simply displace a parcel of fluid without displacing some other fluid around it. Rather, we should consider displacing an entire slab of fluid and making it oscillate in its plane. But the same argument works.
-
-Suppose a slab makes an angle $\theta$ to the vertical and is displaced by $d$ in that direction. Then the displacement in the vertical direction is $d\cos\theta$. A similar argument shows that the slab will execute oscillations with frequency
+Suppose a slab makes an angle $\theta$ to the vertical and is displaced by $d$ in that direction. Then the displacement in the vertical direction is $d\cos\theta$. The restoring force in the direction of the displacement is therefore proportional to $\cos^2\theta$. A similar argument then shows that the slab will execute oscillations with frequency
 \begin{equation}
-	\omega = N\cos\theta
+	\omega = N\cos\theta.
 	\label{igwdisprel-theta}
 \end{equation}
 
@@ -50,7 +50,7 @@ We can derive the above more rigorously by starting from the governing equations
 	\rho_t + \divg(\rho\bs{u}) &= 0\\
 	(\rho\bs{u})_t +\divg(\rho\bs{u}\bs{u}) &= -\grad p + \rho\bs{g} 
 \end{align}
-which may also be written as 
+These are the equations for conservation of volume, mass and momentum respectively. The conservative forms may also be expanded as 
 \begin{align}
 	\divg\bs{u} &= 0\\
 	\rho_t + \bs{u}\cdot\grad\rho &= 0\\
@@ -82,7 +82,7 @@ and then take $\grad^2$ of the $z$-component of (\ref{govlinbous-mom}) to get
 \end{equation}
 Differentiating with respect to time and using the equation for $\rho'_t$ gives
 \begin{align}
-	\grad^2w_tt &= \frac{g}{\rho_0} \left(\grad^2 - \dpd[2]{}{z}\right) (w\bar{\rho}_z) \\
+	\grad^2w_{tt} &= \frac{g}{\rho_0} \left(\grad^2 - \dpd[2]{}{z}\right) (w\bar{\rho}_z) \\
 			&\approx N^2 \left(\dpd[2]{}{z} - \grad^2\right) w
 			\label{igw-govlin-w}
 \end{align}
@@ -96,7 +96,7 @@ For normal mode perturbations of the form
 where $\bs{k} = (k,l,m)$, we get the dispersion relation
 \begin{equation}
 	\omega^2 = N^2 \frac{k^2+l^2}{k^2+l^2+m^2}
-	\label{igwldisprel-klm}
+	\label{igwdisprel-klm}
 \end{equation}
 
 How do we relate this to the argument with slabs, and recover (\ref{igwdisprel-theta})? We note that the slabs that we considered were lines of constant phase, i.e. of constant $\bs{k}\cdot\bs{x}$. So $\bs{k}$ is perpendicular to the slab. Hence if the slab makes an angle $\theta$ with the upwards vertical, then $\bs{k}$ makes an angle $\theta$ with the horizontal, and so
@@ -141,7 +141,7 @@ The phase velocity is the velocity at which crests move, or more abstractly the 
 
 \subsection{Motion of fluid particles}
 
-If $\bs{u} = (u,0,w)$ and 
+For simplicity, we consider two-dimensional motion. If $\bs{u} = (u,0,w)$ and 
 \begin{align}
 	u&=\hat{u} \exp(i(\bs{k}\cdot\bs{x} - \omega t)) \\
 	w&=\hat{w} \exp(i(\bs{k}\cdot\bs{x} - \omega t)) \\
@@ -237,9 +237,9 @@ When $\theta$ and $\alpha$ are very similar, then $\gamma$ becomes very large. S
 
 \subsection{Ray tracing}
 
-Since the frequency is preserved upon reflexion, the angle to the vertical $\theta$ is conserved, so waves tend to propagate along well-defined rays. Depending on the shape of the domain and its boundaries, repeated reflexions can lead to trapping, to amplitudes increasing, and eventually to wave-breaking. Nonlinear effects become important if the amplitude of waves is increased sufficiently.
+Since the frequency $\omega$ is preserved upon reflexion, the angle to the vertical $\theta$ is conserved. Waves therefore tend to propagate along well-defined rays. The dispersion relation alone does not tell us which way a wave propagates. We must pay attention to \textit{causality}, the fact that waves propagate away from whatever generates a disturbance. 
 
-We must take note of causality to determine which direction is appropriate.
+Our analysis so far deals with waves which are a linear perturbation from an equilibrium configuration. We have seen that when a wave reflects from a rigid surface, the reflected wave may have a larger amplitude than the incident wave. Depending on the shape of the domain and its boundaries, repeated reflexions may increase the amplitude of waves and cause nonlinear effects to become important. In particular, repeated reflexions can lead to trapping, to amplitudes increasing, and eventually to wave-breaking. 
 
 \subsection{Wave attractors}
 \subsubsection{Rectangular basins}
@@ -258,11 +258,11 @@ Here we will derive the behaviour for a beam in a viscous fluid with constant ki
 \end{align}
 where 
 \begin{equation}
-	b = \displaystyle\frac{-g(\rho-\rho_0)}{\rho_0}
+	b = \displaystyle\frac{-g}{\rho_0} (\rho-\rho_0)
 \end{equation}
 is the buoyancy. 
 
-Introduce a streamfunction $\psi$ such that $(u,w) = (-\psi_z, w= \psi_x)$. Then some cross-differentiation eliminates $p$ and $b$ to give
+Introduce a streamfunction $\psi$ such that $(u,w) = (-\psi_z, \psi_x)$. Then some cross-differentiation eliminates $p$ and $b$ to give
 \begin{equation}
 	\grad^2 \psi_{tt} + N^2 \psi_{xx} = \nu\grad^4 \psi_t.
 	\label{igw-damped}
@@ -284,9 +284,13 @@ But often we are more interested in the spatial decay of a beam that is generate
 
 \subsection{Non-linear stratification}
 
-If $N$ is not constant but varies with $z$ (say), then waves will not follow straight paths but will refract. If $N$ varies very slowly with $z$, over lengthscales much larger than a wavelength, then the WKB method can be used to find the trajectory of a wave. We use the fact that $\omega = N(z)\cos\theta$ is constant along any beam to determine $\theta$, the angle between the beam and the vertical. 
+If $N$ is not constant but varies with $z$ (say), then waves will not follow straight paths but will refract. If $N$ varies very slowly with $z$, over lengthscales much larger than a wavelength, then the WKB method can be used to find the trajectory of a wave. 
 
-
+The frequency $\omega$ of a wave is still constant, and we assume that $\omega$ is still related to $\theta$, the angle between the direction of propagation and the vertical, by
+\begin{equation}
+ \omega = N(z)\cos\theta.
+\end{equation}
+Since $\omega$ is fixed, this determines $\theta = \theta(z)$, which allows us to solve for the path of the ray.
 
 \subsection{Leewaves}
 
