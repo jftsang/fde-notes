@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.12.12)  23 MAY 2015 15:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.12.12)  21 JUL 2015 15:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -923,9 +923,18 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 10.
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-(./fde-notes.toc [1
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 11.
 
-{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2])
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 11.
+ (./fde-notes.toc
+[1
+
+{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+[2])
 \tf@toc=\write5
 \openout5 = `fde-notes.toc'.
 
@@ -934,60 +943,47 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
  (./section1.tex [4
 
-]
-
-LaTeX Warning: Reference `igwdisprel-klm' on page 5 undefined on input line 108
-.
-
-[5] <igw-wave-vels.pdf, id=670, 341.275pt x 341.275pt>
+] [5]
+<igw-wave-vels.pdf, id=672, 341.275pt x 341.275pt>
 File: igw-wave-vels.pdf Graphic file (type pdf)
  <use igw-wave-vels.pdf>
-Package pdftex.def Info: igw-wave-vels.pdf used on input line 135.
+Package pdftex.def Info: igw-wave-vels.pdf used on input line 136.
 (pdftex.def)             Requested size: 227.62204pt x 227.62718pt.
 
 [6 <./igw-wave-vels.pdf>]
-<super-and-sub-critical.pdf, id=693, 654.445pt x 370.38374pt>
+<super-and-sub-critical.pdf, id=695, 654.445pt x 370.38374pt>
 File: super-and-sub-critical.pdf Graphic file (type pdf)
 
 <use super-and-sub-critical.pdf>
-Package pdftex.def Info: super-and-sub-critical.pdf used on input line 179.
+Package pdftex.def Info: super-and-sub-critical.pdf used on input line 180.
 (pdftex.def)             Requested size: 398.33858pt x 225.44205pt.
  [7] [8 <./super-and-sub-critical.pdf>]
 [9] [10] [11]) [12]
 \openout2 = `section2.aux'.
 
- (./section2.tex
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 18.
-
-(/usr/local/texlive/2014/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 18.
- [13
+ (./section2.tex [13
 
 
-] [14]
-[15]
+] [14] [15]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 230.
+(hyperref)                removing `math shift' on input line 214.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 230.
+(hyperref)                removing `math shift' on input line 214.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 230.
+(hyperref)                removing `math shift' on input line 214.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\epsilon' on input line 230.
+(hyperref)                removing `\epsilon' on input line 214.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 230.
+(hyperref)                removing `math shift' on input line 214.
 
 [16] [17] [18] [19]) [20]
 \openout2 = `section3.aux'.
@@ -996,21 +992,21 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 
 ]
-<st-venant.pdf, id=895, 511.9125pt x 341.275pt>
+<st-venant.pdf, id=898, 511.9125pt x 341.275pt>
 File: st-venant.pdf Graphic file (type pdf)
  <use st-venant.pdf>
 Package pdftex.def Info: st-venant.pdf used on input line 33.
 (pdftex.def)             Requested size: 455.24408pt x 303.49425pt.
  [22
 
- <./st-venant.pdf>] <st-venant-solution.pdf, id=919, 511.9125pt x 341.275pt>
+ <./st-venant.pdf>] <st-venant-solution.pdf, id=922, 511.9125pt x 341.275pt>
 File: st-venant-solution.pdf Graphic file (type pdf)
 
 <use st-venant-solution.pdf>
 Package pdftex.def Info: st-venant-solution.pdf used on input line 68.
 (pdftex.def)             Requested size: 455.24408pt x 303.49425pt.
  [23 <./st-venant-solution.pdf>]
-<entrainment-shallow-water.pdf, id=950, 511.9125pt x 341.275pt>
+<entrainment-shallow-water.pdf, id=953, 511.9125pt x 341.275pt>
 File: entrainment-shallow-water.pdf Graphic file (type pdf)
 
 <use entrainment-shallow-water.pdf>
@@ -1038,25 +1034,21 @@ Missing character: There is no “ in font cmr8!
 
 ] [31] [32]
 [33] [34] [35]) [36]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 24.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 24.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 25.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 25.
  (./fde-notes.aux (./section1.aux) (./section2.aux)
 (./section3.aux) (./section4.aux) (./section-nmv.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 24.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 24.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 25.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 25.
 Package rerunfilecheck Info: File `fde-notes.out' has not changed.
 (rerunfilecheck)             Checksum: 3C12955A6539E63B3751328C60444378;9463.
-
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 24.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 25.
  ) 
 Here is how much of TeX's memory you used:
- 29200 strings out of 493117
- 685202 string characters out of 6135432
+ 29206 strings out of 493117
+ 685266 string characters out of 6135432
  880063 words of memory out of 5000000
- 31711 multiletter control sequences out of 15000+600000
+ 31716 multiletter control sequences out of 15000+600000
  17280 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,13n,76p,935b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1087,10 +1079,10 @@ live/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texli
 ve/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texliv
 e/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/
 2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on fde-notes.pdf (36 pages, 494720 bytes).
+Output written on fde-notes.pdf (36 pages, 496399 bytes).
 PDF statistics:
- 1323 PDF objects out of 1440 (max. 8388607)
- 1217 compressed objects within 13 object streams
- 396 named destinations out of 1000 (max. 500000)
+ 1328 PDF objects out of 1440 (max. 8388607)
+ 1222 compressed objects within 13 object streams
+ 397 named destinations out of 1000 (max. 500000)
  982 words of extra memory for PDF output out of 10000 (max. 10000000)
 

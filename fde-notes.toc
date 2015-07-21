@@ -24,11 +24,11 @@
 \contentsline {subsection}{\numberline {1.12}Non-linear stratification}{10}{subsection.1.12}
 \contentsline {subsection}{\numberline {1.13}Leewaves}{10}{subsection.1.13}
 \contentsline {subsubsection}{\numberline {1.13.1}Kelvin ship waves}{10}{subsubsection.1.13.1}
-\contentsline {subsubsection}{\numberline {1.13.2}Extended range of hills}{10}{subsubsection.1.13.2}
+\contentsline {subsubsection}{\numberline {1.13.2}Extended range of hills}{11}{subsubsection.1.13.2}
 \contentsline {subsubsection}{\numberline {1.13.3}Causality}{11}{subsubsection.1.13.3}
 \contentsline {subsection}{\numberline {1.14}Shear flows}{11}{subsection.1.14}
 \contentsline {subsubsection}{\numberline {1.14.1}Sheared base state}{11}{subsubsection.1.14.1}
-\contentsline {subsubsection}{\numberline {1.14.2}Ray tracing in a shear flow}{11}{subsubsection.1.14.2}
+\contentsline {subsubsection}{\numberline {1.14.2}Ray tracing in a shear flow}{12}{subsubsection.1.14.2}
 \contentsline {subsubsection}{\numberline {1.14.3}*Three-dimensional forcing}{12}{subsubsection.1.14.3}
 \contentsline {subsubsection}{\numberline {1.14.4}*Effect of viscosity}{12}{subsubsection.1.14.4}
 \contentsline {subsubsection}{\numberline {1.14.5}*Blocking}{12}{subsubsection.1.14.5}

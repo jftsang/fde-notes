@@ -92,17 +92,15 @@ Kolmogorov made two hypotheses about isotropic turbulent flows. These hypotheses
 
 \paragraph{First hypothesis} The rate of dissipation of energy (per unit density), $\epsilon$ (dimensions $L^2T^{-3}$), depends only on viscosity $\nu$ (dimensions $L^2T^{-1}$) and on the microscale $\eta$. In particular, $\epsilon$ and $\eta$ are not to depend on the large lengthscale $L$.
 
-By dimensional analysis, this hypothesis allows us to construct $\eta$:
+By dimensional analysis, this hypothesis allows us to construct $\eta$ (up to some constant):
 \begin{equation}
     \eta = (\nu^3 / \epsilon)^{1/4}
 \end{equation}
 
 Note that in a system in dynamic equilibrium, the rate of dissipation of energy is equal to the rate of energy input.
-\footnote{We can have a dynamic equilibrium, but not a static one, since turbulent flow is not steady.}
+\footnote{A flow in dynamic equilibrium is unsteady, but it can be characterised by statistics which are constant in time. For example, the mean flow may be zero and the rms velocity may be constant. A turbulent flow may not be in static equilibrium, but it may be in dynamic equilibrium.}
 
-\paragraph{Second hypothesis} The energy density $E(k)$ (dimensions $L^3
-T^{-2}$) depends only on the rate of dissipation $\epsilon$ and on $k$
-(dimensions $L^{-1}$).
+\paragraph{Second hypothesis} The energy density $E(k)$ (dimensions $L^3T^{-2}$) depends only on the rate of dissipation $\epsilon$ and on $k$ (dimensions $L^{-1}$).
 
 By dimensional analysis,
 \begin{equation}
@@ -111,41 +109,27 @@ By dimensional analysis,
 \end{equation}
 for some constant $C$.
 
-This second hypothesis is not completely valid. If the flow is in a bounded
-domain with characteristic lengthscale $L$, or if the flow is driven at the
-lengthscale $L$, then the hypothesis is not valid at wavenumbers $k\sim1/L$ or
-below. And the hypothesis is also not valid when $k\sim1/\eta$, where the
-details of dissipation start to be important.
-
-However, for the range $1/L\ll k\ll 1/\eta$, known as the \textit{inertial
-range}, the hypothesis is justified and is supported by experimental evidence:
-(\ref{kolmogorov-energy-spectrum}) is reproduced by experimental data. 
+This second hypothesis is not completely valid. If the flow is in a bounded domain with characteristic lengthscale $L$, or if the flow is driven at the lengthscale $L$, then the hypothesis is not valid at wavenumbers $k\sim1/L$ or below. And the hypothesis is also not valid at small scales with $k\sim1/\eta$, where the details of dissipation start to be important. However, for the range $1/L\ll k\ll 1/\eta$, known as the \textit{inertial range}, the hypothesis is justified and is supported by experimental evidence: (\ref{kolmogorov-energy-spectrum}) is reproduced by experimental data. 
 
 \subsubsection{Two-dimensional turbulence}
 
-A turbulent flow in two dimensions is different from one in three dimensions,
-since for a two-dimensional flow the vortex stretching term in
-(\ref{vorticity-eqn}) is always zero. Vorticity is conserved, and there is no
-cascade of energy to smaller lengthscales. Dotting (\ref{vorticity-eqn}) with
+A turbulent flow in two dimensions is different from one in three dimensions, because in two dimensions the vortex stretching term in (\ref{vorticity-eqn}) is always zero. Vorticity is conserved, and there is no cascade of energy to smaller lengthscales. Dotting (\ref{vorticity-eqn}) with
 $\bs{\omega}$ gives us the \textit{enstrophy equation}:
 \begin{equation}
     \DDt{}\left(\frac{1}{2}|\bs{\omega}|^2\right) 
-    = \nu\left(\grad^2\frac{1}{2}|\bs{\omega}|^2 - |\grad\bs{\omega}|^2\right).
+    = \nu\left(\grad^2 \left( \frac{1}{2}|\bs{\omega}|^2 \right) - |\grad\bs{\omega}|^2\right).
  \label{enstrophy-eqn}
 \end{equation}
-The scalar quantity $\frac{1}{2}|\bs{\omega}|^2$ is called the
-\textit{enstrophy density}. 
+The scalar quantity $\frac{1}{2}|\bs{\omega}|^2$ is called the \textit{enstrophy density}. 
 
 We obtain a very similar equation for the kinetic energy density by dotting the
 Navier-Stokes equation with $\bs{u}$:
 \begin{equation}
     \DDt{}\left(\frac{1}{2}|\bs{u}|^2\right) 
-    = \nu\left(\grad^2\frac{1}{2}|\bs{u}|^2 - |\grad\bs{u}|^2\right).
+    = \nu\left(\grad^2 \left( \frac{1}{2}|\bs{u}|^2 \right) - |\grad\bs{u}|^2\right).
  \label{ke-eqn}
 \end{equation}
-Equations \ref{enstrophy-eqn} and \ref{ke-eqn} tell us that in a 2D flow,
-enstrophy and kinetic energy are redistributed by diffusion (first term on RHS)
-as well as dissipated (second term).
+Equations \ref{enstrophy-eqn} and \ref{ke-eqn} tell us that in a 2D flow, enstrophy and kinetic energy are advected, redistributed by diffusion (first term on RHS), and dissipated by viscosity (second term on RHS).
 
 Since total enstrophy (enstrophy density integated across the volume) must
 decrease, there must be a net movement of energy to \textit{larger} lengthscales
@@ -158,9 +142,7 @@ Hence there is an \textit{anticascade} of energy to larger scales, and a
 
 \subsection{Simplistic approaches to modelling turbulence}
 
-Instead of starting from first principles and trying to solve the Navier-Stokes
-equations for a turbulent system directly, it is often easier, and fruitful, to
-model the effects of turbulence instead.
+Instead of starting from first principles and trying to solve the Navier-Stokes equations for a turbulent system directly, it is often easier, and more fruitful, to model the effects of turbulence instead.
 
 \subsubsection{Molecular diffusion}
 
