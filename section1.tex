@@ -1,10 +1,23 @@
 \newpage
-\section{Internal gravity waves} \label{section1}
-\subsection{The minimal mathematics version}
+\chapter{Internal gravity waves} \label{section1}
 
-Consider a parcel of fluid in a stable stratification. If the parcel is raised from its original position, then it will be heavier than the surrounding fluid, and will sink back down. If it is lowered, then buoyancy will push it back up. Thus density differences provide a restoring force to a parcel displaced vertically. 
+In a \textit{stratified fluid} with variable density (such as an ocean, in which
+we have dense salty water at the bottom and lighter, fresh water at the top), it
+is possible to sustain \textit{internal gravity waves} in addition to surface
+waves.
 
-Let $\rho(z)$ be the density of the fluid, with $z$ vertically upwards. We then have $\dod{\rho}{z} < 0$ since the stratification is stable. If the parcel has volume $V$ and is displaced upwards by $H$, then the density difference between the parcel and the surrounding fluid is 
+\section{The minimal mathematics version}
+
+Consider a parcel of fluid in a stable stratification. If the parcel is raised
+from its original position, then it will be heavier than the surrounding fluid,
+and will sink back down. If it is lowered, then buoyancy will push it back up.
+Thus density differences provide a restoring force to a parcel displaced
+vertically. 
+
+Let $\rho(z)$ be the density of the fluid, with $z$ vertically upwards. We then
+have $\dod{\rho}{z} < 0$ since the stratification is stable. If the parcel has
+volume $V$ and is displaced upwards by $H$, then the density difference between
+the parcel and the surrounding fluid is 
 \begin{equation}
 	\Delta\rho = \dod{\rho}{z} H
 \end{equation}
@@ -22,9 +35,15 @@ and so Newton's law $F = ma$ gives the acceleration
 \end{equation}
 which is in the opposite direction to the displacement.
 
-Assume that the fluid is \textit{Boussinesq}, so that density differences are small compared to a reference density $\rho_0$, and fluid accelerations are small compared to gravity. Then we make the approximation $\rho\approx\rho_0$ except when densities are multiplied by gravity. We define the \textit{buoyancy frequency} (or \textit{Brunt-V\"ais\"al\"a frequency}) $N$, such that
+We assume that the fluid is \textit{Boussinesq}\footnote{After Joseph Valentin
+Boussinesq (1842--1929)}, so that fluid accelerations are
+small compared to gravity. We also assume that any density differences are small
+compared to a reference density $\rho_0$. Thus, we will make the approximation
+$\rho\approx\rho_0$ except when densities are multiplied by gravity. We define
+the \textit{buoyancy frequency} (or \textit{Brunt-V\"ais\"al\"a frequency}) $N$
+by
 \begin{equation}
-	N^2 = -\frac{g}{\rho_0}\dod{\rho}{z}.
+    N = \sqrt{-\frac{g}{\rho_0}\dod{\rho}{z}}.
 \end{equation}
 Then 
 \begin{equation}
@@ -32,43 +51,68 @@ Then
 \end{equation}
 so parcels of fluid execute oscillations with frequency $\omega = N$.
 
-The above argument is not quite valid, because we have neglected \textit{continuity}. We cannot simply displace a parcel of fluid without displacing some other fluid around it. Rather, we should consider displacing an entire slab of fluid and making it oscillate in its plane. But otherwise, following the same steps gives the same results. 
+The above argument is not quite valid, because we have neglected
+\textit{continuity}. We cannot simply displace a parcel of fluid without
+displacing some other fluid around it. Instead, we could consider displacing an
+entire vertical slab of fluid and making it oscillate in its plane. Following
+the same steps gives the same result. 
 
 In the oceans, $N \approx 10^{-2}\mathrm{s^{-1}}$.
 
-Suppose a slab makes an angle $\theta$ to the vertical and is displaced by $d$ in that direction. Then the displacement in the vertical direction is $d\cos\theta$. The restoring force in the direction of the displacement is therefore proportional to $\cos^2\theta$. A similar argument then shows that the slab will execute oscillations with frequency
+Suppose we now take a slab of fluid which makes an angle $\theta$ with the
+vertical, and we displace it by a distance $d$ along its plane. To maintain
+continuity, the slab must oscillate in its plane (rather than falling straight
+down).
+
+The vertical displacement of the slab is $d\cos\theta$. The restoring force in
+the direction of the displacement is therefore proportional to $\cos^2\theta$. A
+similar argument to the above shows that the slab will execute oscillations with
+frequency
 \begin{equation}
 	\omega = N\cos\theta.
 	\label{igwdisprel-theta}
 \end{equation}
+This is the dispersion relation for internal gravity waves, and we will see this
+many times. Note that the frequency $\omega$ depends on the orientation of the
+wave, but not at all on the wavenumber or wavelength. 
 
-\subsection{A more rigorous derivation}
+\section{A more rigorous derivation}
 
-We can derive the above more rigorously by starting from the governing equations of an incompressible inviscid fluid:
+We can derive the above more rigorously by starting from the governing equations
+of an incompressible\footnote{i.e. low Mach number} inviscid\footnote{i.e. high
+Reynolds number} fluid:
 \begin{align}
 	\divg\bs{u} &= 0\\
 	\rho_t + \divg(\rho\bs{u}) &= 0\\
 	(\rho\bs{u})_t +\divg(\rho\bs{u}\bs{u}) &= -\grad p + \rho\bs{g} 
 \end{align}
-These are the equations for conservation of volume, mass and momentum respectively. The conservative forms may also be expanded as 
+These are the equations for conservation of volume, mass and momentum
+respectively. The conservative forms may also be expanded as 
 \begin{align}
 	\divg\bs{u} &= 0\\
 	\rho_t + \bs{u}\cdot\grad\rho &= 0\\
 	\rho (\bs{u}_t +\bs{u}\cdot\grad\bs{u}) &= -\grad p + \rho\bs{g}.
 \end{align}
-We perturb about the stationary stratified state, writing
+
+We linearise the governing equations for small displacements, velocities and
+density perturbations from the stationary stratified state, writing
 \begin{align}
 	\rho &= \bar{\rho}(z) + \rho' \\
 	p &= \bar{p}(z) + p' 
 \end{align}
-and assume that the primed quantities and $\bs{u}$ are small. Then linearising the governing equations gives
+and assume that the primed quantities and $\bs{u}$ are `small'.\footnote{Is this
+safe?} Then linearising the governing equations gives
 \begin{align}
 	\divg\bs{u} &= 0\\
-	\dod{\bar{p}}{z} &= -g\bar{\rho} \\
-	\rho_t &= -w\dod{\bar{\rho}}{z} \\
+    \dod{\bar{p}}{z} &= -g\bar{\rho} \label{govlin-hydrostatic} \\
+	\rho'_t &= -w\dod{\bar{\rho}}{z} \\
 	\bar{\rho} \bs{u}_t &= -\grad p' - g\rho'\bs{e}_z. \label{govlin-mom}
 \end{align}
-For a Boussinesq fluid, $\rho\approx\rho_0$ except when multiplied by $g$, so (\ref{govlin-mom}) becomes
+Note that (\ref{govlin-hydrostatic}) simply says that in the unperturbed state,
+the pressure is hydrostatic.
+
+For a Boussinesq fluid, $\rho\approx\rho_0$ except when multiplied by $g$, so
+the momentum equation (\ref{govlin-mom}) becomes
 \begin{align}
 	\bs{u}_t = -\frac{1}{\rho_0}\grad p' - \frac{g}{\rho_0} \rho' \bs{e}_z. \label{govlinbous-mom}
 \end{align}
@@ -89,26 +133,36 @@ Differentiating with respect to time and using the equation for $\rho'_t$ gives
 where the approximation applies for a Boussinesq fluid.
 
 \paragraph{Plane wave eigenvalue problem}
-For normal mode perturbations of the form
+We can solve this linear PDE with constant coefficients by considering the normal
+modes. If we write
 \begin{equation}
 	w = \hat{w}\exp(i(\bs{k}\cdot\bs{x}-\omega t))
 \end{equation}
-where $\bs{k} = (k,l,m)$, we get the dispersion relation
+where $\bs{k} = (k,l,m)$, then we get the dispersion relation
 \begin{equation}
 	\omega^2 = N^2 \frac{k^2+l^2}{k^2+l^2+m^2}
 	\label{igwdisprel-klm}
 \end{equation}
 
-How do we relate this to the argument with slabs, and recover (\ref{igwdisprel-theta})? We note that the slabs that we considered were lines of constant phase, i.e. of constant $\bs{k}\cdot\bs{x}$. So $\bs{k}$ is perpendicular to the slab. Hence if the slab makes an angle $\theta$ with the upwards vertical, then $\bs{k}$ makes an angle $\theta$ with the horizontal, and so
+How do we relate this to the argument with slabs, and recover
+(\ref{igwdisprel-theta})? We note that the slabs were lines of constant phase,
+i.e. of constant $\bs{k}\cdot\bs{x}$. So $\bs{k}$ is perpendicular to the slab.
+Hence if the slab makes an angle $\theta$ with the upwards vertical, then
+$\bs{k}$ makes an angle $\theta$ with the horizontal, and so
 \begin{equation}
 	\cos\theta = \frac{k^2+l^2}{k^2+l^2+m^2}
 \end{equation}
 as required. 
 
 \paragraph{Evanescent waves}
-Note that if $\omega > N$ then there are no real solutions to (\ref{igwdisprel-klm}). Rather, $(k,l,m)$ must be complex and have an imaginary component, which means $e^{i\bs{k}\cdot\bs{x}}$ decays exponentially as $\bs{x}$ increases in a certain direction. Such `waves' are called evanescent waves. A source which oscillates at a frequency $\omega$ will cause localised disturbances and energy is not carried away.
+Note that if $\omega > N$ then there are no real solutions to
+(\ref{igwdisprel-klm}). Rather, $(k,l,m)$ must be complex and have an imaginary
+component, which means $e^{i\bs{k}\cdot\bs{x}}$ decays exponentially as $\bs{x}$
+increases in a certain direction. Such `waves' are called \textit{evanescent
+waves}. A source which oscillates at a frequency $\omega$ will cause localised
+disturbances. Energy is not carried away.
 
-\subsection{Wave velocities}
+\section{Wave velocities}
 
 From the dispersion relation, we obtain the phase and group velocities in the usual way:
 \begin{align}
@@ -127,9 +181,14 @@ Note that
 \begin{equation}
 	\bs{c}_p\cdot\bs{c}_g = 0
 \end{equation}
-so the phase and group velocities are perpendicular; and note that the group and phase velocities have $z$-components in opposite directions. See figure \ref{fig:igw-wave-vels}.
+so the phase and group velocities are perpendicular. Moreover, the group and
+phase velocities have $z$-components in opposite directions. See figure
+\ref{fig:igw-wave-vels}.
 
-The phase velocity is the velocity at which crests move, or more abstractly the velocity at which phase is advected. The group velocity is the velocity with which wavepackets propagate, and can be interpreted as a rate and direction of energy transfer. The group velocity makes an angle $\theta$ with the vertical. 
+The phase velocity is the velocity at which crests move, or more abstractly the
+velocity at which `phase is advected'. The group velocity is the velocity with
+which wavepackets propagate, and can be interpreted as a rate and direction of
+energy transfer. The group velocity makes an angle $\theta$ with the vertical. 
 
 \begin{figure}
 \begin{center}
@@ -139,7 +198,7 @@ The phase velocity is the velocity at which crests move, or more abstractly the 
 \end{center}
 \end{figure}
 
-\subsection{Motion of fluid particles}
+\section{Motion of fluid particles}
 
 For simplicity, we consider two-dimensional motion. If $\bs{u} = (u,0,w)$ and 
 \begin{align}
@@ -150,9 +209,11 @@ then $\divg\bs{u}=0$ gives
 \begin{equation}
 	\hat{u} = -\frac{m}{k}\hat{w}
 \end{equation}
-which tells us that fluid particles oscillate parallel to the group velocity and perpendicularly to the wavevector. We can obtain the displacements by integrating with respect to time, or equivalently by dividing by $-i\omega$. 
+which tells us that fluid particles oscillate parallel to the group velocity and
+perpendicularly to the wavevector. We can obtain the displacements by
+integrating with respect to time, or equivalently by dividing by $-i\omega$. 
 
-\subsection{Equipartition of energy}
+\section{Equipartition of energy}
 
 Dotting (\ref{govlinbous-mom}) with $\bs{u}$ and some manipulation gives us
 \begin{equation}
@@ -168,12 +229,24 @@ For normal modes, we can calculate time-averages, and find that
 
 Note that we must take real parts before multiplying together any quantities. 
 
-\subsection{Oscillating cylinders}
+\section{Oscillating cylinders}
 
-Suppose a cylinder (or any other object) is suspended in a stratified medium. At time $t=0$, it is impulsively started to oscillate at frequency $\omega<N$. The impulsive start of the cylinder generates an entire spectrum of transient wave modes, which generates IGWs propagating at different values of $\theta$. After some time, when the transients have decayed, we see a single mode of IGWs propagating at $\theta = \cos^{-1} (\omega/N)$ to the vertical. 
+Consider a cylinder (or any other object) suspended in a stratified medium.
 
-\subsection{Reflexions}
-\subsubsection{Properties of reflected beams}
+At time $t=0$, it is impulsively started to oscillate at frequency $\omega<N$.
+The impulsive start of the cylinder generates an entire spectrum of transient
+wave modes, which generates IGWs propagating at different values of
+$\theta$.\footnote{Consider the Fourier transform of the Heaviside step
+function.} After some time, when the transients have decayed or moved away, we
+will see a single mode of IGWs propagating at $\theta = \cos^{-1} (\omega/N)$ to
+the vertical. 
+
+If the cylinder is made to oscillate at a frequency $\omega > N$, then the waves
+produced will be evanescent. The cylinder will create local disturbances which
+do not travel very far.
+
+\section{Reflections}
+\subsection{Properties of reflected beams}
 
 \begin{figure}
 \begin{center}
@@ -213,7 +286,7 @@ and that defocusing reflexions have the opposite effect:
 	A_R &= \gamma^{-1} A_I.
 \end{align}
 
-\subsubsection{Energy density upon reflexion}
+\subsection{Energy density upon reflexion}
 
 The energy density per unit wavelength is 
 \begin{equation}
@@ -227,29 +300,37 @@ The energy density per unit length is
 \end{equation}
 and so $\hat{E}$ is multiplied by $\gamma^2$ after a focusing reflexion.
 
-\subsubsection{Subcritical and supercritical reflexions}
+\subsection{Subcritical and supercritical reflexions}
 
-In a subcritical reflexion, the boundary has a shallower slope than the wave ($\theta < \alpha$), and the vertical propagation of the wave is reversed by the reflexion. The horizontal direction of propagation is maintained.
+In a subcritical reflexion, the boundary has a shallower slope than the wave
+($\theta < \alpha$), and the vertical propagation of the wave is reversed by the
+reflexion. The horizontal direction of propagation is maintained.
 
-In a supercritical reflexion, $\theta > \alpha$ and the vertical direction of propagation is maintained but the horizontal direction is reversed. 
+In a supercritical reflexion, $\theta > \alpha$ and the vertical direction of
+propagation is maintained but the horizontal direction is reversed. 
 
-When $\theta$ and $\alpha$ are very similar, then $\gamma$ becomes very large. So waves will have very large amplitudes, and nonlinear effects and viscosity become important. 
+When $\theta$ and $\alpha$ are very similar, then $\gamma$ becomes very large.
+Waves will have very large amplitudes, and nonlinear effects and viscosity,
+which we had ignored from the outset, become important. 
 
-\subsection{Ray tracing}
+\section{Ray tracing}
 
 Since the frequency $\omega$ is preserved upon reflexion, the angle to the vertical $\theta$ is conserved. Waves therefore tend to propagate along well-defined rays. The dispersion relation alone does not tell us which way a wave propagates. We must pay attention to \textit{causality}, the fact that waves propagate away from whatever generates a disturbance. 
 
 Our analysis so far deals with waves which are a linear perturbation from an equilibrium configuration. We have seen that when a wave reflects from a rigid surface, the reflected wave may have a larger amplitude than the incident wave. Depending on the shape of the domain and its boundaries, repeated reflexions may increase the amplitude of waves and cause nonlinear effects to become important. In particular, repeated reflexions can lead to trapping, to amplitudes increasing, and eventually to wave-breaking. 
 
-\subsection{Wave attractors}
-\subsubsection{Rectangular basins}
-\subsubsection{Trapezoidal basin}
-\subsubsection{More complex geometries}
-\subsubsection{Energy spectrum for attractor}
+\section{Wave attractors}
+\subsection{Rectangular basins}
+\subsection{Trapezoidal basin}
+\subsection{More complex geometries}
+\subsection{Energy spectrum for attractor}
 
-\subsection{Decay along a beam}
+\section{Decay along a beam}
 
-Here we will derive the behaviour for a beam in a viscous fluid with constant kinematic viscosity $\nu$. The linearised equations are now
+So far we have completely ignored viscosity. But when a beam of waves
+travels across long distances, a small viscosity may be enough to cause energy
+losses along the beam. In this section, we reintroduce a constant viscosity
+$\nu$. 
 \begin{align}
 	\dpd{u}{t} + \frac{1}{\rho_0}\dpd{p}{x} &= \nu\grad^2 u \\
 	\dpd{w}{t} + \frac{1}{\rho_0}\dpd{p}{z} - b &= \nu\grad^2 w \\
@@ -277,12 +358,12 @@ where $\cos\theta = k/|\bs{k}|$ as usual. Given $(k,m)$, we could solve (\ref{ig
 
 But often we are more interested in the spatial decay of a beam that is generated by oscillations at a fixed $\omega$. We expect that the beam would still propagate in the direction $\theta = \cos^{-1} (\omega/N)$, but with a decaying amplitude.
 
-\subsection{Reflexions from rough topology}
+\section{Reflexions from rough topology}
 
-\subsubsection{Subcritical reflexion from a sinusoidal}
-\subsubsection{Supercritical reflexions from a sinusoidal}
+\subsection{Subcritical reflexion from a sinusoidal}
+\subsection{Supercritical reflexions from a sinusoidal}
 
-\subsection{Non-linear stratification}
+\section{Non-linear stratification}
 
 If $N$ is not constant but varies with $z$ (say), then waves will not follow straight paths but will refract. If $N$ varies very slowly with $z$, over lengthscales much larger than a wavelength, then the WKB method can be used to find the trajectory of a wave. 
 
@@ -292,11 +373,11 @@ The frequency $\omega$ of a wave is still constant, and we assume that $\omega$ 
 \end{equation}
 Since $\omega$ is fixed, this determines $\theta = \theta(z)$, which allows us to solve for the path of the ray.
 
-\subsection{Leewaves}
+\section{Leewaves}
 
 When a medium flows past an obstacle and waves are formed in the wake, it is possible to get standing waves (also known as stationary waves). When standing IGWs occur in the atmosphere as a wind flows past obstacles such as mountains, these are known as leewaves.
 
-\subsubsection{Kelvin ship waves}
+\subsection{Kelvin ship waves}
 
 As an aside to introduce standing waves, we consider a ship moving with velocity $\bs{U} = U\bs{e}_x$ in deep water. The surface waves have a dispersion relation
 \begin{equation}
@@ -321,7 +402,7 @@ For these waves, $\bs{c}_g$ and $\bs{c}_p$ are parallel, and $|\bs{c}_g| = \frac
 
 In shallow water, surface waves are not dispersive and such stationary waves are not seen.
 
-\subsubsection{Extended range of hills}
+\subsection{Extended range of hills}
 
 Now we consider leewaves, i.e. stationary atmospheric IGWs as a wind of speed $U$ flows, from left to right, over a sinusoidal mountain range which has wavelength $\lambda_T$ and so topographical wavenumber $k_T = 2\pi/\lambda$. 
 
@@ -333,11 +414,11 @@ and the wave crests make an angle $\theta = \cos^{-1} (\omega/N)$ with the verti
 
 We move to a frame moving with the wind, in which the mountains are moving with speed $U$ to the left. This does not change the angle between the wave crests and the vertical. But in the new frame the group velocity is $\bs{c}'_g = \bs{c}_g - \bs{U}$, and is aligned with the crests. 
 
-\subsubsection{Causality}
+\subsection{Causality}
 
-\subsection{Shear flows}
+\section{Shear flows}
 
-\subsubsection{Sheared base state}
+\subsection{Sheared base state}
 
 Suppose the background stratified fluid is not stationary but has velocity $\bs{U} = (U(z),0,0)$. Linearising the full governing equations of motion about this base state by writing $\bs{u} = \bs{U} + (u',v',w')$, and a lot of manipulation to eliminate everything apart from $w'$, eventually gives
 \begin{equation}
@@ -368,9 +449,16 @@ or $|\bs{k}| = N/U$ as before. Note that this is also true whenever
 \end{equation}
 is constant.
 
-\subsubsection{Ray tracing in a shear flow}
+\subsection{Ray tracing in a shear flow}
 
-When the length scale over which $U$ and $N$ change is much larger than the wavelength of internal waves, we can consider the important wave properties as being instantaneous in the local state of the background flow. This is the WKB approximation. Rays follow the group velocity relative to the fluid. However, in our frame of reference the waves appear stationary, and so the phase velocity must be parallel to the wave crests and the group velocity antiparallel with the wavenumber vector. We can thus take the trajectory of a wave propagating with the mean flow as
+When the length scale over which $U$ and $N$ change is much larger than the
+wavelength of internal waves, we can consider the important wave properties as
+being instantaneous in the local state of the background flow. This is the WKB
+approximation. Rays follow the group velocity relative to the fluid. However, in
+our frame of reference the waves appear stationary, and so the phase velocity
+must be parallel to the wave crests and the group velocity antiparallel with the
+wavenumber vector. We can thus take the trajectory of a wave propagating with
+the mean flow as
 \begin{equation}
 	\dod{z}{x} = \frac{c_{gz}}{U - c_{gx}} = \frac{m}{k}
 \end{equation}
@@ -388,10 +476,10 @@ Waves cannot propagate through a level where $kU/N = 1$.
 
 In the atmosphere, $U/N$ tends to increase with height as $U$ increases.
 
-\subsubsection{*Three-dimensional forcing}
-\subsubsection{*Effect of viscosity}
-\subsubsection{*Blocking}
+\subsection{*Three-dimensional forcing}
+\subsection{*Effect of viscosity}
+\subsection{*Blocking}
 
-\subsection{Columnar modes}
-\subsection{*Stokes drift in internal waves}
-\subsection{Resonant triads}
+\section{Columnar modes}
+\section{*Stokes drift in internal waves}
+\section{Resonant triads}

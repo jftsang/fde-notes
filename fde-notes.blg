@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d (TeX Live 2014)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: fde-notes.aux
+A level-1 auxiliary file: section1.aux
+A level-1 auxiliary file: section2.aux
+A level-1 auxiliary file: section3.aux
+A level-1 auxiliary file: section4.aux
+A level-1 auxiliary file: section-nmv.aux
+The style file: unsrt.bst
+Database file #1: granular-mechanics.bib
+You've used 3 entries,
+            1791 wiz_defined-function locations,
+            471 strings with 4071 characters,
+and the built_in function-call counts, 605 in all, are:
+= -- 53
+> -- 19
+< -- 0
++ -- 8
+- -- 5
+* -- 42
+:= -- 106
+add.period$ -- 9
+call.type$ -- 3
+change.case$ -- 3
+chr.to.int$ -- 0
+cite$ -- 3
+duplicate$ -- 26
+empty$ -- 62
+format.name$ -- 5
+if$ -- 131
+int.to.chr$ -- 0
+int.to.str$ -- 3
+missing$ -- 3
+newline$ -- 18
+num.names$ -- 3
+pop$ -- 3
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 10
+stack$ -- 0
+substring$ -- 42
+swap$ -- 3
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 5
+width$ -- 4
+write$ -- 35

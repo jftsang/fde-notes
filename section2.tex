@@ -1,16 +1,20 @@
 \newpage
-\section{Turbulence primer} \label{section2}
+\chapter{Turbulence primer} \label{section2}
 
 Most environmental and geophysical flows occur at high Reynolds numbers. At high
-Reynolds numbers, laminar solutions to the Navier-Stokes equations are unstable,
-and the flows are turbulent. 
+Reynolds numbers, steady laminar solutions to the Navier-Stokes equations are
+extremely unstable, and the flows are turbulent. In transitioning from a steady
+laminar solution to a fully turbulent solution, a system undergoes a number of
+bifurcations as the Reynolds number increases beyond critical values. These
+bifurcations are analogous to Hopf bifurcations, or to the period-doubling
+bifurcations exhibited by the logistic map.
 
-\subsection{Basics of turbulence}
+\section{Basics of turbulence}
 
-Throughout this and the next section, assume that the density $\rho$ is constant
-and uniform.
+Throughout this and the next section, we shall assume that the density $\rho$ is
+constant and uniform.
 
-\subsubsection{What is turbulence?}
+\subsection{What is turbulence?}
 
 Although there is no simple definition for turbulence, turbulent flows can be
 characterised by a few properties:
@@ -24,13 +28,21 @@ characterised by a few properties:
         which feed on their velocity, // And little whorls have lesser whorls,
         and so on to viscosity.'' ---Lewis Richardson.
 \end{itemize}
-Turbulent flows are unpredictable and simulating them numerically may be difficult as they may be numerically unstable. However, it may be possible to predict certain statistics of the flow, such as the behaviour of the mean flow or mean pressure (noting that fluctuations about these means may be great). Some features of turbulence can be shown to be universal.
+Turbulent flows are unpredictable and simulating them numerically may be
+difficult as they tend to be numerically unstable. However, it may be possible
+to predict certain statistics of the flow, such as the behaviour of the mean
+flow or mean pressure (noting that fluctuations about these means may be great).
+Some features of turbulence can be shown to be universal, and independent of
+geometry.
 
-Lewis Richardson's couplet describes the two processes at work in a turbulent flow. \textit{Vortex stretching} is responsible for creating small vortices out of large ones, while \textit{energy dissipation} causes small vortices to decay.
+Lewis Richardson's couplet describes the two processes at work in a turbulent
+flow. \textit{Vortex stretching} is responsible for creating small vortices out
+of large ones, while \textit{energy dissipation} causes small vortices to decay.
 
-\subsubsection{Vortex stretching}
+\subsection{Vortex stretching}
 
-Vortex stretching is the main process by which energy is transferred from large scales to smaller scales.
+Vortex stretching is the main process by which energy is transferred from large
+scales to smaller scales.
 
 Taking the curl of the Navier-Stokes equation gives the \textit{vorticity equation}:
 \begin{equation}
@@ -38,9 +50,16 @@ Taking the curl of the Navier-Stokes equation gives the \textit{vorticity equati
      = \bs{\omega}\cdot\grad\bs{u} + \nu\grad^2\bs{\omega}
  \label{vorticity-eqn}
 \end{equation}
-The second term on the RHS of (\ref{vorticity-eqn}) means that vorticity is diffused with diffusion constant $\nu$. This is a minor effect in flows with $\mathrm{Re}\gg1$. The first term means that when a parcel of fluid is stretched into a column, its vorticity increases and becomes aligned with the column. Thus stretching a vortex takes energy to a smaller scale. However, if the vortex column is compressed, not nearly as much energy is taken back to the large scale, since the compression in general de-aligns the vorticity vector and the column.
+The second term on the RHS of (\ref{vorticity-eqn}) means that vorticity is
+diffused with diffusion constant $\nu$. This is a minor effect in flows with
+$\mathrm{Re}\gg1$. The first term means that when a parcel of fluid is stretched
+into a column, its vorticity increases and becomes aligned with the column. Thus
+stretching a vortex takes energy to a smaller scale. However, if the vortex
+column is compressed, not nearly as much energy is taken back to the large
+scale, since the compression in general de-aligns the vorticity vector and the
+column.
 
-\subsubsection{Energy dissipation: Kolmogorov's theory (1941)}
+\subsection{Energy dissipation: Kolmogorov's theory (1941)}
 
 We know that energy is dissipated in a fluid at a rate
 \begin{equation}
@@ -56,9 +75,16 @@ For a laminar flow with characteristic velocity $U$ in a box with sides $L$, $|\
 \end{equation}  
 However, for a turbulent flow, the energy dissipation is much faster than this, because the velocity gradients are over much smaller distances, and so $|\grad\bs{u}|\gg U/L$. 
 
-Although the large-scale structure of the flow might have characteristic lengthscale $L$, the small-scale structure of the flow should be described by another lengthscale $\eta$, called the \textit{Kolmogorov length scale} or the \textit{Kolmogorov microscale}. This is the lengthscale at which the effects of vortex stretching and dissipation balance each other.
+Although the large-scale structure of the flow might have characteristic
+lengthscale $L$, the small-scale structure of the flow should be described by
+another lengthscale $\eta$, called the \textit{Kolmogorov length scale} or the
+\textit{Kolmogorov microscale}. This is the lengthscale at which the effects of
+vortex stretching and dissipation balance each other.
 
-To summarise: The flow is externally driven (continually or initially) at the lengthscale $L$, energy cascades to smaller lengthscales by vortex stretching; viscosity acts more and more strongly at these smaller lengthscales. Eventually, energy cascades down to the lengthscale $\eta$ and proceeds no more.
+To summarise: The flow is externally driven (continually or initially) at the
+lengthscale $L$, energy cascades to smaller lengthscales by vortex stretching;
+viscosity acts more and more strongly at these smaller lengthscales. Eventually,
+energy cascades down to the lengthscale $\eta$ and proceeds no more.
 
 Let $\bs{U}(\bs{k})$ be the Fourier transform of the velocity $\bs{u}(\bs{x})$, using the normalisation
 \begin{equation}
@@ -111,7 +137,7 @@ for some constant $C$.
 
 This second hypothesis is not completely valid. If the flow is in a bounded domain with characteristic lengthscale $L$, or if the flow is driven at the lengthscale $L$, then the hypothesis is not valid at wavenumbers $k\sim1/L$ or below. And the hypothesis is also not valid at small scales with $k\sim1/\eta$, where the details of dissipation start to be important. However, for the range $1/L\ll k\ll 1/\eta$, known as the \textit{inertial range}, the hypothesis is justified and is supported by experimental evidence: (\ref{kolmogorov-energy-spectrum}) is reproduced by experimental data. 
 
-\subsubsection{Two-dimensional turbulence}
+\subsection{Two-dimensional turbulence}
 
 A turbulent flow in two dimensions is different from one in three dimensions, because in two dimensions the vortex stretching term in (\ref{vorticity-eqn}) is always zero. Vorticity is conserved, and there is no cascade of energy to smaller lengthscales. Dotting (\ref{vorticity-eqn}) with
 $\bs{\omega}$ gives us the \textit{enstrophy equation}:
@@ -140,11 +166,11 @@ increase in $E(k)$ at low $k$, so that $\int k^2E(k) dk$ never increases.
 Hence there is an \textit{anticascade} of energy to larger scales, and a
 \textit{cascade} of enstrophy to smaller scales.
 
-\subsection{Simplistic approaches to modelling turbulence}
+\section{Simplistic approaches to modelling turbulence}
 
 Instead of starting from first principles and trying to solve the Navier-Stokes equations for a turbulent system directly, it is often easier, and more fruitful, to model the effects of turbulence instead.
 
-\subsubsection{Molecular diffusion}
+\subsection{Molecular diffusion}
 
 A direct approach is to model all scales down to the microscale
 $\eta=(\nu^3/\epsilon)^{1/4}$. The energy spectrum
@@ -180,7 +206,7 @@ compared by the \textit{Schmidt number} $Sc = \nu/\kappa$. For salt water, $Sc
 at an even smaller scale, the \textit{Batchelor scale}
 $\lambda_B=\eta/Sc^{1/2}$. 
 
-\subsubsection{The closure problem}
+\subsection{The closure problem}
 
 A turbulent flow $\bs{u}$, and the associated pressure field $p$, can be decomposed into its mean part $\overline{\bs{u}}$, and a fluctuating part $\bs{u}'$ that fluctuates about $\bs{0}$: $\overline{\bs{u}'} = \bs{0}$. We can model a turbulent flow by ignoring the details of these fluctuations, and looking only at how these fluctuations affect the mean part.\footnote{The mean can be taken as a time average, a local spatial average, or as an ensemble average, but this detail is unimportant for what follows.}
 
@@ -209,7 +235,7 @@ stress force, with stress tensor
 \end{equation}
 This `stress' is called the \textit{Reynolds stress}. Different closure models propose different formulae for the Reynolds stresss, usually in terms of some properties of the mean flow. 
 
-\subsubsection{The $k$-$\epsilon$ model}
+\subsection{The $k$-$\epsilon$ model}
 
 The most commonly used closure model is the $k$-$\epsilon$ model, where
 $k=\frac{1}{2}\bs{u}'\cdot\bs{u}'$ refers to the \textit{turbulent kinetic energy} (per
@@ -256,7 +282,7 @@ $C_{2\epsilon}\approx1.92$ are constants that are determined empiracally.
 
 Experiments and simulations find that these constants are \textit{universal}.
 
-\subsubsection{Turbulent diffusion models}
+\subsection{Turbulent diffusion models}
 
 As discussed, the vortex stretching process is irreversible and takes energy to
 smaller lengthscales. There is little back-scatter: smaller lengthscales do not
@@ -292,7 +318,7 @@ Closure models that do this are called \textit{turbulent diffusion models}.
 Different models propose different expressions for $\nu_T$: this is usually not 
 constant, but may depend on the position or on $\overline{\bs{u}}$.
 
-\subsubsection{Prandtl's mixing length model}
+\subsection{Prandtl's mixing length model}
 
 Prandtl's mixing length model is a turbulent diffusion model, in which
 \begin{equation}
@@ -340,17 +366,21 @@ $\nu$ is dominant. However, for larger $z$, $U(z)$ is logarithmic in $z$:
 \end{equation}
 Equation \ref{law-of-the-wall} is the \textit{law of the wall}. Here $u_*$ is called the \textit{slip velocity} and $z_0$ the \textit{roughness height}; $\kappa\approx0.41$ is a dimensionless constant called \textit{von Karmen's constant}. 
 
-The law of the wall does not hold when $z$ becomes too large, when other effects such as small pressure gradients take hold, or when the mixing length is no longer $l\sim z$, but it is a good approximation for turbulent boundary layers. 
+In practice, the law of the wall does not hold when $z$ becomes too large. Far
+away from the wall, other effects such as small pressure gradients affect the
+flow, and imperfections in the geometry (such as other walls) may cause the
+mixing length to stop being $l\sim z$. But nonetheless the law is a good
+approximation for turbulent boundary layers. 
 
-\subsubsection{Entrainment: Diffusion of turbulence}
+\subsection{Entrainment: Diffusion of turbulence}
 
 Consider a turbulent patch of length scale $l$ and turbulence intensity $u'$,
-surrounded by irrotational fluid outside the patch. The vortical motion within
+surrounded by an irrotational flow outside the patch. The vortical motion within
 the patch will draw in the external fluid, straining and diffusing vorticity
 into it. Thus the size of the patch will increase; its boundaries move out at a
 rate proportional to $u'$. 
 
-The diffusivity of turbulence is called the \textit{turbulent diffusivity},
+This diffusivity of turbulence is called the \textit{turbulent diffusivity},
 written $\kappa_T$, with $\kappa_T \sim u'l$. This is not to be confused with
 turbulent viscosity, though both are $\sim u'l$ with similar (but not
 necessarily equal) constants of proportionality.
@@ -358,29 +388,48 @@ necessarily equal) constants of proportionality.
 This diffusivity of turbulence can explain the growth of the Rayleigh-Taylor
 instability in a tall tube. 
 
-\subsection{Mixing}
+\section{Mixing}
 
-\subsubsection{What is mixing?}
+\subsection{What is mixing?}
 
-Mixing is the blending of fluid particles with different properties, such as density, salinity or temperature. (These properties are related to each other: the density of salt water increases with salinity and decreases with temperature.) There are two processes responsible for mixing:
+Mixing is the blending of fluid particles with different properties, such as
+density, salinity or temperature. (These properties are related to each other:
+the density of salt water increases with salinity and decreases with
+temperature.) There are two processes responsible for mixing:
 \begin{itemize}
-    \item \textit{Stirring} is the intermingling of fluid particles of different properties. This produces large gradients in these properties.
-    \item \textit{Diffusion} drives a flux down a gradient that reduces these gradients between adjacent fluid particles.
+    \item \textit{Stirring} is the intermingling of fluid particles of different
+        properties. This produces large gradients in these properties.
+    \item \textit{Diffusion} drives a flux down a gradient that reduces these
+        gradients between adjacent fluid particles.
 \end{itemize}
-Diffusion is an irreversible process: there is a `preferred' direction for fluxes, down a gradient; but stirring (on its own) is reversible. Diffusion is a slow process that occurs at the molecular level, whereas stirring can happen quickly and over large lengthscales. Together, stirring and diffusion can cause irreversible mixing very quickly.
+Diffusion is an irreversible process: there is a `preferred' direction for
+fluxes, down a gradient; but stirring (on its own) is reversible. Diffusion is a
+slow process that occurs at the molecular level, whereas stirring can happen
+quickly and over large lengthscales. Together, stirring and diffusion can cause
+irreversible mixing very quickly.
 
 In general, a scalar property $S$ is governed by the advection-diffusion equation
 \begin{equation}
     \DDt{S} = \kappa\grad^2S
 \end{equation}
-where $\kappa$ (dimensions $L^2T^{-1}$) is the molecular diffusivity of $S$. This is often very small: the diffusivity of heat in air is $\approx10^{-5}m^2s^{-1}$ and the diffusivity of salt in water is $\approx10^{-9}m^2s^{-1}$. The timescale for diffusing across a length $l$ is therefore $t\sim l^2/\kappa$, which is huge: heat takes a day to diffuse across a metre in air, and salinity takes thirty years to diffuse a metre.
+where $\kappa$ (dimensions $L^2T^{-1}$) is the molecular diffusivity of $S$.
+This is often very small: the diffusivity of heat in air is
+$\approx10^{-5}m^2s^{-1}$ and the diffusivity of salt in water is
+$\approx10^{-9}m^2s^{-1}$. The timescale for diffusing across a length $l$ is
+therefore $t\sim l^2/\kappa$, which is huge: heat takes a day to diffuse across
+a metre in air, and salinity takes thirty years to diffuse a metre.
 
-However, stirring (represented by the advection term) can help to create large gradients in $S$, which increases the rate of diffusion (by reducing $l$).
+However, stirring (represented by the advection term) can help to create large
+gradients in $S$, which increases the rate of diffusion (by reducing $l$).
 
-\subsubsection{The energy budget}
+\subsection{The energy budget}
 
-Consider an incompressible Boussinesq fluid with a linear equation of state.\footnote{Incompressibility means that $\divg\bs{u}=0$, but this does not mean that the density $\rho$ is constant; $\rho$ is governed by the advection-diffusion equation.}
-Assume that dissipative heating is unimportant, and ignore any heating effects from dilution, chemical potential energy, and so on. 
+Consider an incompressible Boussinesq fluid with a linear equation of
+state.\footnote{Incompressibility means that $\divg\bs{u}=0$, but this does not
+mean that the density $\rho$ is constant; $\rho$ is governed by the
+advection-diffusion equation.}
+Assume that dissipative heating is unimportant, and ignore any heating effects
+from dilution, chemical potential energy, and so on. 
 
 Begin with the momentum equation for a variable-density fluid:
 \begin{equation}
@@ -436,16 +485,17 @@ the total kinetic and potential energy of the system, $W = -\int_S p
 
 Energy is dissipated into heat. (We are ignoring any effects due to heating.) Kinetic and potential energy can be converted into each other, but mixing and dissipation cause irreversible. 
 
-\subsection{*Stably stratified flows}
+\section{*Stably stratified flows}
 Not covered.
-\subsubsection{Stratification modifies turbulence}
+\subsection{Stratification modifies turbulence}
 
-\subsection{*Mixing efficiency}
+\section{*Mixing efficiency}
 Not covered.
 
-\subsection{*Internal mixing}
+\section{*Internal mixing}
 Not covered. 
-\subsubsection{Kelvin-Helmholtz instability}
-\subsubsection{Stratified shear flow}
-\subsubsection{Holmboe instability}
-\subsubsection{Entrainment by internal mixing}
+\subsection{Kelvin-Helmholtz instability}
+
+\subsection{Stratified shear flow}
+\subsection{Holmboe instability}
+\subsection{Entrainment by internal mixing}

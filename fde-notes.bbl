@@ -1,0 +1,20 @@
+\begin{thebibliography}{1}
+
+\bibitem{huppert-1998}
+Herbert~E. Huppert.
+\newblock Quantitative modelling of granular suspension flows.
+\newblock {\em Phil. Trans. R. Soc. Lond. A}, 356:2471--2496, 1998.
+
+\bibitem{bagnold-1954}
+Ralph~Alger Bagnold.
+\newblock Experiments on a gravity-free dispersion of large solid spheres in a
+  newtonian fluid under shear.
+\newblock {\em Proceedings of the Royal Society of London. Series A,
+  Mathematical and Physical Sciences.}, 225(1160):49--63, August 1954.
+
+\bibitem{jop-2006}
+Pierre Jop, Yo{\"e}l Forterre, and Oliver Pouliquen.
+\newblock A constitutive law for dense granular flows.
+\newblock {\em Nature}, 441, 2006.
+
+\end{thebibliography}

@@ -1,15 +1,24 @@
 \newpage
-\section{Jets, plumes and thermals} \label{section4}
+\chapter{Jets, plumes and thermals} \label{section4}
 
-A \textit{jet} is a continuous directed release of fluid with a specified momentum from an isolated source (such as blowing from lips). A \textit{plume} is a continuous release of buoyant fluid from an isolated source, with, ideally, no mass or momentum flux (e.g. a candle). The direction of a plume is given by $\bs{g}$. A \textit{thermal} is an isolated release of a finite patch of buoyancy.
+A \textit{jet} is a continuous directed release of fluid with a specified
+momentum from an isolated source (such as blowing from lips). A \textit{plume}
+is a continuous release of buoyant fluid from an isolated source, with, ideally,
+no mass or momentum flux (e.g. a candle). The direction of a plume is given by
+$\bs{g}$. A \textit{thermal} is an isolated release of a finite patch of
+buoyancy.
 
-Note that `continuous', `stable' and `steady' are distinct terms, and no one of them implies either of the other. 
+Note that `continuous', `stable' and `steady' are distinct terms, and no one of
+them implies either of the other. 
 
-We will assume that jets and plumes are axisymmetric and self-similar, so that any averaged quantity $\bar\phi$ can be written as
+We will assume that jets and plumes are axisymmetric and self-similar, so that
+any averaged quantity $\bar\phi$ can be written as
 \begin{equation}
  \bar\phi = \Phi(z) f(r/b)
 \end{equation}
-where $b$ is the `radius' of the plume. The averaging may be an ensemble average or a temporal average. Specific forms for the function $f$ may be taken. The simplest form for $f$ is the \textit{top-hat} profile
+where $b$ is the `radius' of the plume. The averaging may be an ensemble average
+or a temporal average. Specific forms for the function $f$ may be taken. The
+simplest form for $f$ is the \textit{top-hat} profile
 \begin{equation}
  f(x) = \begin{cases} 
   0 & \text{if } x>1\\
@@ -18,7 +27,7 @@ where $b$ is the `radius' of the plume. The averaging may be an ensemble average
 \end{equation} 
 Other forms, such as the Gaussian $f(x) = \exp(-x^2)$, may also be used.
 
-\subsection{Jets}
+\section{Jets}
 
 We define 
 \begin{align}
@@ -58,9 +67,9 @@ Hence $M = M_0$ is constant along the plume. This gives
 \end{align}
 So, the jet's thickness increases linearly with $z$, and the fluid velocity decreases with $z$. The point $z = -z_\nu$ is the `virtual origin' of the jet: it looks as though there is a point source of momentum at this point, even though boundary conditions are being specified at $z=0$. 
 
-\subsection{General plume equations}
+\section{General plume equations}
 
-\subsubsection{Self-similar plumes}
+\subsection{Self-similar plumes}
 For plumes, the density of the fluid is not homogeneous, and so we need to consider fluxes of mass and momentum, rather than fluxes of volume and $\displaystyle\frac{\text{momentum}}{\text{density}}$. Therefore, we define
 \begin{align}
  \pi Q	&= \frac{1}{T}\int_0^T \int_0^\infty \int_{-\pi}^\pi \hat\rho w r \dif \theta\dif r \dif t \\ 
@@ -83,7 +92,7 @@ where $\rho$ is the density in the plume averaged across a cross-section. We als
  g'		&= F/Q.
 \end{align}
 
-\subsubsection{Time-dependent plume equations}
+\subsection{Time-dependent plume equations}
 
 Volume, mass and momentum balances on the plume give
 \begin{align}
@@ -106,20 +115,20 @@ where $\alpha$ is between $0.1$ and $0.16$ (but again depends on the top-hat pro
 
 It can be shown that, in the Boussinesq case, the system is not hyperbolic, but is parabolic, and admits similarity solutions, as expected. 
 
-\subsection{Plumes in a homogeneous environment}
-\subsubsection{Steady Boussinesq plumes}
+\section{Plumes in a homogeneous environment}
+\subsection{Steady Boussinesq plumes}
 
 It is found that $F$ is constant. 
 
-\subsubsection{Time-dependent plumes}
-\subsubsection{Steady non-Boussinesq plumes}
+\subsection{Time-dependent plumes}
+\subsection{Steady non-Boussinesq plumes}
 
-\subsection{Plumes in a stratified environment}
+\section{Plumes in a stratified environment}
 
 Now the ambient density $\rho_0$ is a function of height. This must be accounted for in the equation for $F$. It is found that $F$ is not constant, and a power-law solution does not exist.
 
-\subsubsection{Rise height}
-\subsubsection{Series solution in Boussinesq fluid}
+\subsection{Rise height}
+\subsection{Series solution in Boussinesq fluid}
 
-\subsection{*Thermal in a homogeneous environment}
-\subsection{*Thermals in a stratified environment}
+\section{*Thermal in a homogeneous environment}
+\section{*Thermals in a stratified environment}

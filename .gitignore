@@ -1,0 +1,8 @@
+.DS_Store
+gray-edwards-2014.pdf
+guazzelli-hinch-2011.pdf
+huppert-1998.pdf
+jop-2006.pdf
+*.aux
+*.log
+
