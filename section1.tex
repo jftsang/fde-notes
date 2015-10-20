@@ -219,12 +219,43 @@ Dotting (\ref{govlinbous-mom}) with $\bs{u}$ and some manipulation gives us
 \begin{equation}
 	\dpd{}{t}\left(\frac{1}{2}\rho_0 \bs{u}^2 + \frac{1}{2}\frac{g^2}{\rho_0N^2}\rho'^2\right) + \divg(p'\bs{u}) = 0,
 \end{equation}
-the equation of conservation of energy. We identify $ \frac{1}{2}\rho_0 \bs{u}^2 $ as kinetic energy density and $\frac{1}{2}\frac{g^2}{\rho_0N^2}\rho'^2$ as potential energy density. (Energy density is energy per unit volume.)
+the equation of conservation of energy. We identify $ \frac{1}{2}\rho_0 \bs{u}^2
+$ as kinetic energy density and $\frac{1}{2}\frac{g^2}{\rho_0N^2}\rho'^2$ as
+potential energy density. (Energy density is energy per unit volume, with
+dimensions $\mathrm{L}^{-1} \mathrm{T}^{-2}$.) And we identify $p'\bs{u}$ as the
+flux of energy per unit area.
 
-For normal modes, we can calculate time-averages, and find that 
+In integral form, we can write
+\begin{equation}
+    \dpd{}{t} \int_V (KE + PE) \dif V + \int_S \bs{F}_E \cdot \bs{n} \dif S = 0
+\end{equation}
+where $KE$ is the kinetic energy density, $PE$ is the potential energy density,
+and $\bs{F}_E$ is the energy flux.
+
+%TODO
+Consider a normal mode with phase $\phi' = \bs{k}'\cdot\bs{x}' - \omega t$. In a
+rotated coordinate system, where $w'$ now means the velocity component along the
+wave ray, we have 
+\begin{align}
+    w' &= \omega \eta_0 \sin\phi' \\
+    b &= \frac{-\omega^2 \eta_0}{cos\theta} \cos\phi' \\
+    p' &= \frac{-\rho_0 \omega^2 \eta_0 \tan\theta}{k'} \sin\phi'
+\end{align}
+with the other two components of velocity being zero. Thus
+\begin{align}
+    KE &= \frac{1}{2}\rho_0 \omega^2 \eta_0^2 \sin^2\phi' \\
+    PE &= \frac{1}{2}\rho_0 \omega^2 \eta_0^2 \cos^2\phi'.
+\end{align}
+Calculating time averages shows that
 \begin{equation}
 \langle\text{kinetic energy density}\rangle = \langle\text{potential energy density}\rangle
 \end{equation}
+which is \textit{equipartition of energy}.
+
+The energy flux is $\bs{F}_E = \rho_0 \omega^2 \eta_0^2 \sin^2\phi' \bs{c}_g$,
+and so $\bar{\bs{F}_E} = \bar{E} \bs{c}_g$. Thus the energy flux is in the
+direction of the group velocity. 
+
 %TODO
 
 Note that we must take real parts before multiplying together any quantities. 
@@ -251,7 +282,7 @@ do not travel very far.
 \begin{figure}
 \begin{center}
 	\includegraphics[width=14cm]{super-and-sub-critical.pdf}
-	\caption{Super- and sub-critical reflexions.}
+	\caption{Super- and sub-critical reflections.}
 	\label{fig:supersubcrit}
 \end{center}
 \end{figure}
@@ -267,46 +298,62 @@ Suppose $z=0$ is a rigid stationary boundary, with a plane wave incident from $z
 \end{align}
 the two waves must have the same $\omega$ and $k_I = k_R$; the boundary condition gives $\hat{w}_I + \hat{w}_R = 0$. And causality implies that $m_R = -m_I$. 
 
-When a plane wave reflects off a flat boundary which is not horizontal, then the incident and reflected waves make the same angle (but reflected) with the vertical or horizontal, so that they have the same $\omega = N\cos\theta$. (Note that for IGWs, $\theta$ is the angle between a wave's direction and the vertical.) In general, the angle of incidence and angle of reflexion are not equal. Depending on how the angle of the incident wave compares with the slope of the boundary, one of two things may happen: see Figure \ref{fig:supersubcrit}. 
+When a plane wave reflects off a flat boundary, the incident and reflected waves
+make the same angle (but reflected) with the vertical or horizontal, so that the
+two waves have the same frequency $\omega = N\cos\theta$. (Note that for IGWs,
+$\theta$ always represents the angle between a wave's direction and the
+vertical.) In general, the angle of incidence and angle of reflection are not
+equal. Depending on how the angle of the incident wave compares with the slope
+of the boundary, one of two things may happen: see Figure
+\ref{fig:supersubcrit}. 
 
-From Figure \ref{fig:supersubcrit} we can see that reflexions change the wavenumber of the wave and can act to focus or defocus the rays, depending on direction. Let $\alpha$ be the angle that the plane boundary makes with the vertical. We define the quantity 
+From Figure \ref{fig:supersubcrit} we can see that reflections change the
+wavenumber of the wave and can act to focus or defocus the rays, depending on
+direction. Let $\alpha$ be the angle that the plane boundary makes with the
+vertical. We define the quantity 
 \begin{equation}
 	\gamma  =  \frac{\sin(\alpha-\theta)}{\sin(\alpha+\theta)}
 \end{equation}
-to characterise the focusing power of a reflexion. 
+to characterise the \textit{focusing power} of a reflection. 
 
-After a lot of manipulation, we can show that focusing reflexions change the amplitude and wavenumber according to
+After a lot of manipulation, we can show that focusing reflections change the amplitude and wavenumber according to
 \begin{align}
 	k_R  &= \gamma k_I \\
 	A_R &= \gamma A_I 
 \end{align}
-and that defocusing reflexions have the opposite effect:
+and that defocusing reflections have the opposite effect:
 \begin{align}
 	k_R  &= \gamma^{-1} k_I \\
 	A_R &= \gamma^{-1} A_I.
 \end{align}
+Thus the magnitudes of the phase velocity and group velocity change as well,
+since
+\begin{align}
+    |\bs{c}_p| &= \frac{N}{|\bs{k}|} \cos\theta \\
+    |\bs{c}_g| &= \frac{N}{|\bs{k}|} \sin\theta 
+\end{align}
 
-\subsection{Energy density upon reflexion}
+\subsection{Energy density upon reflection}
 
 The energy density per unit wavelength is 
 \begin{equation}
 	\tilde{E} \sim \lambda A^2.
 \end{equation}
-After a focusing reflexion, $\lambda$ is divided by $\gamma$ but $A$ is multiplied by $\gamma$, so $\tilde{E}$ is multiplied by $\gamma$. Hence the energy density per wavelength is increased after a focusing reflexion. 
+After a focusing reflection, $\lambda$ is divided by $\gamma$ but $A$ is multiplied by $\gamma$, so $\tilde{E}$ is multiplied by $\gamma$. Hence the energy density per wavelength is increased after a focusing reflection. 
 
 The energy density per unit length is 
 \begin{equation}
 	\hat{E} = \frac{1}{\lambda} \tilde{E}
 \end{equation}
-and so $\hat{E}$ is multiplied by $\gamma^2$ after a focusing reflexion.
+and so $\hat{E}$ is multiplied by $\gamma^2$ after a focusing reflection.
 
-\subsection{Subcritical and supercritical reflexions}
+\subsection{Subcritical and supercritical reflections}
 
-In a subcritical reflexion, the boundary has a shallower slope than the wave
+In a subcritical reflection, the boundary has a shallower slope than the wave
 ($\theta < \alpha$), and the vertical propagation of the wave is reversed by the
-reflexion. The horizontal direction of propagation is maintained.
+reflection. The horizontal direction of propagation is maintained.
 
-In a supercritical reflexion, $\theta > \alpha$ and the vertical direction of
+In a supercritical reflection, $\theta > \alpha$ and the vertical direction of
 propagation is maintained but the horizontal direction is reversed. 
 
 When $\theta$ and $\alpha$ are very similar, then $\gamma$ becomes very large.
@@ -315,9 +362,9 @@ which we had ignored from the outset, become important.
 
 \section{Ray tracing}
 
-Since the frequency $\omega$ is preserved upon reflexion, the angle to the vertical $\theta$ is conserved. Waves therefore tend to propagate along well-defined rays. The dispersion relation alone does not tell us which way a wave propagates. We must pay attention to \textit{causality}, the fact that waves propagate away from whatever generates a disturbance. 
+Since the frequency $\omega$ is preserved upon reflection, the angle to the vertical $\theta$ is conserved. Waves therefore tend to propagate along well-defined rays. The dispersion relation alone does not tell us which way a wave propagates. We must pay attention to \textit{causality}, the fact that waves propagate away from whatever generates a disturbance. 
 
-Our analysis so far deals with waves which are a linear perturbation from an equilibrium configuration. We have seen that when a wave reflects from a rigid surface, the reflected wave may have a larger amplitude than the incident wave. Depending on the shape of the domain and its boundaries, repeated reflexions may increase the amplitude of waves and cause nonlinear effects to become important. In particular, repeated reflexions can lead to trapping, to amplitudes increasing, and eventually to wave-breaking. 
+Our analysis so far deals with waves which are a linear perturbation from an equilibrium configuration. We have seen that when a wave reflects from a rigid surface, the reflected wave may have a larger amplitude than the incident wave. Depending on the shape of the domain and its boundaries, repeated reflections may increase the amplitude of waves and cause nonlinear effects to become important. In particular, repeated reflections can lead to trapping, to amplitudes increasing, and eventually to wave-breaking. 
 
 \section{Wave attractors}
 \subsection{Rectangular basins}
@@ -328,9 +375,11 @@ Our analysis so far deals with waves which are a linear perturbation from an equ
 \section{Decay along a beam}
 
 So far we have completely ignored viscosity. But when a beam of waves
-travels across long distances, a small viscosity may be enough to cause energy
-losses along the beam. In this section, we reintroduce a constant viscosity
-$\nu$. 
+travels across long distances, a small viscosity may be enough to cause
+significant energy losses along the beam. In this section, we reintroduce a
+constant viscosity $\nu$, and consider the long-distance behaviour of beams. 
+
+The equations of motions are
 \begin{align}
 	\dpd{u}{t} + \frac{1}{\rho_0}\dpd{p}{x} &= \nu\grad^2 u \\
 	\dpd{w}{t} + \frac{1}{\rho_0}\dpd{p}{z} - b &= \nu\grad^2 w \\
@@ -343,10 +392,14 @@ where
 \end{equation}
 is the buoyancy. 
 
-Introduce a streamfunction $\psi$ such that $(u,w) = (-\psi_z, \psi_x)$. Then some cross-differentiation eliminates $p$ and $b$ to give
+Introduce a streamfunction $\psi$ such that $(u,w) = (-\psi_z, \psi_x)$. We have 
+\begin{align}
+    \dpd{b}{t} + N^2 \dpd{\psi}{x} &= 0 \\
+    \dpd{}{t} \grad^2 \psi - \dpd{b}{t} - \nu \grad^4 \psi &= 0
+\end{align}
+Then some cross-differentiation eliminates $p$ and $b$ to give
 \begin{equation}
-	\grad^2 \psi_{tt} + N^2 \psi_{xx} = \nu\grad^4 \psi_t.
-	\label{igw-damped}
+	\grad^2 \psi_{tt} + N^2 \psi_{xx} = \nu\grad^4 \psi_t. \label{igw-damped}
 \end{equation} 
 
 The $\nu\grad^4\psi_t$ term acts to damp waves. We could look for plane-wave solutions to (\ref{igw-damped}) in the usual way, and obtain the dispersion relation
@@ -356,30 +409,146 @@ The $\nu\grad^4\psi_t$ term acts to damp waves. We could look for plane-wave sol
 \end{equation}
 where $\cos\theta = k/|\bs{k}|$ as usual. Given $(k,m)$, we could solve (\ref{igwdisprel-damped}) for $\omega$. 
 
-But often we are more interested in the spatial decay of a beam that is generated by oscillations at a fixed $\omega$. We expect that the beam would still propagate in the direction $\theta = \cos^{-1} (\omega/N)$, but with a decaying amplitude.
+But often we are more interested in the spatial decay of a beam that is
+generated by oscillations at a fixed $\omega$. We expect that the beam would
+still propagate in the direction $\theta = \cos^{-1} (\omega/N)$, but with a
+decaying amplitude. Thus we define a scaled coordinate 
+$\chi = \frac{\epsilon}{\sin\theta} \xi$, where $\xi$ is the unscaled coordinate
+along the beam. 
 
-\section{Reflexions from rough topology}
+We let $\epsilon = \nu/2$ and we expand $\psi$ and $b$ as perturbation series:
+\begin{align}
+    \psi &= (\psi_0 + \epsilon \psi_1 + ...)\exp(i\omega t) \\
+    b &= (b_0 + \epsilon b_1 + ... ) \exp(i\omega t).
+\end{align}
+Substituting into the governing equations and comparing orders of $\epsilon$
+gives us 
+\begin{equation}
+    \dpd[4]{\psi_0}{\zeta} = i\dmd{\psi_0}{2}{\zeta}{}{\chi}{}
+\end{equation}
+and some work will give 
+\begin{equation}
+    \psi_0 = A \exp(ik\zeta - k^3 \chi)
+\end{equation}
+for some constant $A$. Thus the velocity decays exponentially along the beam;
+waves with higher wavenumbers decay faster. In the environment, IGWs have
+wavelengths on the order of hundreds of metres, but in the lab the wavelengths
+are much smaller, on the order of a few centimetres. 
 
-\subsection{Subcritical reflexion from a sinusoidal}
-\subsection{Supercritical reflexions from a sinusoidal}
+We could also consider energy losses due to the diffusion of buoyancy (or
+equivalently of temperature) instead of the diffusion of momentum. In practice,
+both effects may be important. The relative importance of the two diffusion
+processes is quantified by the Prandtl number $\mathrm{Pr} = \nu/\kappa$.
+
+\section{Reflections from rough topology}
+
+Consider a wave beam of wavenumber $k_0$, making an angle $\theta$ with the
+vertical, reflecting from a sinusoidal topography
+\begin{equation}
+    z = h = h_0 \sin k_T x
+\end{equation}
+where $k_T$ is the `wavenumber' of the topography. The incident beam is
+propagating downwards and to the right. We suppose that the height of the
+topography, $h_0$, is small (more precisely, that $h_0 k_T \ll 1$).
+
+Suppose the incident beam would reach $z = 0$ at $x = x_0$, were it not for the
+topography. The equation of the beam is therefore given by
+\begin{equation}
+    z = \beta (x_0 - x)
+\end{equation}
+where $\beta = 1/\tan \theta$. The beam intersects the topography at the point
+$x = x_i$, where $x_i$ solves
+\begin{equation}
+    h_0 \sin k_T x_i = \beta (x_0 - x_i).
+\end{equation}
+Define $\delta x = x_i - x_0$
+
+\subsection{Subcritical reflection from a sinusoidal}
+
+If the slope of the topography is sufficiently small, then all ray reflections
+will be subcritical and ray tracing suggests that an incident wavebeam should be
+reflected forwards. 
+
+If $k_0 < k_T$, so the wavelength of the incident beam is larger than the
+wavelength of the topography, then we get \textit{back scatter}: The reflected
+wave propagates upwards but to the \textit{left}. This is because the group
+velocity of the reflected wave must be upwards.
+
+\subsection{Supercritical reflections from a sinusoidal}
+
+\paragraph{Steep topography} If instead we had steep topography, with $h_0 k_T
+\gg 1$, then the picture is much more complicated. Rays can bounce multiple
+times off the topography before leaving. We will observe both forward scatter
+and back scatter. The amounts of energy that scatter forwards and backwards
+depends very sensitively on the incident angle $\theta$, and it is not possible
+to write down a formula for these amounts (although it is possible to bound
+them).
+
+Moreover, attractors may form in the deep gaps between the topography. These may
+cause the amplitude of the wave to increase so much that wave breaking starts to
+occur. The inviscid approximation also becomes invalid, because steep velocity
+gradients will form. Mixing may occur, destroying the original stratification. 
 
 \section{Non-linear stratification}
 
-If $N$ is not constant but varies with $z$ (say), then waves will not follow straight paths but will refract. If $N$ varies very slowly with $z$, over lengthscales much larger than a wavelength, then the WKB method can be used to find the trajectory of a wave. 
+If $N$ is not constant but varies with $z$ (say), then waves will not follow
+straight paths but will refract, and may also reflect.
 
-The frequency $\omega$ of a wave is still constant, and we assume that $\omega$ is still related to $\theta$, the angle between the direction of propagation and the vertical, by
+\subsection{Very sharp changes}
+
+Consider a stratification with $N = N_1$ in $z < 0$ and $N = N_2$ in $z > 0$,
+where $N_2 < N_1$. Consider a wave incident from $z < 0$ with frequency
+$\omega$. The incident wave's angle to the vertical $\theta_i$ is given by $\cos
+\theta_i = \omega/N_1$.  A transmitted wave in $z > 0$ will make an angle
+$\theta_t$ to the vertical, where $\cos\theta_t = \omega/N_2$. In order that the
+boundary conditions be satisfied, there will also need to be a
+\textit{reflected} wave propagating downwards from $z = 0$. Thus we have
+\textit{total internal reflection}. 
+
+Note that if $N_2 < \omega < N_1$ then the transmitted wave will be evanescent.
+
+\subsection{Very slow changes}
+
+If $N$ varies very slowly with $z$, over
+lengthscales much larger than a wavelength, then the WKB method can be used to
+find the trajectory of a wave. 
+
+The frequency $\omega$ of a wave is still constant, and we assume that $\omega$
+is still related to $\theta$, the angle between the direction of propagation and
+the vertical, by
 \begin{equation}
  \omega = N(z)\cos\theta.
 \end{equation}
-Since $\omega$ is fixed, this determines $\theta = \theta(z)$, which allows us to solve for the path of the ray.
+Since $\omega$ is fixed, this determines $\theta = \theta(z)$, which allows us
+to solve for the path of the ray. Say the ray is given by $x = X(z)$. Then
+\begin{equation}
+    \dod{X}{z} = \tan \theta = \frac{\sqrt{1 - \cos^2 \theta}}{\cos\theta}.
+\end{equation}
+
+For example, consider $N(z) = N_0 e^{-z/H}$, so that $\cos\theta(z) =
+(\omega/N_0) e^{z/H}$. Then we have 
+\begin{equation}
+    \dod{X}{z} = \sqrt{1 - \cos^2 \theta_0 e^{2z/H}} \frac{e^{-z/H}}{\cos\theta_0}.
+\end{equation}
+
+As $z$ increases, $N$ decreases. Eventually we will have $\omega/N \rightarrow
+1$, $\od{X}{z} \rightarrow \infty$ and the wave can no longer propagate upwards.
+Instead, the wave is reflected back downwards. (In practice, the amplitude of
+the wave also grows as we approach $\omega/N\rightarrow1$, so that nonlinear
+processes start to play a role as well.)
 
 \section{Leewaves}
 
-When a medium flows past an obstacle and waves are formed in the wake, it is possible to get standing waves (also known as stationary waves). When standing IGWs occur in the atmosphere as a wind flows past obstacles such as mountains, these are known as leewaves.
+When a medium flows past an obstacle and waves are formed in the wake, it is
+possible to get standing waves (also known as stationary waves). When standing
+IGWs occur in the atmosphere as a wind flows past obstacles such as mountains,
+these are known as leewaves.
 
 \subsection{Kelvin ship waves}
 
-As an aside to introduce standing waves, we consider a ship moving with velocity $\bs{U} = U\bs{e}_x$ in deep water. The surface waves have a dispersion relation
+As an aside to introduce standing waves, we consider a ship moving with velocity
+$\bs{U} = U\bs{e}_x$ in deep water. The surface waves in deep water have a
+dispersion relation
 \begin{equation}
 \omega^2 = g|\bs{k}|
 \end{equation}
@@ -387,7 +556,8 @@ and phase
 \begin{equation}
 	\phi = \bs{k}\cdot\bs{x} - \omega t.
 \end{equation}
-Let $\bs{x}'$ denote a position vector relative to the ship, so that $\bs{x}' = \bs{x} - \bs{U}t$. Then
+Let $\bs{x}'$ denote a position vector relative to the ship, so that $\bs{x}' =
+\bs{x} - \bs{U}t$. Then
 \begin{equation}
 	\phi = \bs{k}\cdot\bs{x}' + (\bs{k}\cdot\bs{U} - \omega) t.
 \end{equation}
@@ -398,13 +568,19 @@ Hence waves that are stationary in the frame of the ship have
 \end{align}
 where, in this section, $\theta$ is the angle between $\bs{U}$ and $\bs{k}$. 
 
-For these waves, $\bs{c}_g$ and $\bs{c}_p$ are parallel, and $|\bs{c}_g| = \frac{1}{2} |\bs{c}_p| = \frac{1}{2}U\cos\theta$. This is the speed at which wave packets travel. Some geometry then tells us the shape that these waves make behind the ship.
+For these waves, $\bs{c}_g$ and $\bs{c}_p$ are parallel, and $|\bs{c}_g| =
+\frac{1}{2} |\bs{c}_p| = \frac{1}{2}U\cos\theta$. This is the speed at which
+wave packets travel. Some geometry then tells us the shape that these waves make
+behind the ship.
 
-In shallow water, surface waves are not dispersive and such stationary waves are not seen.
+In shallow water, surface waves are not dispersive and such stationary waves are
+not seen.
 
 \subsection{Extended range of hills}
 
-Now we consider leewaves, i.e. stationary atmospheric IGWs as a wind of speed $U$ flows, from left to right, over a sinusoidal mountain range which has wavelength $\lambda_T$ and so topographical wavenumber $k_T = 2\pi/\lambda$. 
+Now we consider leewaves, i.e. stationary atmospheric IGWs as a wind of speed
+$U$ flows, from left to right, over a sinusoidal mountain range which has
+wavelength $\lambda_T$ and so topographical wavenumber $k_T = 2\pi/\lambda$. 
 
 An observer in the frame of the mountains sees the leewaves as having a constant phase. The frequency of the forcing must therefore be
 \begin{equation}
