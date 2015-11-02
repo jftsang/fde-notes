@@ -1,0 +1,45 @@
+\section{Jets}
+
+We define 
+\begin{align}
+ \pi Q	&= \frac{1}{T}\int_0^T \int_0^\infty \int_{-\pi}^\pi w r \dif \theta\dif r \dif t \\ 
+ \pi M	&= \frac{1}{T}\int_0^T \int_0^\infty \int_{-\pi}^\pi w^2 r \dif \theta\dif r \dif t \\  
+\end{align}
+as, respectively, the volume flux and momentum flux divided by density. The
+integral over $t$ enacts a time-averaging. The $\pi$'s on the LHS are for
+convenience. For a top hat profile, these become
+\begin{align}
+ \pi Q	&= \pi b^2 W \\
+ \pi M	&= \pi b^2 W^2 
+\end{align}
+where we write $W$ instead of $w$ to emphasise that this is an averaged
+velocity, reserving $w$ for the fluctuating local velocity. We have
+\begin{align}
+ W	&= M/Q \\
+ b	&= Q/M^{1/2}
+\end{align}
+
+Consider a steady jet travelling in the $z$ direction. As the fluid in the jet
+travels, it entrains the surrounding fluid with entrainment velocity $u_e$.
+Experiments find that
+\begin{equation}
+ u_e = \alpha W 
+\end{equation} 
+where the entrainment coefficient $\alpha$ is between 0.065 and 0.080 for a top
+hat profile. Thus, the volume flux satisfies
+\begin{align}
+ \pi \dod{Q}{z}	&= 2\pi b u_e \\
+ 			&= 2\pi b \alpha W \\
+			&= 2\alpha\pi M^{1/2}.
+\end{align}
+Meanwhile, conservation of momentum gives
+\begin{equation}
+ \pi \dod{M}{z} = 0.
+\end{equation}
+Hence $M = M_0$ is constant along the plume. This gives
+\begin{align}
+ Q 	&= 2\alpha M_0^{1/2} (z+z_\nu) \\
+ b	&= \alpha (z+z_\nu) \\
+ W	&= \frac{M_0^{1/2}} {2\alpha (z+z_\nu)}.
+\end{align}
+So, the jet's thickness increases linearly with $z$, and the fluid velocity decreases with $z$. The point $z = -z_\nu$ is the `virtual origin' of the jet: it looks as though there is a point source of momentum at this point, even though boundary conditions are being specified at $z=0$. 

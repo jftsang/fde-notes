@@ -1,0 +1,46 @@
+\section{Thermals}
+
+A thermal is a finite patch of buoyant fluid from an isolated release.
+
+The patch of buoyant fluid rises in the environment. It rises with speed $u$,
+and its radius $r$ and volume $V$ increase due to entrainment. Its buoyancy
+(with respect to a reference density $\rho_0$) is described by the reduced
+gravity $g'$. The momentum of the thermal is $M \sim uV$.
+
+Volume conservation and the entrainment hypothesis give
+\begin{equation}
+u \dod{V}{z} = 3(\alpha u) V^{2/3}
+\end{equation}
+where $\alpha u$ is the entrainment velocity.
+The momentum balance states that 
+\begin{equation}
+u \dod{M}{z} = \frac{2}{3} V (g' - g'_e)
+\end{equation}
+and so
+\begin{equation}
+M \dod{M}{z} = \frac{2}{3} V^2 (g' - g'_e)
+\end{equation}
+where $g'_e$ is the reduced gravity of the environment, with respect to the
+reference density $\rho_0$. The buoyancy balance gives
+\begin{equation}
+u \dod{B}{z} = 3 (\alpha u) V^{2/3} g'_e
+\end{equation}
+We have used $\od{}{t} = u\od{}{z}$. 
+
+For a uniform environment with $g'_e = 0$, these equations can be solved, with
+\begin{equation}
+V = (V_0^{1/3} + \alpha z)^3 \text{ and } u = \frac{B^{1/2}}{\alpha^{3/2} z}
+\end{equation}
+and $r \sim \alpha z$. Experiments show that $\alpha = 0.4$.
+
+When a plume starts, it is similar to a thermal. In fact, the top of the
+starting plume behaves more like a thermal. This thermal is governed by the
+above thermal equations, but with additional `plume forcing' terms:
+\begin{align}
+u\dod{V}{z} &= 3\alpha_s V^{2/3} + \beta q_p(z)  \\
+\dod{(uV)}{z} &= \frac{2}{3} V g' \\
+u\dod{(g'V)}{z} &= 3\alpha V^{2/3} g'_e + \beta q_p g'_p
+\end{align}
+where $q_p$ and $g'_p$ are the mass flux and reduced gravity of the plume, and
+$\beta < 1$ is the fraction of the plume that enters the thermal. 
+

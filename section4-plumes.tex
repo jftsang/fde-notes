@@ -1,0 +1,309 @@
+\section{Plumes}
+
+\subsection{Self-similar plumes}
+For plumes, the density of the fluid is not homogeneous, and so we need to consider fluxes of mass and momentum, rather than fluxes of volume and $\displaystyle\frac{\text{momentum}}{\text{density}}$. Therefore, we define
+\begin{align}
+ \pi Q	&= \frac{1}{T}\int_0^T \int_0^\infty \int_{-\pi}^\pi \hat\rho w r \dif \theta\dif r \dif t \\ 
+ \pi M	&= \frac{1}{T}\int_0^T \int_0^\infty \int_{-\pi}^\pi \hat\rho w^2 r \dif \theta\dif r \dif t \\  
+\end{align}
+as the mass flux and momentum flux respectively. We also define
+\begin{equation}
+ \pi F		= \frac{1}{T}\int_0^T \int_0^\infty \int_{-\pi}^\pi (\rho_0 - \hat\rho) g w r \dif \theta\dif r \dif t \\ 
+\end{equation}
+as the buoyancy flux. Here $\hat\rho$ is the instantaneous, fluctuating density inside the plume, and $\rho_0$ is the density of the surrounding fluid. For top-hat profiles, these become
+\begin{align}
+ \pi Q	&= \pi\rho b^2 W \\
+ \pi M	&= \pi\rho b^2 W^2 \\
+ \pi F		&= \pi(\rho_0 - \rho) gb^2W
+\end{align}
+where $\rho$ is the density in the plume averaged across a cross-section. We also have
+\begin{align}
+ W		&= M/Q \\
+ b		&= Q/(\rho M)^{1/2} \\
+ g'		&= F/Q.
+\end{align}
+
+\subsection{Time-dependent plume equations}
+
+Volume, mass and momentum balances on the plume give
+\begin{align}
+ \dpd{}{t} \left(\pi b^2\right) + \dpd{}{z} \left(\pi b^2 W\right) &= 2\pi b u_e \\
+ \dpd{}{t} \left(\pi \rho b^2\right) + \dpd{}{z} \left(\pi \rho b^2 W\right) &= 2\pi \rho_0 b u_e \\
+ \dpd{}{t} \left(\pi \rho b^2 W\right) + \dpd{}{z} \left(\pi \rho b^2 W^2\right) &= \pi b^2 (\rho_0 - \rho) g \\
+\end{align}
+which can also be written as 
+\begin{align}
+ \dpd{}{t} \left(\pi b^2\right) + \dpd{}{z} \left(\pi b^2 W\right) &= 2\pi b u_e \\
+ \dpd{\rho}{t} + W\dpd{\rho}{z} &= \frac{2(\rho_0 - \rho) u_e}{b} \\
+ \dpd{W}{t} + W\dpd{W}{z} &= \frac{g (\rho_0 - \rho)}{\rho} - 2\frac{\rho_0}{\rho} \frac{u_e W}{b}
+\end{align}
+
+Experiments show that the entrainment velocity for plumes is 
+\begin{equation}
+ u_e = \alpha \left(\frac{\rho}{\rho_0}\right)^{1/2} W
+\end{equation}
+where $\alpha$ is between $0.1$ and $0.16$ (but again depends on the top-hat
+profile). For Boussinesq plumes, $\rho\sim\rho_0$ and so $u_e \sim \alpha W$. 
+
+It can be shown that, in the Boussinesq case, the system is not hyperbolic, but
+is parabolic, and admits similarity solutions. This is reasonable.
+
+\section{Plumes in a homogeneous environment}
+
+\subsection{Steady Boussinesq plumes}
+
+Consider a steady injection of fluid of density $\rho+\Delta\rho$ into a
+homogeneous environment of density $\rho$. The volume flux of the injection is
+$Q$. 
+
+The reduced gravity of the plume is $g' = g\Delta\rho/\rho_0$. 
+
+\subsubsection{A simple plume model, by dimensional analysis}
+
+The \textit{buoyancy flux} of the plume, $B$, is equal to $B_0 = g'_0 Q_0$ at
+$z=0$. The dimensions of $B$ are $L^4 /T^3$.
+
+Let $b = b(z)$ represent the radius of the plume at a height $z$. By dimensional
+analysis, we must have $b = \lambda_1 z$.  Let $u = u(z)$ represent the mean
+upwards speed of the plume. By dimensional analysis, we must have $u = \lambda_2
+B^{1/3} z^{-1/3}$.  Therefore the volume flux $q = q(z)$ must be given by $q =
+\lambda_3 B^{1/3} z^{5/3}$. Here, $\lambda_{1,2,3}$ are unknown, dimensionless
+constants.
+
+The buoyancy flux $B$ is conserved: $B = B_0$. This is because buoyancy is
+caused by some conserved quantity, such as salt concentration or thermal energy.
+Hence the reduced gravity will decrease according to $g'(z) = B_0 / q(z) =
+\lambda_3^{-1} B_0^{2/3} z^{-5/3}$.
+
+The $\lambda_i$ can now be found by experiments.
+
+\subsubsection{Plume model with turbulence}
+
+We now try to consider the effect of turbulence in the plume in more detail.
+Consider a plume of radius $b(z)$ rising with upwards speed $u(z)$.  As the
+plume rises, it entrains the surrounding fluid at the entrainment speed $u_e$.
+The \textit{entrainment hypothesis} asserts that $u_e = \alpha u$ for some
+$O(1)$ constant $\alpha$. This is a turbulence closure model.
+
+In fact, the plume is not uniform across its area, and in fact does not have a
+clear-cut radius. Rather, the velocity $u$ and concentration $\Delta c$ are given
+by Gaussians, \textit{viz.}
+\begin{align}
+    u(r,z) &\sim u(0,z) \exp(-r^2/b_g^2) \\
+    \Delta c(r,z) &\sim c(0,z) \exp(-r^2/\lambda b_g^2)
+\end{align}
+and the local density in the plume is given by $\rho = \rho_0(z) (1+\lambda \Delta c)$. The
+ambient density $\rho_a(z) = \rho_0 (1+\lambda\Delta c_a)$.
+
+The Boussinesq approximation now says that $\lambda\Delta c \ll 1$.
+
+Mass conservation gives
+\begin{equation}
+    \dod{}{z} \int \dif A u \rho = 2\pi b_g K u(0,z) \rho_a(z).
+\end{equation}
+That is, the mass flux in the plume increases according to the entrainment of
+ambient fluid. Here $b_g$ is the `Gaussian radius', and $K u(0,z)$ is an
+entrainment velocity. (We will relate the constants $\alpha$ and $K$ later.)
+
+Buoyancy conservation (which as above comes about because of the conservation of
+some quantity which causes buoyancy, such as salt or thermal energy) gives
+\begin{equation}
+    \dod{}{z} \int \dif A u\rho\Delta c = 2\pi b_g K u(0,z) \rho_a (z) \Delta c_a
+\end{equation}
+In an unstratified environment, $\Delta c_a = 0$.
+
+The equation of motion asserts that
+\begin{equation}
+    \rho (\bs{u}\cdot\grad)\bs{u} = -\grad p + \rho\bs{g}.
+\end{equation}
+Integrating the $z$-component over the volume between $z$ and $z + \Delta z$ gives
+\begin{equation}
+    \int\dif V \rho (\bs{u}\cdot\grad)\bs{u}\cdot\bs{e}_z = \int (\rho_a - \rho) g \dif V.
+\end{equation}
+That is, the difference between the plume density and the ambient density is
+responsible for changes in the volume flux. We now use the fundamental theorem
+of calculus to obtain
+\begin{equation}
+    \dod{}{z} \int \rho u^2 \dif A = \int (\rho_a - \rho) g \dif A
+\end{equation}
+where these are surface integrals over a horizontal cross-section of the plume.
+
+The Boussinesq approximation $\lambda\Delta c \ll 1$ gives $\rho,\rho_a \approx
+\rho_0$, and so we have
+\begin{equation}
+    \dod{}{z} \int u \dif A = 2\pi b_g K u(0,z),
+\end{equation}
+a volume conservation equation, with entrainment. From conservation of $c$-flux,
+we have
+\begin{equation}
+    \dod{}{z} \int u \Delta c \dif A = 2\pi b_g K u(0,z) \Delta c_a.
+\end{equation}
+However, in the conservation of momentum equation, we take $\rho_a - \rho$, and
+the leading-order terms cancel out. Rather,
+\begin{equation}
+    \dod{}{z} \int u^2 \dif A = \int g \lambda (\Delta c_a - \Delta c) \dif A = \int g' \dif A
+\end{equation}
+where $g' = g\lambda(\Delta c_a - \Delta c)$ is the reduced gravity.
+
+We now pretend that the plume's velocity and buoyancy functions have top-hat
+profiles of radius $b$, rather than Gaussian profiles with characteristic radius
+$b_g$. This introduces constant conversion factors which will relate $b$ and
+$b_g$. We assume that the velocity, buoyancy and concentration are uniform
+across each cross-section, and zero outside the top hat. We now put bars above
+the names of variables, to stress that we are referring to \textit{averaged}
+quantities: For example, we will call the velocity $\bar{u}$, to represent the
+mean velocity inside the plume.
+
+The integrals above can therefore be simplified, and the integral equatinos can
+be written as differential equations instead:
+\begin{align}
+    \dod{}{z}(\bar{u} b^2) &= 2\alpha b\bar{u} \\
+    \dod{}{z}(\bar{u}^2 b^2) &= \bar{g'} b^2 \\
+    \dod{}{z}(\bar{u} b^2 \bar{\Delta c}) &= 2\alpha b\bar{u} \Delta c_a
+\end{align}
+Multiply the first of these by $-\Delta c_a$ and add the third equation:
+\begin{equation}
+    \dod{}{z} (\bar{u} b^2 (\bar{\Delta c} - \Delta c_a)) = -\bar{u} b^2 \dod{\Delta c_a}{z} 
+\end{equation}
+Multiplying by $g \lambda$ lets us write this in terms of the reduced gravity:
+\begin{equation}
+    \dod{}{z}(\bar{u} b^2 \bar{g'}) = -N^2 \bar{u} b^2
+\end{equation}
+where $N^2 = -(g/\rho_0) \pd{\rho_a}{z}$ is the square of the
+Brunt--V\"ais\"al\"a frequency.
+
+For an unstratified environment with $N^2 = 0$, we have
+\begin{align}
+    \dod{}{z}(\bar{u} b^2) &= 2\alpha b\bar{u} \\
+    \dod{}{z}(\bar{u}^2 b^2) &= \bar{g'} b^2 \\
+    \dod{}{z}(\bar{u} b^2 \bar{\Delta c}) &= 0
+\end{align}
+Define $q = \bar{u}b^2$ as the (specific) volume flux, $m = \bar{u}^2 b^2$ as
+the (specific) momentum flux, and $B = \bar{u}b^2 \bar{g'}$ as the (specific)
+buoyancy flux.\footnote{The word `specific' refers to the fact that we are
+ignoring any factors of $\pi$, $\rho_0$, etc.} Then we have
+\begin{align}
+    \dod{q}{z} &= 2\alpha m^{1/2} \\
+    m\dod{m}{z} &= B q \\
+    \dod{B}{z} &= 0
+\end{align}
+and so the buoyancy flux $B = B_0$ is constant in an unstratified environment.
+Multiplying the second equation by $2\alpha m^{1/2}$ gives us
+\begin{equation}
+    2\alpha m^{3/2} \dod{m}{z} = B_0 q\dod{q}{z}
+\end{equation}
+which integrates to
+\begin{equation}
+    m^{5/2} = \left(\frac{5B_0}{8\alpha}\right) q^2 + \left( m_0^{5/2}
+    - \left(\frac{5B_0}{8\alpha}\right) q_0^2 \right) 
+    = \left(\frac{5B_0}{8\alpha}\right) q^2 + J
+\end{equation}
+for some value of $J$.
+
+\paragraph{The case $J=0$} A plume for which $J = 0$ is called a \textit{pure
+plume}.In this case we can write exact solutions for $b$ and $q$, and therefore
+for $\bar{u}$ and for $\bar{g'}$. These solutions scale with $z$ exactly as the
+dimensional arguments predicted:
+\begin{align}
+    \bar{u} &= \left(\frac{5}{6\alpha}\right) \left( \frac{9\alpha B_0}{10}\right)^{1/3} z^{-1/3} \\
+    \bar{g'} &= \left(\frac{5B_0}{6\alpha}\right) \left( \frac{9\alpha
+        B_0}{10}\right)^{-1/3} z^{-5/3} \\
+        q &= \left(\frac{6\alpha}{5}\right)^{5/3}
+        \left(\frac{5B_0}{8\alpha}\right)^{1/3} z^{5/3}
+\end{align}
+We can now test our model by conducting an experiment and finding whether the
+volume flux $q$ does scale with $z$ as predicted. We will need to conduct an
+experiment to find the empirical constant $\alpha$.
+
+\paragraph{The case $J>0$} With $J>0$, the plume initially has more momentum
+than a pure plume. Near the source, the plume will behave more like a jet,
+entraining surrounding fluid more quickly than a pure plume. Such a plume is
+called a \textit{forced plume}. As the surrounding fluid is entrained, the
+starting momentum becomes less important and the forced plume adjusts to become
+like a pure plume.
+
+We define the \textit{jet length} $L_j$ as the distance over which the momentum is
+important compared to the buoyancy. By dimensional arguments, we have $L_j \sim
+M_0^{1/4} B_0^{-1/2}$.
+
+\paragraph{The case $J<0$} In this case the volume flux is too great compared to
+the buoyancy flux. Such a plume is called a \textit{distributed plume}. The flow
+will adjust to become like a pure plume by accelerating, over a length scale
+$L_a \sim Q_0^{3/5} B_0^{-1/3}$ called the \textit{acceleration length}. A
+distributed plume does not entrain surrounding fluid as quickly as a pure plume.
+
+\paragraph{Summary} The case $J=0$, known as \textit{pure plume balance}, is a
+balance between volume, momentum and buoyancy fluxes. 
+
+\subsection{Time-dependent plumes}
+\subsection{Steady non-Boussinesq plumes}
+
+\section{Plumes in a stratified environment}
+
+Now the ambient density is a function of height, and $N^2 \neq 0$. The equations
+become 
+\begin{align}
+    \dod{q}{z} &= 2\alpha m^{1/2} \\
+    m\dod{m}{z} &= B q \\
+    \dod{B}{z} &= -N^2 q
+\end{align}
+Suppose the stratification is uniform, so that $N^2$ is constant.
+
+\subsection{Rise height}
+
+What determines the rise height $H$? Since $H = f(N, B_0)$ and using dimensional
+analysis, we have 
+\begin{equation}
+    H = 5 B^{1/4} N^{-3/4} 
+\end{equation}
+where the number $5$ must be obtained from experiment (either directly or after
+working out $\alpha$ from experiment).
+
+The differential equations for $q$, $m$ and $B$ have no analytic solution; we
+must use numerical methods to solve them. It is found that $b$ initially grows
+linearly with $z$ but then tends towards a constant; $\bar{u}$ decreases and
+eventually goes to 0, and $\bar{g'}$ decreases and eventually becomes negative.
+
+The height at which $B = 0$ is called the \textit{neutral height}. Above the
+neutral height, $B < 0$ and so the momentum drops, eventually to 0. The height
+at which $\bar{u} = 0$ is called the \textit{top height}, and is higher than the
+neutral height.
+
+Thus, a parcel of fluid entering the plume will rise, above the neutral height,
+reach the top height, and then fall back down to the neutral height. Above the
+neutral height, the shape of the plume looks like a fountain. Strictly speaking,
+our model does not work here, because the entrainment above the neutral height
+is different from the entrainment below. That said, the numerical results agree
+with experimental results very well.
+
+\subsection{In air and water}
+
+\paragraph{Thermodynamics} For air, temperature and density $\rho = \rho(T)$ are
+related by $\rho = P/RT$ where $R$ is the ideal gas constant. Thus
+$\rho(T+\Delta T) = (P/RT) (1-\Delta T/T+\dots)$ and so $g' \sim \Delta T/T$. 
+
+\paragraph{Hydrothermal plumes} In the ocean, $\rho$ is governed by both
+salinity and temperature: $\rho = \rho(S,T)$. At leading order, $\rho(S+\Delta
+S, T+\Delta T) = \rho_0 (1+\alpha_S \Delta S + \alpha_T \Delta T + \dots)$.
+
+Since both heat and salt must be conserved, we have four equations in our model:
+\begin{align}
+    \dod{q}{z} &= 2\alpha m^{1/2} \\
+    m\dod{m}{z} &= (B_S + B_T) q \\
+    \dod{B_S}{z} &= -N_S^2 q \\
+    \dod{B_T}{z} &= -N_T^2 q
+\end{align}
+where $B_S$ is the buoyancy due to salinity and $B_T$ is the buoyancy due to
+heat, and $N_S$ and $N_T$ are the two different buoyancy frequencies.
+
+In some parts of the ocean, the ocean may be stably stratified with respect to
+salinity but unstably stratified with respect to temperature, or vice-versa.
+Overall, the ocean may still be stably stratified. But the cause of buoyancy for
+the plume may be different at different depths.
+
+\subsection{Series solution in Boussinesq fluid}
+
+\subsection{Plumes in a confined space and ventilation}
+
+
+
