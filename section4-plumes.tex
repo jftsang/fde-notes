@@ -303,7 +303,110 @@ the plume may be different at different depths.
 
 \subsection{Series solution in Boussinesq fluid}
 
-\subsection{Plumes in a confined space and ventilation}
+\section{Ventilation}
 
+\subsection{A warm room}
 
+Suppose a room of height $H$ has windows of area $A$ at the top and at the
+bottom. Suppose that air flows into the room from the bottom
+window and out of the room from the top, mixing with the air inside the room.
+The air inside the room is buoyant, because the room is being heated at the
+bottom.
 
+First, assume that the air in the room is always well-mixed and has reduced
+gravity $g'$ (with respect to the air outside). The volume flux into the room
+from the windows is 
+\begin{equation}
+    Q = cA \sqrt{\frac{g'H}{2}}.
+\end{equation}
+Suppose that the air in the room is heated at a constant rate $B$. 
+We have:
+\begin{align}
+    V \dod{g'}{t} &= -g' Q + B \\
+                  &= cA \sqrt{\frac{'H}{2}} g'^{3/2} + B \\
+\end{align}
+and so $g'$ approaches an equilibrium $g'_e = \left( \frac{B}{cA\sqrt{H/2}}
+\right)^{2/3} $.
+The timescale of this approach is $\tau = V g'_0/B$.
+
+Now suppose that the air in the room is not well-mixed but forms two layers with
+reduced gravities $g'_0$ for the upper layer and $g'_l$ for the lower layer. The
+height of the lower layer is $h_l$. The volume flux into the room is
+\begin{equation}
+    Q = cA \sqrt{\frac{ g'_0(H-h_l) + g'_l h_l }{2}}.
+\end{equation}
+If the lower layer is heated at the rate $B$, then
+\begin{equation}
+    \dod{(h_l g'_l)}{t} = B
+\end{equation}
+If $g'_l > g'_0$ then the lower layer is more dense than the upper layer, and
+the air is stably stratified. But if $g'_l < g'_0$ then the lower layer is in
+fact less dense than the upper layer; the system is unstable and overturning
+occurs, causing the air to become well-mixed. 
+
+By considering the early-time asymptotics, we find that
+\begin{equation}
+    \frac{g'_l}{g'_0} = \left( \frac{g'_e}{g'_0} \right)^{3/2}
+\end{equation}
+and so instability occurs at early time if $g'_e > g'_0$, where $g'_e$ is as above.
+
+This is not the whole story: In fact, the overturning instability and mixing
+occurs only if the \textit{Rayleigh number} is sufficiently high. 
+
+\subsection{A cold room}
+
+Now suppose that the air in the room is cold and that air flows in from the top
+window and out through the bottom window. The reduced gravity in the room is
+$g' < 0$. We have
+\begin{equation}
+    A \dod{h_l}{t} = -cA\sqrt{\frac{|g'| h_l}{2}}
+\end{equation}
+and
+\begin{equation}
+    A \dod{(g' h_l)}{t} = B - cA g' \sqrt{\frac{|g'|h_l}{2}}
+\end{equation}
+and so 
+\begin{equation}
+    A h_L \dod{g'}{t} = B g'
+\end{equation}
+Numerics show that $g'$ starts off negative, increases and approaches 0. When
+$g'=0$, overturning can start to occur.
+
+\subsection{Wind}
+
+If a wind of speed $v$ flows around a building then the pressure on the upwind
+face of the building is higher than the pressure on the downwind face, with
+$\Delta p_w \sim c_D\rho v^2$ for some drag coefficient $c_D$. Usually $c_D
+\approx 0.1$, and $\Delta p_w \approx 10\mathrm{Pa}$. On the other hand, the
+buoyancy also drives a pressure difference $\Delta\rho gH \approx
+10\mathrm{Pa}$. While both of these are very small compared to atmospheric
+pressure, they are similar to each other and may interact with each other. 
+
+Consider again the warm room. Take the reference pressure to be the pressure
+outside of the bottom window, which is downstream. The pressure just inside the
+bottom window is $-\Delta p_1$, where $\Delta p_1 > 0$ for inflow. The flow rate
+there is $Q_1=cA\sqrt{\frac{\Delta p_1}{\rho}}$. 
+
+The pressure just inside the top window is $\Delta p_2 = -\Delta p_1 + \rho_0 g'
+H$, and so the flow rate at the top window is $Q_2=cA\sqrt{\frac{\Delta p_2-\Delta p_w}{\rho_0}}$.
+Since $Q_1 = Q_2 = Q$, we must have
+\begin{equation}
+    \Delta p_1 = -\Delta p_1 + \rho_0 g' H - \Delta p_w
+\end{equation}
+and so
+\begin{equation}
+    Q = cA \sqrt{\frac{ g'H - \Delta p_w / \rho_0}{2}}
+\end{equation}
+and
+\begin{align}
+    V \dod{g'}{t} &= B - g' Q \\
+                  &= B - \frac{cAH^{1/2}}{2^{1/2}} g' (g' - \Delta p_w/\rho_0H)^{1/2} \text{ which rearranges to} \\
+    B &= \frac{cAH^{1/2}}{2^{1/2}} g' (g' - g'_w)^{1/2} \text{ where } g'_w = \Delta p_w/\rho_0H
+\end{align}
+
+On the other hand, if the flow is wind-dominated and the inflow is through the
+top window, then 
+\begin{align}
+    Q &= \frac{cAH^{1/2}}{2^{1/2}} (g'_w - g')^{1/2} \\
+    B &= \frac{cAH^{1/2}}{2^{1/2}} g' (g'_w - g')^{1/2}
+\end{align}
